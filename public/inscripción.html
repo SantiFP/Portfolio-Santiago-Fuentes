@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kronos Home</title>
+    <!---------- ESTILOS ------------>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="styles.css">
+    <!--------- GOOGLE FONTS ---------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <nav class="pb-4 bg-header">
+
+        <!---------------- header --------------------->
+        <header>
+
+            <div class="pt-8 lg:flex lg:flex-row lg:justify-between lg:pt-5">
+
+                <div class="w-fit pl-4 lg:pl-10">
+                    <a class="w-fit" href="./home.html">
+                        <img class="w-44 h-8 " src="./assets/Logo kronos.png" alt="logo">
+                    </a>
+                </div>
+
+                <button id="boton-nav" class="float-right -mt-8 text-white mr-6 lg:hidden">
+                    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
+                </button>
+
+
+                <div id="navbar" class="hidden relative z-10 mt-2 mb-[-13.5rem] p-4 pt-10 pb-5 pl-6 text-white mr-7 w-3/4 ml-auto bg-burgermenu space-y-3 lg:w-1/2 
+                    lg:pr-10 lg:space-y-0 lg:flex lg:flex-row lg:justify-end lg:pt-2 lg:space-x-6 lg:m-0 lg:text-white lg:ml-0 lg:text-sm lg:bg-inherit">
+
+                    <div class="flex flex-row justify-between items-center">
+
+                        <a class="cursor-pointer" href="./plantillaestatica.html">¿Quiénes somos?</a>
+                        <img id="close" class="w-7 h-7 cursor-pointer lg:hidden" src="./assets/cruz.png" alt="cruz">
+
+                    </div>
+                    <div>
+                        <a class="cursor-pointer" href="./plantillaestatica.html">¿Que hacemos?</a>
+                    </div>
+                    <div class="pb-4 lg:pb-0">
+                        <a class="cursor-pointer" href="./plantillaestatica.html">Tecnología</a>
+                    </div>
+
+                    <div class="inline">
+                        <img class="w-[2rem] h-[2rem] cursor-pointer lg:w-[1.188rem] inline  lg:h-[1.118rem] lg:block lg:bg-inherit"
+                            src="./assets/face-icon.png" alt="icons">
+                    </div>
+                    <div class="inline ml-2 ">
+                        <img class="w-[2rem] h-[2rem] cursor-pointer lg:w-[1.188rem]  inline lg:h-[1.118rem] lg:block lg:bg-inherit"
+                            src="./assets/twit-icon.png" alt="icons">
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+    </nav>
+
+    <div>
+
+        <div class="h-64 orangegradient  ">
+            <div class="w-5/6 mx-auto pt-6">
+                <h1 class="w-fit bg-white px-1 py-1 text-amber-600 "> ABIERTO</h1>
+                <h1 class="mt-6 text-white text-xl font-semibold">¡TOD@S CORREMOS!<br> LA FLORESTA</h1><br>
+                <p class="text-white">22 de enero de 2021</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="lg:flex lg:flex-row-reverse lg:w-5/6 lg:mx-auto lg:space-x-2">
+
+        <section class="bg-white shadow rounded-md -mt-8 w-5/6 mx-auto text-center pt-6 pb-8 lg:w-1/4 lg:h-fit">
+
+            <p>Estas por inscribirte a la prueba:</p>
+            <p class="bg-event w-3/4 mx-auto font-bold text-white text-3xl py-3 rounded my-6">CARRERA 4K</p>
+            <p>¿Dificultades para inscribirte?</p>
+            <div class="pt-1"><a class="text-blue cursor-pointer">Hacer consulta</a></div>
+
+        </section>
+
+        <!---------------- FORMULARIO DE INSCRIPCIÓN -------------------------------->
+
+        <form class="colorform bg-white shadow rounded-md mt-5 w-5/6 mx-auto py-7 lg:pb-12 lg:-mt-8 lg:w-[68%]" action="">
+
+            <!-------------- CAMPOS OBLIGATORIOS ----------------------------------------------------->
+
+            <p class="text-center pb-6">CAMPOS OBLIGATORIOS</p>
+
+            <div class="w-11/12 mx-auto borderinscripcion">
+
+                <div class="lg:flex lg:flex-wrap ">
+
+                    <div class="lg:w-[48%] lg:mr-5">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Nombre</span>
+                    </div>
+
+                    <div class="lg:w-[48%]">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Apellido</span>
+                    </div>
+
+                    <div class="flecha2 pt-6 lg:w-[48%] lg:-mt-1 lg:mr-5">
+                        <select class="borderform selectText inputstyle cursor-pointer outline-none " id="" name="">
+                            <option>Cédula</option>
+                            <option>....</option>
+                            <option>....</option>
+                        </select>
+                        <span class="floating-label">Tipo de documento</span>
+                    </div>
+
+                    <div class="lg:w-[48%] lg:mt-5">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Número</span>
+                    </div>
+
+                </div>
+
+                <div class="lg:flex lg:flex-row ">
+
+                    <p class="pb-6 pl-2 w-[74%] ">Fecha de nacimiento</p>
+                    <p class="hidden lg:block  w-[26%] text-center ">Categoría</p>
+
+                </div>
+
+                <div class="lg:flex lg:flex-row lg:space-x-4">
+
+                    <div class="flex flex-row space-x-4 lg:w-3/4">
+
+                        <div class="w-1/4">
+                            <input type="text" class="borderform inputText inputstyle outline-none " required />
+                            <span class="floating-label">Día</span>
+                        </div>
+
+                        <div class="flecha2 w-2/4">
+
+                            <select class="borderform rounded-md w-full py-[0.72rem] pl-[0.75rem] mt-[-0.6rem] inputstyle cursor-pointer
+                             outline-none ">
+                                <option class="text-gray-700">Mes</option>
+                                <option value="enero">Enero</option>
+                                <option value="febrero">Febrero</option>
+                                <option value="febrero">Marzo</option>
+                                <option value="febrero">Abril</option>
+                                <option value="febrero">Mayo</option>
+                                <option value="febrero">Junio</option>
+                                <option value="febrero">Julio</option>
+                                <option value="febrero">Agosto</option>
+                                <option value="febrero">Setiembre</option>
+                                <option value="febrero">Octubre</option>
+                                <option value="febrero">Noviembre</option>
+                                <option value="febrero">Diciembre</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="w-1/4 ">
+                            <input type="text" class="borderform inputText inputstyle outline-none " required />
+                            <span class="floating-label">Año</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="flex flex-row space-x-2 py-4 lg:w-1/4 lg:block lg:p-0">
+
+                        <p class="w-1/4 lg:hidden">Categoría</p>
+                        <input type="text" class="borderform inputText inputstyle outline-none w-3/4 bg-EF lg:w-full" />
+
+                    </div>
+                
+                </div>
+
+                <div class="flecha2 pt-6 lg:w-[48%]">
+                    <select class="borderform selectText inputstyle cursor-pointer outline-none " id="" name="">
+                        <option>Masculino</option>
+                        <option>....</option>
+                        <option>....</option>
+                    </select>
+                    <span class="floating-label">Género</span>
+                </div>
+
+                <!------------------------------------------------------------------------------------------>
+
+                <!---------------- INFORMACION PERSONAL Y CAMPOS OPCIONALES -------------------------------->
+
+                <p class="text-center text-sm pt-8 pb-8">MÁS INFORMACIÓN PERSONAL <br> (campos opcionales)</p>
+
+                <div class="lg:flex lg:flex-wrap borderinscripcion">
+                
+                    <div class="lg:w-[48%] lg:mr-5">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Email</span>
+                    </div>
+
+                    <div class="lg:w-[48%]">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Teléfono</span>
+                    </div>
+
+                    <div class="flecha2 lg:w-[48%] lg:mt-6 lg:mr-5">
+                        <select class="borderform selectText inputstyle cursor-pointer outline-none " id="" name="">
+                            <option>Uruguay</option>
+                            <option>....</option>
+                            <option>....</option>
+                        </select>
+                        <span class="floating-label">País</span>
+                    </div>
+
+                    <div class="flecha2 lg:w-[48%] lg:mt-6">
+                        <select class="borderform selectText inputstyle cursor-pointer outline-none " id="" name="">
+                            <option>Montevideo</option>
+                            <option>....</option>
+                            <option>....</option>
+                        </select>
+                        <span class="floating-label">Departamento</span>
+                    </div>
+
+                </div>
+                
+
+                <div class="lg:pt-6">
+                    <input type="text" class="borderform inputText inputstyle outline-none " required />
+                    <span class="floating-label">Dirección</span>
+                </div>
+
+                <!------------------------------------------------------------------------------------->
+
+                <!----------------------------- DATOS EXTRA -------------------------------------------->
+
+                <p class="text-center text-sm pt-6 pb-8">DATOS EXTRA (campos opcionales)</p>
+                
+                <div class="lg:flex lg:flex-wrap borderinscripcion">
+
+                    <div class="lg:w-[48%] lg:mr-5 ">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Emergencia</span>
+                    </div>
+
+                    <div class="lg:w-[48%]" >
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">S.Médica</span>
+                    </div>
+
+                    <div class="flecha2 lg:w-[48%] lg:mt-4 lg:mr-5 ">
+                        <select class="borderform selectText inputstyle cursor-pointer outline-none " id="" name="">
+                            <option>XL</option>
+                            <option>....</option>
+                            <option>....</option>
+                        </select>
+                        <span class="floating-label">Talle remera</span>
+                    </div>
+
+                    <div class="lg:w-[48%] lg:mt-4 ">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Equipo</span>
+                    </div>
+
+                </div>
+
+                <!---------------------------------------------------------------------->
+
+                <!------------------- CONTACTO EN CASOS DE EMERGENCIA --------------------------->
+
+                <p class="text-center text-sm pt-6 pb-8">CONTACTO EN CASO DE EMERGENCIA <br> (campos obligatorios)</p>
+
+                <div class="lg:flex lg:flex-row">
+
+                    <div class="lg:w-[48%] lg:mr-5">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Nombre completo</span>
+                    </div>
+
+                    <div class="lg:w-[48%]">
+                        <input type="text" class="borderform inputText inputstyle outline-none " required />
+                        <span class="floating-label">Teléfono</span>
+                    </div>
+
+                </div>
+
+                <div class="flex justify-center g-recaptcha lg:my-10" data-sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ"></div>
+                
+                <div class="mt-8 text-center">
+                    <button class="text-white rounded-full bg-orangelight py-3 px-8 lg:px-10 ">INSCRIBIRME</button>
+                </div>
+
+                <p class="text-xs text-center text-gray mt-8 lg:w-3/4 lg:mx-auto">Esta inscripción no te asegura el lugar en el evento, sólo cuando efectivices el pago de tu inscripción 
+                tendrás tu lugar en la competencia.</p>
+
+                <!----------------------------------------------------------------------->
+
+            </div>
+        
+        </form>
+
+    </div>
+
+
+    <!------------------------- FOOTER ---------------------------------->
+
+    <footer class="bg-formblack mt-28  lg:pb-24">
+    
+        <div class="text-white flex flex-col items-center lg:flex lg:flex-row lg:w-5/6 lg:mx-auto   ">
+
+            <div class=" text-center space-y-2 pt-14 lg:pt-0 lg:space-y-4 lg:text-left lg:w-1/2 ">
+
+                <p class="font-bold text-lg">COMPAÑÍA</p>
+                <p class="pt-6">¿Quiénes somos?</p>
+                <p>¿Qué hacemos?</p>
+                <p>Tecnología</p>
+
+            </div>
+
+            <div class="text-center pt-6 pb-16 w-full lg:w-1/2 lg:mb-4 ">
+
+                <p class="pt-16 text-lg mb-8 lg:w-full lg:text-left lg:pt-24 lg:pl-16 lg:pb-5 ">¿Querés recibir todas las novedades?</p>
+
+                <div class="lg:flex lg:flex-row">
+
+                    <form class="flex flex-row w-5/6 mx-auto text-black lg:m-0 lg:mr-8 lg:w-3/4">
+    
+                            
+                        <input class=" pl-5 py-2 pr-2 mail w-5/6 outline-none lg:pl-5  " type="text" placeholder="Email"  >
+                        <button class=" bg-subbg buttonborder text-sub py-2 px-2 text-sm lg:px-4 lg:w-fit lg:text-base lg:text-center">SUSCRIBIRME</button>
+
+                        
+                    </form>
+
+                    <div class="flex flex-row justify-center pt-16 lg:pt-0 space-x-12  lg:w-1/4 ">
+
+                       <img class="w-[2.5rem] h-[2.5rem]" src="./assets/face-icon.png" alt="face">
+                       <img class="w-[2.5rem] h-[2.5rem]" src="./assets/twit-icon.png" alt="twit">
+                    
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+<script src="../js/nav.js"></script>
+<script src="../js/inscripción.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+</html>

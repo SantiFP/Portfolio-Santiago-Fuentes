@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formreclamo</title>
+       <!---------- ESTILOS ------------>
+       <link rel="stylesheet" href="final.css">
+       <link rel="stylesheet" href="styles.css">
+       <!--------- GOOGLE FONTS ---------->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <form class="w-fit mx-auto pb-4  lg:px-4">
+
+        <div class="w-5/6 mx-auto ">
+
+            <div class="flex flex-col items-center">
+                <p class=" text-center pt-2 pb-4 ">SOLUCIONAR PROBLEMA</p>
+                <input class="w-full mb-6 text-base text-gray pl-4 py-2 formborders rounded outline-none " type="text" placeholder="Nombre completo" />
+            </div>
+
+            <div class="flex flex-row justify-center space-x-2  ">
+
+                <input class=" mb-6 text-base text-gray rounded outline-none formborders pl-4 py-2 w-1/2 " type="text" placeholder="Número" />
+                <select name="genero" required class="mb-6  outline-none text-gray pl-4 bg-white formborders py-2 rounded w-1/2  ">
+                    <option >Género</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+
+            <p class="mb-2">Fecha de nacimiento</p>
+
+            <div class="flex flex-row pb-6 space-x-2 ">
+
+                <input class=" text-base text-gray rounded outline-none  formborders py-2 pl-4 w-1/4 " type="text" placeholder="Día" /><br>
+
+                <select name="mes" required class=" outline-none  text-gray bg-white formborders rounded py-2 pl-4 w-2/4  ">
+                        <option>Mes</option>
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="setiembre">Setiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>
+                    </select>
+
+
+                <input class="text-base text-gray formborders rounded py-2 pl-4 w-1/4 outline-none" type="text" placeholder="Año" />
+
+
+            </div>
+
+            <select name="mes" required class=" w-full mb-6 text-gray formborders pl-3 py-2 bg-white rounded  ">
+                <option class="text-gray">Posible problema</option>
+                <option value="enero">opción 1</option>
+                <option value="febrero">opción 2</option>
+
+            </select>
+
+            <textarea class="outline-none block px-3 mb-6 formborders text-gray bg-white pt-2 w-full" rows="5" placeholder="Comentario"></textarea>
+
+            <div class="flex flex-row">
+                <div class="flex flex-col  items-center ">
+                    <div class="flex justify-center">
+                        <div class="mb-3 ">
+                            <div class="overflow-hidden relative  ">
+                                <button class="bg-file text-black font-bold py-2 px-4  inline-flex items-center">
+                                    <svg fill="#000" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
+                                    </svg>
+                                    <span class="text-xs ">ADJUNTAR ARCHIVO </span>  
+                                </button>
+                                <span class="text-xs">Tamaño máximo 5mb</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="text-center pt-4 ">
+                <button class="bg-orangeresults px-12 py-2 text-white font-light  rounded-full ">ENVIAR</button>
+
+            </div>
+
+        </div>
+    </form>
+
+
+    
+</body>
+</html>

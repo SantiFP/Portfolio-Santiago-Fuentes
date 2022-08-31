@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!---------- ESTILOS ------------>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="styles.css">
+    <!--------- GOOGLE FONTS ---------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="pb-4 bg-header">
+
+        <!---------------- header --------------------->
+        <header>
+
+            <div class="pt-8 lg:flex lg:flex-row lg:justify-between lg:pt-5">
+
+                <div class="w-fit pl-4 lg:pl-10">
+                    <a class="w-fit" href="./home.html">
+                        <img class="w-44 h-8 " src="./assets/Logo kronos.png" alt="logo">
+                    </a>
+                </div>
+
+                <button id="boton-nav" class="float-right -mt-8 text-white mr-6 lg:hidden">
+                    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
+                </button>
+
+
+                <div id="navbar" class="hidden relative z-10 mt-2 mb-[-13.5rem] p-4 pt-10 pb-5 pl-6 text-white mr-7 w-3/4 ml-auto bg-burgermenu space-y-3 lg:w-1/2 
+                    lg:pr-10 lg:space-y-0 lg:flex lg:flex-row lg:justify-end lg:pt-2 lg:space-x-6 lg:m-0 lg:text-white lg:ml-0 lg:text-sm lg:bg-inherit">
+
+
+                    <div class="flex flex-row justify-between items-center">
+
+                        <a class="cursor-pointer" href="./plantillaestatica.html">¿Quiénes somos?</a>
+                        <img id="close" class="w-7 h-7 cursor-pointer lg:hidden" src="./assets/cruz.png" alt="cruz">
+
+                    </div>
+                    <div>
+                        <a class="cursor-pointer" href="./plantillaestatica.html">¿Que hacemos?</a>
+                    </div>
+                    <div class="pb-4 lg:pb-0">
+                        <a class="cursor-pointer" href="./plantillaestatica.html">Tecnología</a>
+                    </div>
+
+                    <div class="inline">
+                        <img class="w-[2rem] h-[2rem] cursor-pointer lg:w-[1.188rem] inline  lg:h-[1.118rem] lg:block lg:bg-inherit"
+                            src="./assets/face-icon.png" alt="icons">
+                    </div>
+                    <div class="inline ml-2 ">
+                        <img class="w-[2rem] h-[2rem] cursor-pointer lg:w-[1.188rem]  inline lg:h-[1.118rem] lg:block lg:bg-inherit"
+                            src="./assets/twit-icon.png" alt="icons">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+    </nav>
+
+    <section class="bluegradient text-white ">
+
+        <div class="w-5/6 mx-auto pt-8 text-center flex flex-col space-y-4 pt-12 ">
+
+            <p class="px-2 py-1 font-bold text-2xl text-white">Eventos completados</p>
+
+            <img class="w-16 mx-auto" src="./assets/whitebar.png" alt="white">
+
+            <p class="pb-24 md:w-2/5 md:mx-auto">Aquí encontraras todos los eventos realizados, puedes usar los filtros
+                para que sea más facil la búsqueda.</p>
+
+        </div>
+
+    </section>
+
+    <!--------------------------- CATEGORIA Y FILTROS ------------------------------->
+
+
+    <div class="w-5/6 mx-auto bg-white shadow rounded -mt-10 ">
+
+        <form class="p-4 lg:pt-1 lg:pb-4 lg:flex lg:flex-row  lg:w-[95%] lg:mx-auto">
+
+            <div
+                class="flex flex-row space-x-1 w-3/5 mx-auto justify-center lg:space-x-2 lg:justify-around lg:items-end ">
+                <img class="iconcategories cursor-pointer" src="./assets/runmancategories.png" alt="run">
+                <img class="iconcategories cursor-pointer" src="./assets/swimman.png" alt="swim">
+                <img class="iconcategories cursor-pointer" src="./assets/bikemancategories.png" alt="bike">
+                <img class="iconcategories cursor-pointer" src="./assets/wheelchair.png" alt="chair">
+                <img class="iconcategories cursor-pointer" src="./assets/varios.png" alt="varios">
+            </div>
+
+
+            <div class=" flecha w-4/5 mx-auto mt-8 lg:mt-0 lg:w-1/5 lg:flex lg:items-end">
+
+                <select
+                    class="py-4 pl-3 w-full cursor-pointer  border-solid border-[1px] border-bordercolor rounded-md outline-none lg:w-5/6 lg:mx-auto  lg:py-3"
+                    id="" name="">
+                    <option value="volvo">Año</option>
+                    <option value="saab">Departamento</option>
+                    <option value="fiat">Categoría</option>
+                </select>
+
+            </div>
+
+            <div class=" w-4/5 mx-auto mt-4 lg:w-1/5 lg:mt-0  ">
+
+                <button
+                    class="text-white w-full rounded-2xl bg-orangeresults mt-5 p-2 lg:py-3 lg:rounded-3xl">FILTRAR</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!--------------------------- EVENTOS ---------------------------------------->
+
+    <section class="w-5/6 mx-auto mt-10 flex flex-col items-center lg:flex lg:flex-row lg:justify-center  lg:flex-wrap  ">
+
+        <!---------- <-------------FECHA DEL EVENTO ------------------>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <!---------- <-------------FECHA DEL EVENTO ------------------>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <!---------- <-------------FECHA DEL EVENTO ------------------>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+
+
+        <!---------- <-------------FECHA DEL EVENTO ------------------>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+
+        <!---------- <-------------FECHA DEL EVENTO ------------------>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+        <div class="flex flex-row lg:mr-4">
+
+            <span class="flex flex-col mt-8 eventdate bluegradient ">
+
+                <span class="pt-2">Nov</span>
+                <span class="font-extrabold text-lg -mt-1">9</span>
+                <span class="-mt-1 mb-1 pb-1">2019</span>
+
+            </span>
+            <!------------------------- LUGAR DEL EVENTO ------------->
+
+            <img class="mt-14 icon " src="./assets/runman.png" alt="run">
+
+            <span class="flex flex-col mt-8 eventinfo">
+
+                <span class="ml-4 text-sm font-semibold mt-2 break-words pr-2">¡TODOS CORREMOS!</span>
+                <p class="ml-4 text-xs break-words pr-2">La Floresta,Canelones,Uruguay</p>
+                <a href="./ficha evento finalizado.html" class="ml-4 text-xs mt-3 text-blue w-fit cursor-pointer">MÁS
+                    INFORMACIÓN</a>
+
+            </span>
+
+        </div>
+
+
+    </section>
+
+    <!---------------- PAGINADO ---------------------------->
+
+    <ul class="flex flex-row justify-center w-5/6 mx-auto space-x-4 pt-28 pb-12">
+
+        <li class="paginado_anterior">
+            <a href="#"><img class="w-6 h-6 " src="./assets/left.png"></a>
+        </li>
+
+        <li><a href="#">1</a></li>
+
+        <li class="paginado_actual"><a href="#">2</a></li>
+
+        <li><a href="#">3</a></li>
+
+        <li><a href="#">4</a></li>
+
+        <li><a href="#">5</a></li>
+
+        <li><a href="#">....</a></li>
+
+        <li><a href="#">24</a></li>
+
+        <li class="paginado_siguiente">
+            <a href="#"><img class="w-6 h-6 " src="./assets/right.png"></a>
+        </li>
+
+    </ul>
+
+    <!------------------ FOOTER Y SUSCRIPICION ------------------------>
+
+    <footer class="bg-formblack lg:pb-24">
+
+        <div class="text-white flex flex-col items-center lg:flex lg:flex-row lg:w-5/6 lg:mx-auto   ">
+
+            <div class=" text-center space-y-2 pt-14 lg:pt-0 lg:space-y-4 lg:text-left lg:w-1/2 ">
+
+                <p class="font-bold text-lg">COMPAÑÍA</p>
+                <p class="pt-6">¿Quiénes somos?</p>
+                <p>¿Qué hacemos?</p>
+                <p>Tecnología</p>
+
+            </div>
+
+            <div class="text-center pt-6 pb-16 w-full lg:w-1/2 lg:mb-4 ">
+
+                <p class="pt-16 text-lg mb-8 lg:w-full lg:text-left lg:pt-24 lg:pl-16 lg:pb-5 ">¿Querés recibir todas
+                    las novedades?</p>
+
+                <div class="lg:flex lg:flex-row">
+
+                    <form class="flex flex-row w-5/6 mx-auto text-black lg:m-0 lg:mr-8 lg:w-3/4">
+
+
+                        <input class=" pl-5 py-2 pr-2 mail w-5/6 outline-none lg:pl-5  " type="text"
+                            placeholder="Email">
+                        <button
+                            class=" bg-subbg buttonborder text-sub py-2 px-2 text-sm lg:px-4 lg:w-fit lg:text-base lg:text-center">SUSCRIBIRME</button>
+
+
+                    </form>
+
+                    <div class="flex flex-row justify-center pt-16 lg:pt-0 space-x-12  lg:w-1/4 ">
+
+                        <img class="w-[2.5rem] h-[2.5rem]" src="./assets/face-icon.png" alt="face">
+                        <img class="w-[2.5rem] h-[2.5rem]" src="./assets/twit-icon.png" alt="twit">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+<script src="../js/nav.js"></script>
+
+</html>

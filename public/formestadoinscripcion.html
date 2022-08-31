@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form estadoinscripción</title>
+    <!---------- ESTILOS ------------>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="styles.css">
+    <!--------- GOOGLE FONTS ---------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <form class=" w-fit mx-auto pt-6 flex flex-col space-y-4  ">
+
+        <p class=" text-center">ESTADO DE LA INSCRIPCIÓN</p>
+
+        <select name="documento" class=" w-full text-gray bg-white formborders rounded py-2 pl-3 w-full outline-none  ">
+            <option class="text-gray-700 " value="" disabled selected>Documento</option>
+            <option value="ci">Cédula</option>
+            <option value="pas">Pasaporte</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <input class="w-full text-base text-gray pl-4 py-2 formborders rounded outline-none " type="text" placeholder="Número" />
+
+        <div class="text-center">
+
+            <button class="bg-orangeresults w-full py-2 text-white font-light outline-none  rounded-full">VERIFICAR</button>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>
+
+
+
