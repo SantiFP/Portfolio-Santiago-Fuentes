@@ -14,8 +14,18 @@ const useLogic = () => {
 
   const onChangeNumber = (text) => {
     if (signs.includes(text)) {
-      if (!signs.includes(showOperation[showOperation.length - 1])) {
-        setShowOperation((prevState) => prevState && `${prevState} ${text}`);
+      if (showOperation) {
+        if (!signs.includes(showOperation[showOperation.length - 1])) {
+          setShowOperation((prevState) => {
+            if (prevState) {
+              return `${prevState} ${text}`;
+            }
+          });
+        } else {
+          setShowOperation(() => {
+            return `${numberInScreen} ${text}`;
+          });
+        }
       }
     }
 
@@ -26,9 +36,9 @@ const useLogic = () => {
           : `${prevState}${text}`;
       });
       setShowOperation((prevState) => {
-        if (operation === 'done') {
+        if (operation === "done") {
           setOperationCompleted(false);
-          return `${numberInScreen}${text}`
+          return `${numberInScreen}${text}`;
         }
         return signs.includes(prevState[prevState.length - 1])
           ? `${prevState} ${text}`
@@ -41,6 +51,9 @@ const useLogic = () => {
         !prevState || previous ? (setPrevious(false), "0.") : `${prevState}.`
       );
       setShowOperation((prevState) => {
+        if (operationCompleted) {
+          return setShowOperation(`${numberInScreen} ${text}`);
+        }
         if (!prevState || signs.includes(prevState[prevState.length - 1])) {
           return `${prevState && prevState} 0.`;
         } else if (prevState.match(/[0-9]+/)) {
@@ -50,18 +63,52 @@ const useLogic = () => {
     }
 
     if (text === "AC") {
-      return setNumberInScreen(0), setOperation(null), setShowOperation('');
+      return setNumberInScreen(0), setOperation(null), setShowOperation("");
     }
 
     if (text === "+/-") {
+      console.log('text',text);
+      if(signs.includes(showOperation[showOperation.length -1])){
+        return;
+      }
+      setShowOperation(() => {
+        if (showOperation.includes(' ')) {
+          console.log('sc');
+          if (operation !== "done") {
+            return `${parsedPrevNumber.toString()} ${operation} ${(parsedNumber * -1).toString()}`;
+          } else {
+            return numberInScreen;
+          }
+        } else{
+          return (parsedNumber * -1).toString();
+        }
+      });
       return setNumberInScreen(parsedNumber * -1);
+    }
+
+    if (text === "%") {
+      setShowOperation(() => {
+        if (prevNumber) {
+          if (operation !== "done") {
+            return `${parsedPrevNumber.toString()} ${operation} ${(
+              parsedNumber / 100
+            ).toString()}`;
+          } else {
+            return (numberInScreen / 100).toString();
+          }
+        } else {
+          return (parsedNumber / 100).toString();
+        }
+      });
+
+      setNumberInScreen(parsedNumber / 100);
     }
 
     const settings = () => {
       setPrevious(true);
       setPrevNumber(numberInScreen);
       if (operationCompleted) {
-        setShowOperation(`${numberInScreen} ${text}`)
+        setShowOperation(`${numberInScreen} ${text}`);
       }
     };
 
@@ -82,8 +129,6 @@ const useLogic = () => {
         settings();
         setOperation("x");
         break;
-      case "%":
-        setNumberInScreen(parsedNumber / 100);
       default:
         break;
     }
