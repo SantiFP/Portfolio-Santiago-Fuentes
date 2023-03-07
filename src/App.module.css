@@ -1,0 +1,30 @@
+.calc{
+  height: 100vh;
+  background-color: red;
+}
+
+.wrapper{
+  height: 100%;
+}
+
+.calculatorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 84vh;
+  grid-template-areas: "a b c d" 
+  "e f g h"
+  "i j k l"
+  "m n ñ o"
+  "p p q r"
+}
+
+.zero{
+  grid-area: p;
+}
+
+
+.operations{
+  background-color: rgb(189, 209, 222);
+}
+
+
