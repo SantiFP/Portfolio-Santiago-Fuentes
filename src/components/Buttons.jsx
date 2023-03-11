@@ -1,9 +1,8 @@
 import classes from "./Buttons.module.css";
 
-const Button = ({ text, className, onClick }) => {
+const Button = ({ text, className, onShowResult }) => {
   const showNumber = () => {
-    console.log();
-    onClick(text);
+    onShowResult(text);
   };
 
   return (

@@ -5,60 +5,60 @@ import useLogic from "./logic/useLogic";
 
 function App() {
   
-  const { numberInScreen, onChangeNumber,showOperation } = useLogic();
+  const { numberInScreen, showResult } = useLogic();
 
   return (
     <>
-      <Result number={numberInScreen} showOperation={showOperation} />
+      <Result number={numberInScreen}  />
       <div className={classes.calculatorGrid}>
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"AC"}
         />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"+/-"}
         />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"%"}
         />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"÷"}
         />
-        <Button onClick={onChangeNumber} text={"7"} />
-        <Button onClick={onChangeNumber} text={"8"} />
-        <Button onClick={onChangeNumber} text={"9"} />
+        <Button onShowResult={showResult} text={"7"} />
+        <Button onShowResult={showResult} text={"8"} />
+        <Button onShowResult={showResult} text={"9"} />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"x"}
         />
-        <Button onClick={onChangeNumber} text={"4"} />
-        <Button onClick={onChangeNumber} text={"5"} />
-        <Button onClick={onChangeNumber} text={"6"} />
+        <Button onShowResult={showResult} text={"4"} />
+        <Button onShowResult={showResult} text={"5"} />
+        <Button onShowResult={showResult} text={"6"} />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"-"}
         />
-        <Button onClick={onChangeNumber} text={"1"} />
-        <Button onClick={onChangeNumber} text={"2"} />
-        <Button onClick={onChangeNumber} text={"3"} />
+        <Button onShowResult={showResult} text={"1"} />
+        <Button onShowResult={showResult} text={"2"} />
+        <Button onShowResult={showResult} text={"3"} />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"+"}
         />
-        <Button onClick={onChangeNumber} className={classes.zero} text={"0"} />
-        <Button onClick={onChangeNumber} text={"."} />
+        <Button onShowResult={showResult} className={classes.zero} text={"0"} />
+        <Button onShowResult={showResult} text={"."} />
         <Button
-          onClick={onChangeNumber}
+          onShowResult={showResult}
           className={classes.operations}
           text={"="}
         />
