@@ -46,8 +46,6 @@ const useLogic = () => {
     };
 
     const settingResult = () => setNumberInScreen(result);
-    console.log('text: ',text);
-    console.log('textState: ',textState);
 
     if (!signs.includes(textState)) {
       switch (text) {
@@ -79,7 +77,6 @@ const useLogic = () => {
           break;
       }
     }else if(signs.includes(text) && text !== textState){
-      console.log('hola');
       setCompleted(false)
       setPrevOperation(text)
     }
