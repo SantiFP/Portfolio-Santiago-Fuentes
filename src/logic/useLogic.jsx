@@ -6,16 +6,15 @@ const useLogic = () => {
   const [numberInScreen, setNumberInScreen] = useState(0);
   const [textState, setTextState] = useState("");
   const [keepOperating, setKeepOperating] = useState(false);
-  const [prevOperation,setPrevOperation] = useState('');
-  const [completed,setCompleted] = useState(true)
+  const [prevOperation, setPrevOperation] = useState("");
+  const [completed, setCompleted] = useState(true);
 
-  let signs = ["+", "-", "x", "÷"];
+  let signs = ["+", "-", "x", "÷", "="];
   let parsedNumberInScreen = Number(numberInScreen);
 
   const showResult = (text) => {
-
     setTextState(text);
-    
+
     if (text.match(/[0-9]+/)) {
       setNumberInScreen((prevState) =>
         !prevState || signs.includes(textState) ? text : prevState + text
@@ -27,48 +26,48 @@ const useLogic = () => {
         setKeepOperating(true);
         result = parsedNumberInScreen;
       } else {
-        if (prevOperation === '+' && !completed) {
-          result += parsedNumberInScreen
-        }else if(prevOperation === '-' && !completed){
-          result -= parsedNumberInScreen
-        }else if(prevOperation === '÷'  && !completed){
-          result /= parsedNumberInScreen
-        }else if(prevOperation === 'x'  && !completed){
-          result *= parsedNumberInScreen
-        }else if(completed){
-          prevOperation === '+' &&  (result += parsedNumberInScreen);
-          prevOperation === '-' &&  (result -= parsedNumberInScreen);
-          prevOperation === '/' &&  (result /= parsedNumberInScreen);
-          prevOperation === '*' &&  (result *= parsedNumberInScreen);
-          setNumberInScreen(result)
+        if (prevOperation === "+" && !completed) {
+          result += parsedNumberInScreen;
+        } else if (prevOperation === "-" && !completed) {
+          result -= parsedNumberInScreen;
+        } else if (prevOperation === "÷" && !completed) {
+          result /= parsedNumberInScreen;
+        } else if (prevOperation === "x" && !completed) {
+          result *= parsedNumberInScreen;
+        } else if (completed) {
+          prevOperation === "+" && (result += parsedNumberInScreen);
+          prevOperation === "-" && (result -= parsedNumberInScreen);
+          prevOperation === "/" && (result /= parsedNumberInScreen);
+          prevOperation === "*" && (result *= parsedNumberInScreen);
+          setNumberInScreen(result);
         }
       }
     };
 
-    const settingResult = () => setNumberInScreen(result);
+    const settingResult = () => setNumberInScreen(result === Infinity ? 'Cannot divide by zero' : result);
 
-    if (!signs.includes(textState)) {
+    if (!signs.includes(textState) && textState !== "AC") {
       switch (text) {
         case "+":
-          setCompleted(false)
+          setCompleted(false);
           setPrevOperation(text);
           operationType();
           settingResult();
           break;
         case "-":
-          setCompleted(false)
+          setCompleted(false);
           setPrevOperation(text);
           operationType();
           settingResult();
           break;
         case "÷":
-          setCompleted(false)
+          setCompleted(false);
           setPrevOperation(text);
           operationType();
-          settingResult()
+          settingResult();
           break;
         case "x":
-          setCompleted(false)
+          setCompleted(false);
           setPrevOperation(text);
           operationType();
           settingResult();
@@ -76,16 +75,41 @@ const useLogic = () => {
         default:
           break;
       }
-    }else if(signs.includes(text) && text !== textState){
-      setCompleted(false)
-      setPrevOperation(text)
+    } else if (signs.includes(text) && text !== textState) {
+      setCompleted(false);
+      setPrevOperation(text);
     }
 
-    if (text === "=" && !completed) {
-      setPrevOperation('');
-      setCompleted(true)
-      operationType()
+    if (text === "+/-") {
+      setNumberInScreen(parsedNumberInScreen * -1);
+    }
+
+    if (text === "%") {
+      setNumberInScreen(parsedNumberInScreen / 100);
+    }
+
+    if (
+      text === "=" &&
+      !completed &&
+      !signs.includes(textState) &&
+      textState !== "="
+    ) {
+      setPrevOperation("");
+      setCompleted(true);
+      operationType();
       settingResult();
+    }
+
+    if (text === "." && textState !== '.') {
+      setNumberInScreen((prevState) =>
+        !prevState || signs.includes(textState) ? "0." : prevState + "."
+      );
+    }
+
+    if (text === "AC") {
+      setNumberInScreen(0);
+      setCompleted(true);
+      setKeepOperating(false);
     }
   };
 
