@@ -8,7 +8,7 @@ const Result = ({ number,operation }) => {
           <p style={{paddingRight:'1rem' ,paddingTop:'0.5rem'}}>{operation ? operation : 'operation will be shown here'}</p>
         </div>
         <div className={`${classes.resultFlex} `}>
-          <p style={{ paddingRight: "1rem" }}>{number}</p>
+          <p style={{ paddingRight: "1rem" }}>{number ? number : 0}</p>
         </div>
       </div>
     </>

@@ -11,9 +11,27 @@ const useShowOperation = () => {
 
     if (text.match(/[0-9]+/)) {
       setOperation((prevState) =>
-        !prevState || signsArray.includes(text) ? `${text}` : `${prevState}${text}`
+        !prevState || signsArray.includes(text)
+          ? `${text}`
+          : `${prevState}${text}`
       );
-    }
+    };
+
+    if (text === "=" && textState !== "=" && textState.match(/[0-9]+/)) {
+      setOperation((prevState) => `${prevState} ${text}`);
+    };
+
+    if (text === "." && textState !== ".") {
+      setOperation((prevState) =>
+        !prevState || !textState.match(/[0-9]+/)
+          ? `${prevState} 0${text}`
+          : `${prevState}.`
+      );
+    };
+
+    if (text === "AC") {
+      setOperation(false);
+    };
 
     if (signsArray.includes(text) && operation) {
       if (signsArray.includes(textState)) {
@@ -22,10 +40,10 @@ const useShowOperation = () => {
           arr.splice(prevState.length - 2, 1, text);
           return arr.join("");
         });
-      } else if(text !== '=' && textState !== '='){
+      } else if (text !== "=" && textState !== "=") {
         setOperation((prevState) => `${prevState} ${text} `);
       }
-    }
+    };
   };
   return {
     operation,

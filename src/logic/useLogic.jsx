@@ -3,7 +3,7 @@ import { useState } from "react";
 let result = 0;
 
 const useLogic = () => {
-  const [numberInScreen, setNumberInScreen] = useState(0);
+  const [numberInScreen, setNumberInScreen] = useState("");
   const [textState, setTextState] = useState("");
   const [keepOperating, setKeepOperating] = useState(false);
   const [prevOperation, setPrevOperation] = useState("");
@@ -100,10 +100,14 @@ const useLogic = () => {
       settingResult();
     }
 
-    if (text === "." && textState !== '.') {
-      setNumberInScreen((prevState) =>
-        !prevState || signs.includes(textState) ? "0." : prevState + "."
-      );
+    if (text === '.' && textState !== '.' ) {
+      if (numberInScreen.toString().includes('.') && !signs.includes(textState)) {
+        setNumberInScreen(prevState => prevState)
+      }else{
+        setNumberInScreen((prevState) =>
+          !prevState || signs.includes(textState) ? "0." : prevState + "."
+        );
+      }
     }
 
     if (text === "AC") {
