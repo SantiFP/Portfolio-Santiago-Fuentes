@@ -8,6 +8,7 @@ const useLogic = () => {
   const [keepOperating, setKeepOperating] = useState(false);
   const [prevOperation, setPrevOperation] = useState("");
   const [completed, setCompleted] = useState(true);
+  const [operating,setOperating ] = useState(false)
 
   let signs = ["+", "-", "x", "÷", "="];
   let parsedNumberInScreen = Number(numberInScreen);
@@ -16,6 +17,7 @@ const useLogic = () => {
     setTextState(text);
 
     if (text.match(/[0-9]+/)) {
+      setOperating(true);
       setNumberInScreen((prevState) =>
         !prevState || signs.includes(textState) ? text : prevState + text
       );
@@ -46,7 +48,7 @@ const useLogic = () => {
 
     const settingResult = () => setNumberInScreen(result === Infinity ? 'Cannot divide by zero' : result);
 
-    if (!signs.includes(textState) && textState !== "AC") {
+    if (!signs.includes(textState) && textState !== "AC" && operating) {
       switch (text) {
         case "+":
           setCompleted(false);
@@ -114,6 +116,7 @@ const useLogic = () => {
       setNumberInScreen(0);
       setCompleted(true);
       setKeepOperating(false);
+      setOperating(false)
     }
   };
 
