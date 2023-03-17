@@ -29,7 +29,6 @@ const useShowOperation = () => {
 
       if (text === "." && textState !== ".") {
         if (textState !== "AC" && textState !== '+/-' && textState !== '%') {
-          console.log('el if');
           setOperation((prevState) =>
             !prevState || !textState.match(/[0-9]+/) 
               ? `${prevState} 0${text}`
