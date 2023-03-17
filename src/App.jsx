@@ -1,12 +1,17 @@
 import Button from "./components/Buttons";
 import classes from "./App.module.css";
 import Result from "./components/Result";
-import useLogic from "./logic/useLogic";
-import useShowOperation from "./logic/useShowOperation";
+import useShowOperation from "./showOperation/useShowOperation";
+import CalcContext from './store/calc-context';
+import { useContext } from "react";
+
 
 function App() {
-  const { numberInScreen, showResult } = useLogic();
   const { operation, showOperation } = useShowOperation();
+
+  const calcCtx = useContext(CalcContext);
+
+  const { numberInScreen, showResult} = calcCtx;
 
   return (
     <>
