@@ -65,7 +65,7 @@ const useShowOperation = () => {
         });
       }
 
-      if (text === "%" && textState.match(/[0-9]+/)) {
+      if (text === "%" && operating) {
         setOperation((prevState) => {
           let f = prevState.split("").reverse();
 
@@ -88,9 +88,6 @@ const useShowOperation = () => {
               return f.reverse().join("");
             }
           }
-
-          console.log(f);
-          console.log(f[f.indexOf("^") + 1]);
 
           for (let i = 0; i < f.length; i++) {
             if (f[i] === "^") {
@@ -140,7 +137,7 @@ const useShowOperation = () => {
       if (text === "=" && operating) {
         setOperating(false);
         setDone(true);
-        if (textState.match(/[0-9]+/) || textState === "+/-") {
+        if (textState.match(/[0-9]+/) || textState === "+/-" || textState === '%') {
           setOperation((prevState) => `${prevState} ${text}`);
         }
       }

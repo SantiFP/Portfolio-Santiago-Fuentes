@@ -60,3 +60,5 @@ const n = (str) => {
         return f.reverse().join("");
       }
 };
+
+console.log(n('3 + 100 + (4/100)^2'));
