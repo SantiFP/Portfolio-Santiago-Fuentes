@@ -28,12 +28,15 @@ const useShowOperation = () => {
       }
 
       if (text === "." && textState !== ".") {
-        if (textState !== "AC") {
+        if (textState !== "AC" && textState !== '+/-' && textState !== '%') {
+          console.log('el if');
           setOperation((prevState) =>
-            !prevState || !textState.match(/[0-9]+/)
+            !prevState || !textState.match(/[0-9]+/) 
               ? `${prevState} 0${text}`
               : `${prevState}.`
           );
+        }else if(textState === '+/-' || textState === '%'){
+          setOperation(prevState => `${prevState}.`)
         } else if (textState === "AC") {
           setOperation("0.");
         }
