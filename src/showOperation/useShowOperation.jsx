@@ -51,7 +51,7 @@ const useShowOperation = () => {
       }
     }
 
-    if (text === "+/-" && operating) {
+    if (text === "+/-" && operating && !signsArray.includes(textState)) {
       setOperation((prevState) => {
         let fromString = prevState.split("").reverse();
         let noSpace = true;
@@ -77,7 +77,7 @@ const useShowOperation = () => {
       });
     }
 
-    if (text === "%" && operating) {
+    if (text === "%" && operating && !signsArray.includes(textState)) {
       setOperation((prevState) => {
         let arr = prevState.split("").reverse("");
         if (!arr.includes(" ")) {
