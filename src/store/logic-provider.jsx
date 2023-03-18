@@ -17,16 +17,22 @@ const CalcProvider = (props) => {
   const showResult = (text) => {
     setTextState(text);
 
-    if (!done) {
+    console.log('text:',text);
+
+    console.log('textState: ',textState);
+
       if (text.match(/[0-9]+/)) {
         setOperating(true);
+        if (textState === '=') {
+          setDone(false)
+        }
         setNumberInScreen((prevState) =>
           !prevState || signs.includes(textState) ? text : prevState + text
         );
       }
   
       const operationType = () => {
-        if (!keepOperating) {
+        if (!keepOperating && !done) {
           setKeepOperating(true);
           result = parsedNumberInScreen;
         } else {
@@ -52,6 +58,7 @@ const CalcProvider = (props) => {
         setNumberInScreen(result === Infinity ? "Cannot divide by zero" : result);
   
       if (!signs.includes(textState) && textState !== "AC" && operating) {
+        textState === '=' && setDone(false)
         switch (text) {
           case "+":
             setCompleted(false);
@@ -104,7 +111,8 @@ const CalcProvider = (props) => {
         operationType();
         settingResult();
         setOperating(false);
-        setDone(true)
+        setDone(true);
+        setKeepOperating(false)
       }
   
       if (text === "." && textState !== ".") {
@@ -119,7 +127,6 @@ const CalcProvider = (props) => {
           );
         }
       }
-    }
     
 
     if (text === "AC") {
