@@ -17,10 +17,6 @@ const CalcProvider = (props) => {
   const showResult = (text) => {
     setTextState(text);
 
-    console.log('text:',text);
-
-    console.log('textState: ',textState);
-
       if (text.match(/[0-9]+/)) {
         setOperating(true);
         if (textState === '=') {
@@ -122,6 +118,7 @@ const CalcProvider = (props) => {
         ) {
           setNumberInScreen((prevState) => prevState);
         } else {
+          textState === '=' && setDone(false)
           setNumberInScreen((prevState) =>
             !prevState || signs.includes(textState) ? "0." : prevState + "."
           );
