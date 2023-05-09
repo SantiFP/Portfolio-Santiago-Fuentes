@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import classes from "./Sidebar.module.css";
+import ManaColors from "./ManaColors";
 
 let sideIsOpen = {
   side1: false,
@@ -34,7 +35,7 @@ function Sidebar(props) {
       <div
         className={`${classes.sidebar} ${side1 ? `open` : `${classes.closed}`}`}
       >
-        <p>el side</p>
+        <ManaColors />
         <img
           onClick={toggleSidebar.bind(null, "s1")}
           className={`h-11 w-11 ${classes.sideArrowTop} ${
@@ -50,7 +51,8 @@ function Sidebar(props) {
           side2 ? `open` : `${classes.closed}`
         } `}
       >
-        <p>el side</p>
+        <ManaColors />
+
         <img
           onClick={toggleSidebar.bind(null, "s2")}
           className={`h-11 w-11 ${classes.sideArrowBottom} ${

@@ -9,9 +9,9 @@ const reducer = (state, action) => {
   if (action.player === "p1") {
     switch (action.type) {
       case "increment":
-        return { lifesP2: state.lifesP2, lifesP1: state.lifesP1 + 1 };
+        return { ...state, lifesP1: state.lifesP1 + 1 };
       case "decrement":
-        return { lifesP2: state.lifesP2, lifesP1: state.lifesP1 - 1 };
+        return { ...state, lifesP1: state.lifesP1 - 1 };
       default:
         throw new Error();
     }
@@ -19,9 +19,9 @@ const reducer = (state, action) => {
   if (action.player === "p2") {
     switch (action.type) {
       case "increment":
-        return { lifesP1: state.lifesP1, lifesP2: state.lifesP2 + 1 };
+        return { ...state, lifesP2: state.lifesP2 + 1 };
       case "decrement":
-        return { lifesP1: state.lifesP1, lifesP2: state.lifesP2 - 1 };
+        return { ...state, lifesP2: state.lifesP2 - 1 };
       default:
         throw new Error();
     }
