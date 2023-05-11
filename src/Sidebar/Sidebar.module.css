@@ -18,7 +18,6 @@
   position: absolute;
   top: 44.5%;
   left: 96%;
-  cursor: pointer;
 }
 
 .arrowReverse {
@@ -60,18 +59,28 @@
   position: absolute;
   top: 44.5%;
   left: 96%;
-  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
-  
   .sideArrowBottom {
     position: absolute;
     top: 44.1%;
     left: 99%;
     cursor: pointer;
   }
-  
-  
 
+  .sideArrowTop {
+    position: absolute;
+    top: 44.5%;
+    left: 99%;
+    cursor: pointer;
+  }
+}
+
+.ManaColorsBg {
+  background-color: rgb(6, 14, 30);
+  background-image: url('/magic-logo-transparent.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

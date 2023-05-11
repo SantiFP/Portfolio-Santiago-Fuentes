@@ -1,6 +1,6 @@
 import classes from "./TwoPlayers.module.css";
 import { useContext } from "react";
-import { LifesContext } from "../Store/store";
+import { ColorsContext, LifesContext } from "../Store/store";
 import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
@@ -29,8 +29,14 @@ const reducer = (state, action) => {
 };
 
 const TwoPlayers = () => {
-  const { state, dispatch: dispatchCtx } = useContext(LifesContext);
   const navigate = useNavigate();
+  const { state, dispatch: dispatchCtx } = useContext(LifesContext);
+  const {state: colorsState} = useContext(ColorsContext);
+
+  const [colorsStateP1,colorsStateP2] = colorsState;
+  const {color1P1,color2P1} = colorsStateP1;
+  const {color1P2,color2P2} = colorsStateP2;
+
 
   const initialLifes = {
     lifesP1: state.lifes,
@@ -57,39 +63,45 @@ const TwoPlayers = () => {
   return (
     <>
       <Sidebar >
-        <div className={`relative bg-red-500 ${classes.grid}`}>
+        <div className={`relative overflow-hidden ${classes.grid}`}>
           <img
             onClick={goHome}
             className={`h-14 w-14 ${classes.centerLogo}`}
             src="/magic-logo-center.png"
             alt="centerLogo"
           />
+          
           <p
-            className={`absolute text-center text-white text-9xl w-fit h-fit ${classes.rotate}`}
+            className={`absolute text-center text-white  w-fit  h-fit ${classes.rotate}`}
           >
             {playersLifes.lifesP1}
           </p>
           <div
             onClick={decrement.bind(null, "p1")}
-            className={`${classes.grid1A} bg-red-500`}
+            className={`${classes.grid1A} ${color1P1 === 'bgWhite' ? classes.bgWhite : color1P1}`}
           ></div>
           <div
             onClick={increment.bind(null, "p1")}
-            className={`${classes.grid2A} bg-blue-700`}
+            className={`${classes.grid2A} ${color2P1 === 'bgWhite' ? classes.bgWhite : color2P1}`}
           ></div>
+
+
           <p
-            className={`absolute text-center text-white text-9xl w-fit h-fit ${classes.place} `}
+            className={`absolute text-center text-white w-fit h-fit ${classes.place} `}
           >
             {playersLifes.lifesP2}
           </p>
           <div
             onClick={increment.bind(null, "p2")}
-            className={`${classes.grid1B} bg-red-500`}
+            className={`${classes.grid1B} ${color1P2 === 'bgWhite' ? classes.bgWhite : color1P2}`}
           ></div>
           <div
             onClick={decrement.bind(null, "p2")}
-            className={`${classes.grid2B} bg-green-700`}
+            className={`${classes.grid2B} ${color2P2 === 'bgWhite' ? classes.bgWhite : color2P2}`}
           ></div>
+
+
+          
         </div>
       </Sidebar>
     </>

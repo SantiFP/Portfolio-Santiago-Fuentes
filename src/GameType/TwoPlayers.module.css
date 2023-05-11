@@ -2,7 +2,16 @@
   position: absolute;
   justify-self: center;
   align-self: center;
-  cursor: pointer;
+  animation: centerLogo 1s ease-in-out;
+}
+
+@keyframes centerLogo {
+  from {
+    transform: translateX(-350%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .grid {
@@ -19,35 +28,96 @@
 
 .grid1A {
   grid-area: 1;
+  border-bottom: 1px solid rgb(198, 192, 192);
 }
 
 .grid2A {
   grid-area: 2;
+  border-bottom: 1px solid rgb(198, 192, 192);
 }
 
 .grid1B {
   grid-area: 3;
+  border-bottom: 1px solid rgb(189, 181, 181);
 }
 
 .grid2B {
   grid-area: 4;
 }
-
 .rotate {
   transform: rotate(180deg);
   position: absolute;
-  top: 16%;
+  top: 9.5%;
   left: 0;
   right: 0;
   margin: auto;
   pointer-events: none;
+  animation: up 1s 0s ease-in-out,numberRotate 3s 1s linear infinite;
+  font-family: "Almendra", serif;
+  font-size: 11rem;
+}
+
+@keyframes up {
+  
+  from {
+    transform: translateY(-100%) rotate(180deg);
+  }
+  to {
+    transform: translateY(0) rotate(180deg);
+  }
+}
+
+@keyframes bottom {
+  
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes numberRotate {
+  0% {
+    transform: translateX(0) rotate(180deg);
+  }
+  25% {
+    transform: translateX(-15px) rotate(180deg);
+  }
+  75% {
+    transform: translateX(15px) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0) rotate(180deg);
+  }
+}
+@keyframes number {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(15px);
+  }
+  75% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.bgWhite {
+  background-color: #e1c54a;
 }
 
 .place {
-  top: 50%;
+  top: 47%;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
   pointer-events: none;
+  animation: bottom 1s 0s ease-in-out,number 3s 1s linear infinite;
+  font-family: "Almendra", serif;
+  font-size: 11rem;
 }

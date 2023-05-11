@@ -32,7 +32,7 @@ const Home = () => {
           <div className="flex justify-center items-center  h-full">
             <div className="h-full  w-full flex items-center">
               <img
-                className=" mx-auto pt-12"
+                className={`${classes.magicLogo} mx-auto pt-12`}
                 src="/magic-logo.png"
                 alt="magicLogo"
               />
@@ -40,7 +40,7 @@ const Home = () => {
           </div>
         </header>
 
-        <div className="h-1/3 flex flex-col justify-center items-center space-y-2 pb-6">
+        <div className={`${classes.select} h-1/3 flex flex-col justify-center items-center space-y-2 pb-6`}>
           <p className="text-lg text-white">Total de jugadores</p>
           <select
             onChange={playersSelectionHandler}
@@ -69,12 +69,13 @@ const Home = () => {
           </div>
         </div>
 
-        <footer className="h-1/3">
+        <footer className="h-1/3 relative overflow-hidden">
           <img
-            className="h-full mx-auto"
+            className={`${classes.magicElements} h-full mx-auto`}
             src="/magic-elements.png"
             alt="elements"
           />
+          <div className={classes.white}></div>
         </footer>
       </section>
     </>

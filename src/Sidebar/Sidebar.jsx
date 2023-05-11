@@ -35,7 +35,7 @@ function Sidebar(props) {
       <div
         className={`${classes.sidebar} ${side1 ? `open` : `${classes.closed}`}`}
       >
-        <ManaColors />
+        <ManaColors player='1'  bg={classes.ManaColorsBg}/>
         <img
           onClick={toggleSidebar.bind(null, "s1")}
           className={`h-11 w-11 ${classes.sideArrowTop} ${
@@ -51,7 +51,7 @@ function Sidebar(props) {
           side2 ? `open` : `${classes.closed}`
         } `}
       >
-        <ManaColors />
+        <ManaColors player='2' bg={classes.ManaColorsBg}/>
 
         <img
           onClick={toggleSidebar.bind(null, "s2")}
