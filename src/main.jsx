@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { MyContextProvider, MyColorProvider } from "./Store/store.jsx";
+import { MyLifesProvider, MyColorProvider } from "./Store/store.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MyContextProvider>
+    <MyLifesProvider>
       <MyColorProvider>
         <App />
       </MyColorProvider>
-    </MyContextProvider>
+    </MyLifesProvider>
   </React.StrictMode>
 );
