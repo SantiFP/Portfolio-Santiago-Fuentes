@@ -31,7 +31,7 @@ const reducer = (state, action) => {
 const TwoPlayers = () => {
   const navigate = useNavigate();
   const { state, dispatch: dispatchCtx } = useContext(LifesContext);
-  const {state: colorsState} = useContext(ColorsContext);
+  const {state: colorsState,dispatch: dispatchColors} = useContext(ColorsContext);
 
   const [colorsStateP1,colorsStateP2] = colorsState;
   const {color1P1,color2P1} = colorsStateP1;
@@ -57,6 +57,7 @@ const TwoPlayers = () => {
 
   const goHome = () => {
     dispatchCtx({ type: "20" });
+    dispatchColors({type: 'reset'});
     navigate("/");
   };
 

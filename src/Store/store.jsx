@@ -326,9 +326,8 @@ export const MyColorProvider = (props) => {
             },
           ];
         }
-
       default:
-        break;
+        return [...initialColors];
     }
   };
 

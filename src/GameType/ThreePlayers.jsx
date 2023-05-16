@@ -50,6 +50,7 @@ const ThreePlayers = () => {
 
   const goHome = () => {
     dispatchCtx({ type: "20" });
+    dispatchColors({ type: "reset" });
     navigate("/");
   };
   return (
