@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-  .hoverImg {
+  .selectedImg {
     @apply w-[5.5rem] h-[5.5rem] ;
   }
 }

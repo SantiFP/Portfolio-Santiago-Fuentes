@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { ColorsContext } from "../Store/store";
+import classes from './Sidebar.module.css'
 
 const ManaColors = (props) => {
   const { dispatch } = useContext(ColorsContext);
@@ -16,7 +17,7 @@ const ManaColors = (props) => {
       >
         <img
           className={`ml-2 mt-2 ${
-            selected === 1 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 1 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/blue.png"
           alt="blue"
@@ -27,7 +28,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`ml-2 ${
-            selected === 2 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 2 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/white.png"
           alt="white"
@@ -38,7 +39,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`ml-2 ${
-            selected === 3 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 3 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/green.png"
           alt="green"
@@ -49,7 +50,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`"ml-2 ${
-            selected === 4 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 4 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black.png"
           alt="black"
@@ -60,7 +61,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`"ml-2 ${
-            selected === 5 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 5 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/red.png"
           alt="red"
@@ -72,7 +73,7 @@ const ManaColors = (props) => {
 
         <img
           className={`${
-            selected === 6 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 6 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/blue-and-white.png"
           alt="b&w"
@@ -83,7 +84,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`${
-            selected === 7 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 7 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-green.png"
           alt="b&g"
@@ -94,7 +95,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`${
-            selected === 8 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 8 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/blue-and-red.png"
           alt="b&r"
@@ -105,7 +106,7 @@ const ManaColors = (props) => {
         />
         <img
           className={`${
-            selected === 9 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"
+            selected === 9 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-red.png"
           alt="b&r"
@@ -115,7 +116,7 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 10 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"} `}
+          className={`${selected === 10 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
           src="/mana symbols/red-and-white.png"
           alt="r&w"
           onClick={() => {
@@ -124,7 +125,7 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 11 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"} `}
+          className={`${selected === 11 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
           src="/mana symbols/black-and-white.png"
           alt="b&w"
           onClick={() => {
@@ -133,7 +134,7 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 12 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"} `}
+          className={`${selected === 12 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
           src="/mana symbols/black-and-blue.png"
           alt="b&b"
           onClick={() => {
@@ -142,7 +143,7 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 13 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"}`}
+          className={`${selected === 13 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
           src="/mana symbols/green-and-blue.png"
           alt="b&g"
           onClick={() => {
@@ -151,7 +152,7 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 14 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"}`}
+          className={`${selected === 14 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
           src="/mana symbols/green-and-white.png"
           alt="g&w"
           onClick={() => {
@@ -160,7 +161,7 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 15 ? "hoverImg" : "w-[4.5rem] h-[4.5rem]"}`}
+          className={`${selected === 15 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
           src="/mana symbols/red-and-green.png"
           alt="r&g"
           onClick={() => {
