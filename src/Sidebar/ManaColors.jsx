@@ -66,7 +66,7 @@ const ManaColors = (props) => {
           src="/mana symbols/red.png"
           alt="red"
           onClick={() => {
-            dispatch({ type: "black", player: props.player });
+            dispatch({ type: "red", player: props.player });
             imgClick(5);
           }}
         />
