@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./home/Home";
 import TwoPlayers from "./GameType/TwoPlayers";
-import Sidebar from "./Sidebar/Sidebar";
+import ThreePlayers from "./GameType/ThreePlayers";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "twoplayers",
     element: <TwoPlayers />,
+  },
+  {
+    path: "threeplayers",
+    element: <ThreePlayers />,
   },
 ]);
 

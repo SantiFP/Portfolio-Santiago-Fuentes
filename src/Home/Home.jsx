@@ -1,21 +1,23 @@
 import classes from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { LifesContext } from "../Store/store";
 
-let selectedPlayers = 2;
 let selectedLifes = 20;
 
 const Home = () => {
   const navigate = useNavigate();
   const { dispatch } = useContext(LifesContext);
+  const [selectedPlayers,setSelectedPlayers] = useState(2)
+
 
   const startPlaying = () => {
     selectedPlayers === 2 && navigate("twoplayers");
+    selectedPlayers === 3 && navigate("threeplayers");
   };
 
   const playersSelectionHandler = (e) => {
-    selectedPlayers = Number(e.target.value);
+    setSelectedPlayers(Number(e.target.value));
   };
 
   const lifesSelectionHandler = (e) => {
@@ -40,11 +42,13 @@ const Home = () => {
           </div>
         </header>
 
-        <div className={`${classes.select} h-1/3 flex flex-col justify-center items-center space-y-2 pb-6`}>
+        <div
+          className={`${classes.select} h-1/3 flex flex-col justify-center items-center space-y-2 pb-6`}
+        >
           <p className="text-lg text-white">Total de jugadores</p>
           <select
             onChange={playersSelectionHandler}
-            className={`${classes.arrow} py-1`}
+            className={`${classes.arrow} py-1 text-2xl`}
           >
             <option>2</option>
             <option>3</option>
@@ -53,7 +57,7 @@ const Home = () => {
           <p className="text-lg text-white">Total de vidas inicial</p>
           <select
             onChange={lifesSelectionHandler}
-            className={`${classes.arrow} py-1`}
+            className={`${classes.arrow} py-1 text-2xl`}
           >
             <option>20</option>
             <option>30</option>
@@ -62,7 +66,7 @@ const Home = () => {
           <div className="pt-2">
             <button
               onClick={startPlaying}
-              className=" border-2 cursor-default bg-white border-solid px-4 py-2 rounded-2xl "
+              className=" border-2 cursor-default bg-white border-solid px-4 py-2 rounded-2xl text-xl "
             >
               Comenzar
             </button>

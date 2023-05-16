@@ -1,0 +1,106 @@
+.common {
+  font-size: 8rem;
+  display: grid;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c d e f"
+    "c d e f"
+    "c d e f"
+    "c d e f";
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.grid1A {
+  background-color: blue;
+  grid-area: a;
+}
+
+.grid2A {
+  background-color: green;
+  grid-area: b;
+}
+
+.grid1B {
+  background-color: rgb(163, 107, 116);
+  grid-area: c;
+  width: 100%;
+}
+
+.grid2B {
+  background-color: red;
+  grid-area: d;
+  width: 100%;
+}
+.grid1C {
+  background-color: brown;
+  width: 100%;
+  grid-area: e;
+}
+.grid2C {
+  background-color: violet;
+  width: 100%;
+  grid-area: f;
+}
+
+.p1lifes {
+  color: white;
+  position: absolute;
+  right: 0;
+  left: 0;
+  transform: rotate(180deg);
+  top: 5.5%;
+}
+
+.p2lifes {
+  color: white;
+  position: absolute;
+  left: 11.5%;
+  top: 55%;
+  transform: rotate(-90deg) rotate(-180deg);
+}
+.p3lifes {
+  color: white;
+  position: absolute;
+  right: 11.5%;
+  top: 55%;
+  transform: rotate(90deg) rotate(180deg);
+}
+
+.centerLogo {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 30%;
+  margin: auto;
+  animation: enterLogo 1s ease-in-out;
+  z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+  .p2lifes {
+    color: white;
+    position: absolute;
+    left: 21.5%;
+    top: 55%;
+    transform: rotate(-90deg) rotate(-180deg);
+  }
+  .p3lifes {
+    color: white;
+    position: absolute;
+    right: 21.5%;
+    top: 55%;
+    transform: rotate(90deg) rotate(180deg);
+  }
+}
+
+@keyframes enterLogo {
+  from {
+    transform: translateX(-350%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
