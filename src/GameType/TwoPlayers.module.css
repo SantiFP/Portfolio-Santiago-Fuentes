@@ -52,62 +52,9 @@
   right: 0;
   margin: auto;
   pointer-events: none;
-  animation: up 1s 0s ease-in-out,numberRotate 3s 1s linear infinite;
+  animation: up 1s 0s ease-in-out, numberRotate 5s 1s linear infinite;
   font-family: "Almendra", serif;
   font-size: 11rem;
-}
-
-@keyframes up {
-  
-  from {
-    transform: translateY(-100%) rotate(180deg);
-  }
-  to {
-    transform: translateY(0) rotate(180deg);
-  }
-}
-
-@keyframes bottom {
-  
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes numberRotate {
-  0% {
-    transform: translateX(0) rotate(180deg);
-  }
-  25% {
-    transform: translateX(-15px) rotate(180deg);
-  }
-  75% {
-    transform: translateX(15px) rotate(180deg);
-  }
-  100% {
-    transform: translateX(0) rotate(180deg);
-  }
-}
-@keyframes number {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(15px);
-  }
-  75% {
-    transform: translateX(-15px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.bgWhite {
-  background-color: #e1c54a;
 }
 
 .place {
@@ -117,7 +64,47 @@
   bottom: 0;
   margin: auto;
   pointer-events: none;
-  animation: bottom 1s 0s ease-in-out,number 3s 1s linear infinite;
+  animation: bottom 1s 0s ease-in-out, number 5s 1s linear infinite;
   font-family: "Almendra", serif;
   font-size: 11rem;
+}
+
+.bgWhite {
+  background-color: #e1c54a;
+}
+
+@keyframes up {
+  from {
+    transform: translateY(-100%) rotate(180deg);
+  }
+  to {
+    transform: translateY(0) translateX(-9px) rotate(180deg);
+  }
+}
+
+@keyframes bottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0) translateX(9px);
+  }
+}
+
+@keyframes numberRotate {
+  from {
+    transform: rotate(0deg) translateX(-9px) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-9px) rotate(-180deg);
+  }
+}
+
+@keyframes number {
+  from {
+    transform: rotate(0deg) translate(9px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(9px) rotate(-360deg);
+  }
 }

@@ -62,7 +62,7 @@ const Home = () => {
           <div className="pt-2">
             <button
               onClick={startPlaying}
-              className=" border-2 cursor-default bg-white border-solid px-4 py-2 rounded-2xl hover:bg-sky-900"
+              className=" border-2 cursor-default bg-white border-solid px-4 py-2 rounded-2xl "
             >
               Comenzar
             </button>

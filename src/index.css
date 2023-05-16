@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-  .lolo {
-    @apply bg-red-500 ;
+  .hoverImg {
+    @apply w-[5.5rem] h-[5.5rem] ;
   }
 }
