@@ -60,7 +60,9 @@ const ThreePlayers = () => {
       <p
         className={`${classes.p2lifes} pointer-events-none ${lifesState.lifesP2 < 20 && "left-[13.5%]"} 
         ${lifesState.lifesP2 <= 9 && "pb-12 top-[52.5%]"} ${lifesState.lifesP2 < 0 && 'left-[5%]'}
-        ${lifesState.lifesP2 < 0 && lifesState.lifesP2 >= -9 && 'left-[8%]'}`}
+        ${lifesState.lifesP2 < 0 && lifesState.lifesP2 >= -9 && 'left-[8%]'}
+        ${lifesState.lifesP2 < -10 && 'ml-[-0.5rem]'}
+        ${lifesState.lifesP2 <= -18 && 'ml-[-1rem]'}`}
       >
         {lifesState.lifesP2}
       </p>
@@ -76,7 +78,9 @@ const ThreePlayers = () => {
       <p
         className={`${classes.p3lifes} pointer-events-none ${lifesState.lifesP3 < 20 && "right-[13.5%]"} 
         ${lifesState.lifesP3 <= 9 && "pb-12 top-[52.5%]"} ${lifesState.lifesP3 < 0 && 'right-[5%]'}
-        ${lifesState.lifesP3 < 0 && lifesState.lifesP3 >= -9 && 'right-[8%]'}`}
+        ${lifesState.lifesP3 < 0 && lifesState.lifesP3 >= -9 && 'right-[8%]'}
+        ${lifesState.lifesP3 <= -10 && 'mr-[-0.5rem]'}
+        ${lifesState.lifesP3 <= -18 && 'mr-[-1rem]'}`}
       >
         {lifesState.lifesP3}
       </p>
