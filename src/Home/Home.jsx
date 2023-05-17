@@ -1,15 +1,14 @@
 import classes from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { useContext,useState } from "react";
-import { LifesContext } from "../Store/store";
+import { LifeCounterCtx } from "../Store/LifeStore";
 
 let selectedLifes = 20;
 
 const Home = () => {
   const navigate = useNavigate();
-  const { dispatch } = useContext(LifesContext);
-  const [selectedPlayers,setSelectedPlayers] = useState(2)
-
+  const { dispatch } = useContext(LifeCounterCtx);
+  const [selectedPlayers,setSelectedPlayers] = useState(2);
 
   const startPlaying = () => {
     selectedPlayers === 2 && navigate("twoplayers");
@@ -22,9 +21,9 @@ const Home = () => {
 
   const lifesSelectionHandler = (e) => {
     selectedLifes = Number(e.target.value);
-    selectedLifes === 20 && dispatch({ type: "20" });
-    selectedLifes === 30 && dispatch({ type: "30" });
-    selectedLifes === 40 && dispatch({ type: "40" });
+    selectedLifes === 20 && dispatch({ type: "20",starting: 'start' });
+    selectedLifes === 30 && dispatch({ type: "30",starting: 'start' });
+    selectedLifes === 40 && dispatch({ type: "40" ,starting: 'start'});
   };
 
   return (

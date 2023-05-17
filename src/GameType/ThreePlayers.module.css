@@ -11,33 +11,39 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .grid1A {
   background-color: blue;
   grid-area: a;
+  border-bottom: 1px solid rgb(198, 192, 192);
 }
 
 .grid2A {
   background-color: green;
   grid-area: b;
+  border-bottom: 1px solid rgb(198, 192, 192);
 }
 
 .grid1B {
   background-color: rgb(163, 107, 116);
   grid-area: c;
   width: 100%;
+  border-right: 1px solid rgb(198, 192, 192);
 }
 
 .grid2B {
   background-color: red;
   grid-area: d;
   width: 100%;
+  border-right: 1px solid rgb(198, 192, 192);
 }
 .grid1C {
   background-color: brown;
   width: 100%;
   grid-area: e;
+  border-right: 1px solid rgb(198, 192, 192);
 }
 .grid2C {
   background-color: violet;
@@ -50,8 +56,8 @@
   position: absolute;
   right: 0;
   left: 0;
-  transform: rotate(180deg);
   top: 5.5%;
+  animation: up 1s 0s ease-in-out, numberRotate 5s 1s linear infinite;
 }
 
 .p2lifes {
@@ -59,14 +65,15 @@
   position: absolute;
   left: 11.5%;
   top: 55%;
-  transform: rotate(-90deg) rotate(-180deg);
+  animation: fromLeft 1s 0s ease-in-out, numberRotateLeft 5s 1s linear infinite;
 }
 .p3lifes {
   color: white;
   position: absolute;
   right: 11.5%;
   top: 55%;
-  transform: rotate(90deg) rotate(180deg);
+  animation: fromRight 1s 0s ease-in-out,
+    numberRotateRight 5s 1s linear infinite;
 }
 
 .centerLogo {
@@ -77,6 +84,65 @@
   margin: auto;
   animation: enterLogo 1s ease-in-out;
   z-index: 10;
+}
+
+@keyframes up {
+  from {
+    transform: translateY(-100%) rotate(180deg);
+  }
+  to {
+    transform: translateY(0) translateX(-7px) rotate(180deg);
+  }
+}
+
+@keyframes numberRotate {
+  from {
+    transform: rotate(0deg) translateX(-7px) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-7px) rotate(-180deg);
+  }
+}
+@keyframes fromLeft {
+  from {
+    transform: translateX(-100%) rotate(-180deg) rotate(-90deg);
+  }
+  to {
+    transform: translateX(7px) rotate(-180deg) rotate(-90deg);
+  }
+}
+@keyframes numberRotateLeft {
+  from {
+    transform: rotate(0deg) translateX(7px) rotate(-90deg) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(7px) rotate(-90deg) rotate(-180deg);
+  }
+}
+
+@keyframes fromRight {
+  from {
+    transform: translateX(100%) rotate(180deg) rotate(90deg);
+  }
+  to {
+    transform: translateX(-7px) rotate(180deg) rotate(90deg);
+  }
+}
+@keyframes numberRotateRight {
+  from {
+    transform: rotate(0deg) translateX(-7px) rotate(90deg) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-7px) rotate(90deg) rotate(-180deg);
+  }
+}
+@keyframes enterLogo {
+  from {
+    transform: translateX(-350%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -93,14 +159,5 @@
     right: 21.5%;
     top: 55%;
     transform: rotate(90deg) rotate(180deg);
-  }
-}
-
-@keyframes enterLogo {
-  from {
-    transform: translateX(-350%);
-  }
-  to {
-    transform: translateX(0);
   }
 }

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ColorsContext } from "../Store/store";
+import { ColorsContext } from "../Store/ColorStore";
 import classes from './Sidebar.module.css'
 
 const ManaColors = (props) => {
