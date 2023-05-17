@@ -58,9 +58,9 @@ const ThreePlayers = () => {
         className={classes.grid2B}
       ></div>
       <p
-        className={`${classes.p2lifes} pointer-events-none ${
-          lifesState.lifesP2 < 20 && "left-[13.5%]"
-        } ${lifesState.lifesP2 <= 9 && "pb-12 top-[20%]"}`}
+        className={`${classes.p2lifes} pointer-events-none ${lifesState.lifesP2 < 20 && "left-[13.5%]"} 
+        ${lifesState.lifesP2 <= 9 && "pb-12 top-[52.5%]"} ${lifesState.lifesP2 < 0 && 'left-[5%]'}
+        ${lifesState.lifesP2 < 0 && lifesState.lifesP2 >= -9 && 'left-[8%]'}`}
       >
         {lifesState.lifesP2}
       </p>
@@ -74,9 +74,9 @@ const ThreePlayers = () => {
         className={classes.grid2C}
       ></div>
       <p
-        className={`${classes.p3lifes} pointer-events-none ${
-          lifesState.lifesP3 < 20 && "right-[13.5%]"
-        } ${lifesState.lifesP3 <= 9 && "pb-12 top-[50%]"}`}
+        className={`${classes.p3lifes} pointer-events-none ${lifesState.lifesP3 < 20 && "right-[13.5%]"} 
+        ${lifesState.lifesP3 <= 9 && "pb-12 top-[52.5%]"} ${lifesState.lifesP3 < 0 && 'right-[5%]'}
+        ${lifesState.lifesP3 < 0 && lifesState.lifesP3 >= -9 && 'right-[8%]'}`}
       >
         {lifesState.lifesP3}
       </p>
