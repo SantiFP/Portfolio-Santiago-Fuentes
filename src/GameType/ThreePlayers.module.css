@@ -80,7 +80,6 @@
   top: 30%;
   margin: auto;
   animation: enterLogo 1s ease-in-out;
-  z-index: 10;
 }
 
 @keyframes up {

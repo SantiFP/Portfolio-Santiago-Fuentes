@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import { useNavigate } from "react-router-dom";
 import { LifeCounterCtx } from "../Store/LifeStore";
+import Sidebar from '../Sidebar/Sidebar';
 
 const ThreePlayers = () => {
   const navigate = useNavigate();
@@ -30,7 +31,8 @@ const ThreePlayers = () => {
   };
 
   return (
-    <div className={`text-center w-full ${classes.common}`}>
+    <Sidebar sidebarType='3p'> 
+       <div className={`text-center w-full ${classes.common}`}>
       <div
         onClick={decrement.bind(null, "p1")}
         className={`${classes.grid1A}`}
@@ -58,11 +60,13 @@ const ThreePlayers = () => {
         className={classes.grid2B}
       ></div>
       <p
-         className={`${classes.p2lifes} pointer-events-none ${lifesState.lifesP2 >= 20 && "left-[11.5%] md:left-[22.3%]"} ${lifesState.lifesP2 < 20 && "left-[13.5%] md:left-[23%]"} 
-         ${lifesState.lifesP2 <= 9 && "pb-12 top-[52.5%] md:pb-6"} ${lifesState.lifesP2 < 0 && 'left-[5%]  md:left-[11.5%]'}
-         ${lifesState.lifesP2 < 0 && lifesState.lifesP2 >= -9 && 'left-[8%]  md:left-[21.5%]'}
-         ${lifesState.lifesP2 <= -10 && lifesState.lifesP2 > -18 && 'ml-[-0.5rem]  md:ml-[0] md:left-[21%]'}
-         ${lifesState.lifesP2 <= -18 && 'ml-[-1rem] md:ml-[0] md:left-[20%]'}`}
+        className={`${classes.p2lifes} pointer-events-none 
+        ${lifesState.lifesP2 >= 20 && "left-[11.5%] md:left-[21.5%]"}
+        ${lifesState.lifesP2 < 20 && lifesState.lifesP2 > 9 && "left-[13.5%] md:left-[22%]"} 
+        ${lifesState.lifesP2 <= 9 && "pb-12 top-[52.5%] left-[13.5%] md:pb-6 md:left-[22.5%]"} 
+        ${lifesState.lifesP2 < 0 && lifesState.lifesP2 >= -9 && 'left-[8%]  md:left-[21%]'}
+        ${lifesState.lifesP2 <= -10 && lifesState.lifesP2 > -18 && 'ml-[-0.5rem] left-[6.5%]  md:ml-[0] md:left-[19.7%]'}
+        ${lifesState.lifesP2 <= -18 && 'ml-[-1rem] left-[6.5%] md:ml-[0] md:left-[19.7%]'}`}
       >
         {lifesState.lifesP2}
       </p>
@@ -76,15 +80,19 @@ const ThreePlayers = () => {
         className={classes.grid2C}
       ></div>
       <p
-        className={`${classes.p3lifes} pointer-events-none ${lifesState.lifesP3 >= 20 && "right-[11.5%] md:right-[22.3%]"} ${lifesState.lifesP3 < 20 && "right-[13.5%] md:right-[23%]"} 
-        ${lifesState.lifesP3 <= 9 && "pb-12 top-[52.5%] md:pb-6"} ${lifesState.lifesP3 < 0 && 'right-[5%]  md:right-[11.5%]'}
-        ${lifesState.lifesP3 < 0 && lifesState.lifesP3 >= -9 && 'right-[8%]  md:right-[21.5%]'}
-        ${lifesState.lifesP3 <= -10 && lifesState.lifesP3 > -18 && 'mr-[-0.5rem]  md:mr-[0] md:right-[21%]'}
-        ${lifesState.lifesP3 <= -18 && 'mr-[-1rem] md:mr-[0] md:right-[20%]'}`}
+       className={`${classes.p3lifes} pointer-events-none ${lifesState.lifesP3 >= 20 && "right-[11.5%] md:right-[21.5%]"}
+       ${lifesState.lifesP3 < 20 && lifesState.lifesP3 > 9 && "right-[13.5%] md:right-[22%]"} 
+       ${lifesState.lifesP3 <= 9 && "pb-12 top-[52.5%] right-[13.5%] md:pb-6 md:right-[22.5%]"} 
+       ${lifesState.lifesP3 < 0 && lifesState.lifesP3 >= -9 && 'right-[8%]  md:right-[21%]'}
+       ${lifesState.lifesP3 <= -10 && lifesState.lifesP3 > -18 && 'mr-[-0.5rem] right-[6.5%]  md:mr-[0] md:right-[19.7%]'}
+       ${lifesState.lifesP3 <= -18 && 'mr-[-1rem] right-[6.5%] md:mr-[0] md:right-[19.7%]'}`}
       >
         {lifesState.lifesP3}
       </p>
     </div>
+
+    </Sidebar>
+   
   );
 };
 

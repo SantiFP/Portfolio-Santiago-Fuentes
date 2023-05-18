@@ -32,7 +32,7 @@ const TwoPlayers = () => {
 
   return (
     <>
-      <Sidebar>
+      <Sidebar sidebarType='2p'>
         <div className={`relative overflow-hidden ${classes.grid}`}>
           <img
             onClick={goHome}

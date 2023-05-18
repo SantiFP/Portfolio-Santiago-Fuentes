@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { ColorsContext } from "../Store/ColorStore";
-import classes from './Sidebar.module.css'
+import classes from './Sidebar2P.module.css'
 
 const ManaColors = (props) => {
   const { dispatch } = useContext(ColorsContext);
