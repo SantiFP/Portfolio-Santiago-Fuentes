@@ -17,7 +17,7 @@
 .sideArrowTop {
   position: absolute;
   top: 44.5%;
-  left: 96%;
+  left: 97%;
 }
 
 .arrowReverse {
@@ -58,7 +58,7 @@
 .sideArrowBottom {
   position: absolute;
   top: 44.5%;
-  left: 96%;
+  left: 97%;
 }
 
 @media only screen and (min-width: 768px) {

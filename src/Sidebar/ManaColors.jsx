@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ColorsContext } from "../Store/ColorStore";
-import classes from './Sidebar2P.module.css'
+import classes2P from "./Sidebar2P.module.css";
+import classes3P from "./Sidebar3P.module.css";
 
 const ManaColors = (props) => {
   const { dispatch } = useContext(ColorsContext);
@@ -10,14 +11,27 @@ const ManaColors = (props) => {
     setSelected(img);
   };
 
+  const {position} = props;
+
+  let bg = props.bg.split(',');
+
+  let bgToArray = bg[0].split(' ');
+  let bgStyle = bgToArray[bgToArray.length -1];
+  let bgStyle2 = bg[1];
+
   return (
-    <>
-      <form
-        className={`${props.bg} pointer flex flex-wrap h-full pt-3 pl-1 space-x-2 space-y-2 `}
+    <form
+      className={` h-full pt-3 pl-1 pointer ${bgStyle} lg:${bgStyle2} ${position === "rotateP1" && 'w-[27rem] lg: w-auto'}`}
+    >
+      <div
+        className={`${ position !== 'rotateP1' && 'flex flex-wrap  space-x-2  space-y-8 '} 
+        ${position === "rotateP1" && `${classes3P.rotateRight} flex-wrap  space-x-4 space-y-2 lg:flex lg:flex-row`}`}
       >
         <img
-          className={`ml-2 mt-2 ${
-            selected === 1 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+          className={`${position !== "rotateP1" ? "ml-2 mt-8 " : ' ml-[0.90rem] mt-2 '}${
+            selected === 1
+              ? `${classes3P.selectedImg}`
+              :  "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/blue.png"
           alt="blue"
@@ -27,8 +41,10 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`ml-2 ${
-            selected === 2 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+          className={`${position !== "rotateP1" && "ml-2 "}${
+            selected === 2
+              ? ` ${classes3P.selectedImg} `
+              :  "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/white.png"
           alt="white"
@@ -38,8 +54,10 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`ml-2 ${
-            selected === 3 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+          className={`${position !== "rotateP1" && "ml-2 "}${
+            selected === 3
+              ? ` ${classes3P.selectedImg} `
+              : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/green.png"
           alt="green"
@@ -49,8 +67,10 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`"ml-2 ${
-            selected === 4 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+          className={`${position !== "rotateP1" && "ml-2"} ${
+            selected === 4
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black.png"
           alt="black"
@@ -60,8 +80,10 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`"ml-2 ${
-            selected === 5 ? `${classes.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+          className={`${position !== "rotateP1" && " ml-2 "}${
+            selected === 5
+              ? ` ${classes3P.selectedImg} `
+              :  "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/red.png"
           alt="red"
@@ -73,7 +95,9 @@ const ManaColors = (props) => {
 
         <img
           className={`${
-            selected === 6 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+            selected === 6
+              ? `${classes3P.selectedImg}`
+              :  "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/blue-and-white.png"
           alt="b&w"
@@ -84,7 +108,9 @@ const ManaColors = (props) => {
         />
         <img
           className={`${
-            selected === 7 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+            selected === 7
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-green.png"
           alt="b&g"
@@ -95,7 +121,9 @@ const ManaColors = (props) => {
         />
         <img
           className={`${
-            selected === 8 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+            selected === 8
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/blue-and-red.png"
           alt="b&r"
@@ -106,7 +134,9 @@ const ManaColors = (props) => {
         />
         <img
           className={`${
-            selected === 9 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+            selected === 9
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-red.png"
           alt="b&r"
@@ -116,7 +146,11 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 10 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
+          className={`${
+            selected === 10
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
+          } `}
           src="/mana symbols/red-and-white.png"
           alt="r&w"
           onClick={() => {
@@ -125,7 +159,11 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 11 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
+          className={`${
+            selected === 11
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
+          } `}
           src="/mana symbols/black-and-white.png"
           alt="b&w"
           onClick={() => {
@@ -134,7 +172,11 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 12 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
+          className={`${
+            selected === 12
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
+          } `}
           src="/mana symbols/black-and-blue.png"
           alt="b&b"
           onClick={() => {
@@ -143,7 +185,11 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 13 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
+          className={`${
+            selected === 13
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
+          }`}
           src="/mana symbols/green-and-blue.png"
           alt="b&g"
           onClick={() => {
@@ -152,7 +198,11 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 14 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
+          className={`${
+            selected === 14
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
+          }`}
           src="/mana symbols/green-and-white.png"
           alt="g&w"
           onClick={() => {
@@ -161,7 +211,11 @@ const ManaColors = (props) => {
           }}
         />
         <img
-          className={`${selected === 15 ? `${classes.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
+          className={`${
+            selected === 15
+              ? `${classes3P.selectedImg}`
+              : "w-[4.5rem] h-[4.5rem]"
+          }`}
           src="/mana symbols/red-and-green.png"
           alt="r&g"
           onClick={() => {
@@ -169,9 +223,170 @@ const ManaColors = (props) => {
             imgClick(15);
           }}
         />
-      </form>
-    </>
+        </div>
+    </form>
   );
 };
 
 export default ManaColors;
+
+// <>
+//   <form
+//     className={`${props.bg} pointer flex flex-wrap h-full pt-3 pl-1 space-x-2 space-y-2 `}
+//   >
+//     <img
+//       className={`ml-2 mt-2 ${
+//         selected === 1 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+//       }`}
+//       src="/mana symbols/blue.png"
+//       alt="blue"
+//       onClick={() => {
+//         dispatch({ type: "blue", player: props.player });
+//         imgClick(1);
+//       }}
+//     />
+//     <img
+//       className={`ml-2 ${
+//         selected === 2 ? `${classes2P.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+//       }`}
+//       src="/mana symbols/white.png"
+//       alt="white"
+//       onClick={() => {
+//         dispatch({ type: "white", player: props.player });
+//         imgClick(2);
+//       }}
+//     />
+//     <img
+//       className={`ml-2 ${
+//         selected === 3 ? `${classes2P.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+//       }`}
+//       src="/mana symbols/green.png"
+//       alt="green"
+//       onClick={() => {
+//         dispatch({ type: "green", player: props.player });
+//         imgClick(3);
+//       }}
+//     />
+//     <img
+//       className={`"ml-2 ${
+//         selected === 4 ? `${classes2P.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+//       } `}
+//       src="/mana symbols/black.png"
+//       alt="black"
+//       onClick={() => {
+//         dispatch({ type: "black", player: props.player });
+//         imgClick(4);
+//       }}
+//     />
+//     <img
+//       className={`"ml-2 ${
+//         selected === 5 ? `${classes2P.selectedImg}`: "w-[4.5rem] h-[4.5rem]"
+//       } `}
+//       src="/mana symbols/red.png"
+//       alt="red"
+//       onClick={() => {
+//         dispatch({ type: "red", player: props.player });
+//         imgClick(5);
+//       }}
+//     />
+
+//     <img
+//       className={`${
+//         selected === 6 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+//       } `}
+//       src="/mana symbols/blue-and-white.png"
+//       alt="b&w"
+//       onClick={() => {
+//         dispatch({ type: "blueAndWhite", player: props.player });
+//         imgClick(6);
+//       }}
+//     />
+//     <img
+//       className={`${
+//         selected === 7 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+//       } `}
+//       src="/mana symbols/black-and-green.png"
+//       alt="b&g"
+//       onClick={() => {
+//         dispatch({ type: "blackAndGreen", player: props.player });
+//         imgClick(7);
+//       }}
+//     />
+//     <img
+//       className={`${
+//         selected === 8 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+//       } `}
+//       src="/mana symbols/blue-and-red.png"
+//       alt="b&r"
+//       onClick={() => {
+//         dispatch({ type: "blueAndRed", player: props.player });
+//         imgClick(8);
+//       }}
+//     />
+//     <img
+//       className={`${
+//         selected === 9 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"
+//       } `}
+//       src="/mana symbols/black-and-red.png"
+//       alt="b&r"
+//       onClick={() => {
+//         dispatch({ type: "blackAndRed", player: props.player });
+//         imgClick(9);
+//       }}
+//     />
+//     <img
+//       className={`${selected === 10 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
+//       src="/mana symbols/red-and-white.png"
+//       alt="r&w"
+//       onClick={() => {
+//         dispatch({ type: "redAndWhite", player: props.player });
+//         imgClick(10);
+//       }}
+//     />
+//     <img
+//       className={`${selected === 11 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
+//       src="/mana symbols/black-and-white.png"
+//       alt="b&w"
+//       onClick={() => {
+//         dispatch({ type: "blackAndWhite", player: props.player });
+//         imgClick(11);
+//       }}
+//     />
+//     <img
+//       className={`${selected === 12 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"} `}
+//       src="/mana symbols/black-and-blue.png"
+//       alt="b&b"
+//       onClick={() => {
+//         dispatch({ type: "blackAndBlue", player: props.player });
+//         imgClick(12);
+//       }}
+//     />
+//     <img
+//       className={`${selected === 13 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
+//       src="/mana symbols/green-and-blue.png"
+//       alt="b&g"
+//       onClick={() => {
+//         dispatch({ type: "greenAndBlue", player: props.player });
+//         imgClick(13);
+//       }}
+//     />
+//     <img
+//       className={`${selected === 14 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
+//       src="/mana symbols/green-and-white.png"
+//       alt="g&w"
+//       onClick={() => {
+//         dispatch({ type: "greenAndWhite", player: props.player });
+//         imgClick(14);
+//       }}
+//     />
+//     <img
+//       className={`${selected === 15 ? `${classes2P.selectedImg}` : "w-[4.5rem] h-[4.5rem]"}`}
+//       src="/mana symbols/red-and-green.png"
+//       alt="r&g"
+//       onClick={() => {
+//         dispatch({ type: "greenAndRed", player: props.player });
+//         imgClick(15);
+//       }}
+//     />
+//   </form>
+// </>

@@ -32,6 +32,7 @@ function Sidebar(props) {
   };
 
   const { side1, side2,side3 } = openSides;
+  const {sidebarType} = props;
 
   return (
     <>
@@ -40,30 +41,31 @@ function Sidebar(props) {
       {/* /////////////////// PLAYER 1 ////////////////////////////////// */}
 
       <div
-        className={`${props.sidebarType === "2p" && classes2P.sidebar} ${
-          props.sidebarType === "3p" && classes3P.sidebar
+        className={`${sidebarType === "2p" && classes2P.sidebar} ${
+          sidebarType === "3p" && classes3P.sidebar
         } ${
           side1
             ? `open`
-            : `${props.sidebarType === "2p" && classes2P.closed} ${
-                props.sidebarType === "3p" && classes3P.closed
+            : `${sidebarType === "2p" && classes2P.closed} ${
+                sidebarType === "3p" && classes3P.closed
               }`
         } `}
       >
-        <ManaColors player="p1" bg={classes2P.ManaColorsBg} />
+        <ManaColors player="p1" position='rotateP1' bg={`${sidebarType === '2p' && classes2P.ManaColorsBg}
+         ${sidebarType === '3p' && [classes3P.ManaColorsBgRight,classes3P.ManaColorsBg]}`} />
 
         <img
           onClick={toggleSidebar.bind(null, "s1")}
           className={`h-11 w-11 
-            ${props.sidebarType === "2p" && classes2P.sideArrowTop}
-            ${props.sidebarType === "3p" && classes3P.sideArrowP1} 
+            ${sidebarType === "2p" && classes2P.sideArrowTop}
+            ${sidebarType === "3p" && classes3P.sideArrowP1} 
             ${
               side1
-                ? `${props.sidebarType === "2p" && classes2P.arrowReverse} ${
-                    props.sidebarType === "3p" && classes3P.arrowReverse
+                ? `${sidebarType === "2p" && classes2P.arrowReverse} ${
+                    sidebarType === "3p" && classes3P.arrowReverse
                   }`
-                : `${props.sidebarType === "2p" && classes2P.goBackArrow} ${
-                    props.sidebarType === "3p" && classes3P.goBackArrow
+                : `${sidebarType === "2p" && classes2P.goBackArrow} ${
+                    sidebarType === "3p" && classes3P.goBackArrow
                   } `
             }
             `}
@@ -75,13 +77,13 @@ function Sidebar(props) {
       {/* ////////// PLAYER 2 //////////////// */}
 
       <div
-        className={`${props.sidebarType === "2p" && classes2P.sidebar2} ${
-          props.sidebarType === "3p" && classes3P.sidebar2
+        className={`${sidebarType === "2p" && classes2P.sidebar2} ${
+          sidebarType === "3p" && classes3P.sidebar2
         } ${
           side2
             ? `open`
-            : `${props.sidebarType === "2p" && classes2P.closed} ${
-                props.sidebarType === "3p" && classes3P.closed
+            : `${sidebarType === "2p" && classes2P.closed} ${
+                sidebarType === "3p" && classes3P.closed
               }`
         } `}
       >
@@ -90,15 +92,15 @@ function Sidebar(props) {
         <img
           onClick={toggleSidebar.bind(null, "s2")}
           className={`h-11 w-11 
-            ${props.sidebarType === "2p" && classes2P.sideArrowBottom}
-            ${props.sidebarType === "3p" && classes3P.sideArrowP2} 
+            ${sidebarType === "2p" && classes2P.sideArrowBottom}
+            ${sidebarType === "3p" && classes3P.sideArrowP2} 
             ${
               side2
-                ? `${props.sidebarType === "2p" && classes2P.arrowReverse2} ${
-                    props.sidebarType === "3p" && classes3P.arrowReverse2
+                ? `${sidebarType === "2p" && classes2P.arrowReverse2} ${
+                    sidebarType === "3p" && classes3P.arrowReverse2
                   }`
-                : `${props.sidebarType === "2p" && classes2P.goBackArrow2} ${
-                    props.sidebarType === "3p" && classes3P.goBackArrow2
+                : `${sidebarType === "2p" && classes2P.goBackArrow2} ${
+                    sidebarType === "3p" && classes3P.goBackArrow2
                   } `
             }
             `}
@@ -109,7 +111,7 @@ function Sidebar(props) {
 
       {/* //////////////// PLAYER 3 ///////////////////////////// */}
 
-      {props.sidebarType === "3p" && (
+      {sidebarType === "3p" && (
         <div
           className={`${classes3P.sidebar3} ${
             side3 ? `open` : `${classes3P.closed}`
