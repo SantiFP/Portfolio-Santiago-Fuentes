@@ -114,11 +114,13 @@ function Sidebar(props) {
 
       {sidebarType === "3p" && (
         <div
-          className={`${classes3P.sidebar3} ${
+          className={`${classes3P.sidebar3}  ${
             side3 ? `open` : `${classes3P.closed}`
           }`}
         >
-          <ManaColors player="p1" bg={classes3P.ManaColorsBg} />
+          <ManaColors player="p3" position={`${sidebarType === '3p' ? 'P3-3P' : sidebarType === '2p' && '2P'}`} 
+          bg={`${sidebarType === '2p' ? classes2P.ManaColorsBg : sidebarType === '3p' && classes3P.ManaColorsBg}`} />
+
           <img
             onClick={toggleSidebar.bind(null, "s3")}
             className={`h-11 w-11 ${classes3P.sideArrowP3} ${

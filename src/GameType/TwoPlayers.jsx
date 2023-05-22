@@ -7,7 +7,7 @@ import Sidebar from "../Sidebar/Sidebar";
 
 const TwoPlayers = () => {
   const navigate = useNavigate();
-  const { state: colorsState, dispatch: dispatchColors } =useContext(ColorsContext);
+  const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
   const { state: lifes, dispatch: dispatchLifes } = useContext(LifeCounterCtx);
 
   const [colorsStateP1, colorsStateP2] = colorsState;

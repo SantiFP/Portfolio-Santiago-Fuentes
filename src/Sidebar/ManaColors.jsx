@@ -11,26 +11,50 @@ const ManaColors = (props) => {
     setSelected(img);
   };
 
-  const {position} = props;
-
-  console.log(position);
+  const { position } = props;
 
   return (
     <form
       className={` h-full pt-3 pl-1 pointer ${props.bg}  
-      ${(position === 'P1-3P' || position === 'P2-3P') && ' lg:w-auto '}`}
+      ${(position === "P1-3P" || position === "P2-3P") && " lg:w-auto "}`}
     >
       <div
-        className={`${ position === '2P' && 'flex flex-wrap space-x-2 space-y-4'} 
-        ${position === "P1-3P" && `${classes3P.rotateRight} space-x-3 ml-2 space-y-4`}
-        ${position === "P2-3P" && `${classes3P.rotateLeft} space-x-3 ml-2 space-y-4`}
+        className={`${
+          position === "2P" && "flex flex-wrap space-x-2 space-y-4"
+        } 
+        ${
+          position === "P1-3P" &&
+          `${classes3P.rotateRight} space-x-3 ml-2 space-y-4`
+        }
+        ${
+          position === "P2-3P" &&
+          `${classes3P.rotateLeft} space-x-3 ml-2 space-y-4`
+        }
+        ${
+          position === "P3-3P" &&
+          ` flex flex-row flex-wrap pb-6  space-x-3  space-y-4`
+        }
+
         `}
       >
         <img
-          className={`${position === "2P" ? "ml-2 mt-4 " : (position === 'P1-3P' || position === 'P2-3P') && ' ml-[0.65rem] mt-4 '}${
+          className={`${
+            position === "2P"
+              ? "ml-2 mt-4 "
+              : (position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position == "P3-3P") &&
+                " ml-[0.65rem] mt-4 "
+          } ${
             selected === 1
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
-              :  "w-[4.5rem] h-[4.5rem]"
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
+              : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/blue.png"
           alt="blue"
@@ -42,8 +66,14 @@ const ManaColors = (props) => {
         <img
           className={`${position === "2P" && "ml-2 "} ${
             selected === 2
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
-              :  "w-[4.5rem] h-[4.5rem]"
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
+              : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/white.png"
           alt="white"
@@ -55,7 +85,13 @@ const ManaColors = (props) => {
         <img
           className={`${position === "2P" && " ml-2 "}${
             selected === 3
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/green.png"
@@ -68,7 +104,13 @@ const ManaColors = (props) => {
         <img
           className={`${position === "2P" && "ml-2"} ${
             selected === 4
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black.png"
@@ -81,8 +123,14 @@ const ManaColors = (props) => {
         <img
           className={`${position === "2P" && " ml-2 "}${
             selected === 5
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
-              :  "w-[4.5rem] h-[4.5rem]"
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
+              : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/red.png"
           alt="red"
@@ -95,8 +143,14 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 6
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
-              :  "w-[4.5rem] h-[4.5rem]"
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
+              : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/blue-and-white.png"
           alt="b&w"
@@ -108,7 +162,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 7
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-green.png"
@@ -121,7 +181,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 8
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/blue-and-red.png"
@@ -134,7 +200,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 9
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-red.png"
@@ -147,7 +219,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 10
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/red-and-white.png"
@@ -160,7 +238,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 11
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-white.png"
@@ -173,7 +257,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 12
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           } `}
           src="/mana symbols/black-and-blue.png"
@@ -186,7 +276,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 13
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/green-and-blue.png"
@@ -199,7 +295,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 14
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/green-and-white.png"
@@ -212,7 +314,13 @@ const ManaColors = (props) => {
         <img
           className={`${
             selected === 15
-              ? ` ${position === "P1-3P" || position === 'P2-3P' ? classes3P.selectedImg : position === '2P' && classes2P.selectedImg} `
+              ? ` ${
+                  position === "P1-3P" ||
+                  position === "P2-3P" ||
+                  position === "P3-3P"
+                    ? classes3P.selectedImg
+                    : position === "2P" && classes2P.selectedImg
+                } `
               : "w-[4.5rem] h-[4.5rem]"
           }`}
           src="/mana symbols/red-and-green.png"
@@ -222,7 +330,7 @@ const ManaColors = (props) => {
             imgClick(15);
           }}
         />
-        </div>
+      </div>
     </form>
   );
 };

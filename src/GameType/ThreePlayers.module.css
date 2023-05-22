@@ -82,6 +82,10 @@
   animation: enterLogo 1s ease-in-out;
 }
 
+.bgWhite {
+  background-color: #e1c54a;
+}
+
 @keyframes up {
   from {
     transform: translateY(-100%) rotate(180deg);
@@ -155,3 +159,5 @@
     transform: rotate(90deg) rotate(180deg);
   }
 }
+
+
