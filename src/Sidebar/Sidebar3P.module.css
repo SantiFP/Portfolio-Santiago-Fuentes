@@ -39,28 +39,30 @@
   background-color: #fff;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s ease-in-out;
-  transform: translateX(0);
+  transform: translateX(0) rotate(180deg);
 }
 
 .sidebar2.closed {
-  transform: translateY(100%);
+  transform: translateY(100%) rotate(180deg);
+
 }
 
 .arrowReverse2 {
-  transform: rotate(90deg);
+  transform: rotate(270deg);
   transition: transform 0.5s ease-in-out;
 }
 
 .goBackArrow2 {
-  transform: rotate(-90deg);
-
+  transform: rotate(90deg);
   transition: transform 0.5s ease-in-out;
 }
 
 .sideArrowP2 {
-  position: absolute;
-  top: -7%;
-  left: 39%;
+  position: relative;
+  right: 0;
+  left: 0;
+  margin: auto;
+  top: -2.1%;
 }
 
 .sidebar3 {
@@ -101,15 +103,15 @@
   }
 
   .sideArrowP2 {
-    position: absolute;
-    top: -6.5%;
-    left: 47.2%;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
   }
-
+  
   .sideArrowP3 {
     position: absolute;
     top: 41%;
-
     left: 99%;
     right: 0;
     bottom: 0;
@@ -122,10 +124,21 @@
   transform: rotate(-90deg);
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 31rem;
   position: relative;
   right: 7.5rem;
-  top: 6rem;
+  top: 4.5rem;
+}
+.rotateLeft {
+  transform: rotate(-90deg);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 31rem;
+  position: relative;
+  top: 3.7rem;
+  right: 7.5rem;
 }
 
 .selectedImg {
@@ -139,7 +152,7 @@
 @keyframes selection {
   to {
     margin-left: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
   }
 }
 
@@ -157,5 +170,18 @@
   background-size: center center;
   background-repeat: no-repeat;
   overflow: scroll;
+  width: 25.8rem;
 }
+
+.ManaColorsBgLeft {
+  background-color: rgb(6, 14, 30);
+  background-image: url("/magic-logo-transparent-right.png");
+  background-size: center center;
+  background-repeat: no-repeat;
+  overflow: scroll;
+  width: 25.8rem;
+}
+
+
+
 

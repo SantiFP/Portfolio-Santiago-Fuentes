@@ -51,8 +51,8 @@ function Sidebar(props) {
               }`
         } `}
       >
-        <ManaColors player="p1" position='rotateP1' bg={`${sidebarType === '2p' && classes2P.ManaColorsBg}
-         ${sidebarType === '3p' && [classes3P.ManaColorsBgRight,classes3P.ManaColorsBg]}`} />
+        <ManaColors player="p1" position={`${sidebarType === '3p' ? 'P1-3P' : sidebarType === '2p' && '2P'}`} 
+        bg={`${sidebarType === '2p' ? classes2P.ManaColorsBg : sidebarType === '3p' && classes3P.ManaColorsBgRight}`} />
 
         <img
           onClick={toggleSidebar.bind(null, "s1")}
@@ -77,7 +77,7 @@ function Sidebar(props) {
       {/* ////////// PLAYER 2 //////////////// */}
 
       <div
-        className={`${sidebarType === "2p" && classes2P.sidebar2} ${
+        className={`${sidebarType === "2p" && classes2P.sidebar2} ${sidebarType === '3p' && ' rotate-180 '} ${
           sidebarType === "3p" && classes3P.sidebar2
         } ${
           side2
@@ -87,7 +87,8 @@ function Sidebar(props) {
               }`
         } `}
       >
-        <ManaColors player="p2" bg={classes2P.ManaColorsBg} />
+        <ManaColors player="p2" position={`${sidebarType === '3p' ? 'P2-3P' : sidebarType === '2p' && '2P'}`} 
+        bg={`${sidebarType === '2p' ? classes2P.ManaColorsBg : sidebarType === '3p' && classes3P.ManaColorsBgLeft}`} />
 
         <img
           onClick={toggleSidebar.bind(null, "s2")}
