@@ -32,7 +32,7 @@ const ManaColors = (props) => {
         }
         ${
           position === "P3-3P" &&
-          ` flex flex-row flex-wrap pb-6  space-x-3  space-y-4`
+          ` flex flex-row flex-wrap pb-6 space-x-2  space-y-4`
         }
 
         `}

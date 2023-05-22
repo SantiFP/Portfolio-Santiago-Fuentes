@@ -394,6 +394,7 @@ export const MyColorProvider = (props) => {
 
   const [state, dispatch] = useReducer(reducer, initialColors);
 
+
   const colorsHandler = {
     state,
     dispatch,
