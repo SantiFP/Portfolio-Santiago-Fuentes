@@ -369,22 +369,22 @@ export const MyColorProvider = (props) => {
           case "p1":
             return state.map((el,i) => i === 0 ? ({
               color1P1: "bg-green-800",
-              color2P1: "bg-red-800",
+              color2P1: "bg-red-600",
             }) : el );
           case "p2":
             return state.map((el,i) => i === 1 ? ({
               color1P2: "bg-green-800",
-              color2P2: "bg-red-800",
+              color2P2: "bg-red-600",
             }) : el );
           case "p3":
             return state.map((el,i) => i === 2 ? ({
               color1P3:"bg-green-800",
-              color2P3:"bg-red-800",
+              color2P3:"bg-red-600",
             }) : el );
           case "p4":
             return state.map((el,i) => i === 3 ? ({
               color1P4: "bg-green-800",
-              color2P4: "bg-red-800",
+              color2P4: "bg-red-600",
             }) : el );
         }
       default:
