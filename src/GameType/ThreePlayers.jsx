@@ -16,9 +16,6 @@ const ThreePlayers = () => {
   const { color1P2, color2P2 } = colorsStateP2;
   const { color1P3, color2P3 } = colorsStateP3;
 
-  console.log(color1P3);
-  console.log(color2P3);
-
   const increment = (player) => {
     player === "p1" && dispatchLifes({ player: "p1", type: "increment" });
     player === "p2" && dispatchLifes({ player: "p2", type: "increment" });

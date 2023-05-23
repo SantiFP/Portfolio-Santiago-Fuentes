@@ -66,6 +66,16 @@ const counterReducer = (state, action) => {
         throw new Error();
     }
   }
+  if (action.player === "p4") {
+    switch (action.type) {
+      case "increment":
+        return { ...state, lifesP4: state.lifesP4 + 1 };
+      case "decrement":
+        return { ...state, lifesP4: state.lifesP4 - 1 };
+      default:
+        throw new Error();
+    }
+  }
 };
 
 export const LifeCounterProvider = (props) => {

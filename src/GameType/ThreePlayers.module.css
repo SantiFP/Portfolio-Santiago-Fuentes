@@ -12,6 +12,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  color: white;
 }
 
 .grid1A {
@@ -46,7 +47,6 @@
 }
 
 .p1lifes {
-  color: white;
   position: absolute;
   right: 0;
   left: 0;
@@ -55,13 +55,11 @@
 }
 
 .p2lifes {
-  color: white;
   position: absolute;
   top: 55%;
   animation: fromLeft 1s 0s ease-in-out, numberRotateLeft 5s 1s linear infinite;
 }
 .p3lifes {
-  color: white;
   position: absolute;
   top: 55%;
   animation: fromRight 1s 0s ease-in-out, numberRotateRight 5s 1s linear infinite;

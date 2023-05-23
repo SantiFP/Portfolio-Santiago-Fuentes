@@ -13,6 +13,7 @@ const Home = () => {
   const startPlaying = () => {
     selectedPlayers === 2 && navigate("twoplayers");
     selectedPlayers === 3 && navigate("threeplayers");
+    selectedPlayers === 4 && navigate("fourplayers");
   };
 
   const playersSelectionHandler = (e) => {

@@ -1,0 +1,212 @@
+.grid4P {
+  display: grid;
+  grid-template-areas:
+    "p1a p1b p2a p2b"
+    "p1a p1b p2a p2b"
+    "p3a p3b p4a p4b"
+    "p3a p3b p4a p4b";
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-size: 8rem;
+  color: white;
+}
+
+.centerLogo {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  animation: centerLogo 1s ease-in-out;
+}
+
+.grid1A {
+  background-color: blue;
+  grid-area: p1a;
+  border-bottom: 1px solid rgb(198, 192, 192);
+  border-right: 1px solid rgb(198, 192, 192);
+}
+
+.grid2A {
+  background-color: red;
+  grid-area: p1b;
+  border-bottom: 1px solid rgb(198, 192, 192);
+  border-right: 1px solid rgb(198, 192, 192);
+}
+
+.grid1B {
+  background-color: rgb(126, 54, 126);
+  grid-area: p2a;
+  border-bottom: 1px solid rgb(198, 192, 192);
+  border-right: 1px solid rgb(198, 192, 192);
+}
+
+.grid2B {
+  background-color: rgb(129, 129, 16);
+  grid-area: p2b;
+  border-bottom: 1px solid rgb(198, 192, 192);
+}
+
+.grid1C {
+  background-color: rgb(11, 65, 47);
+  grid-area: p3a;
+  border-right: 1px solid rgb(198, 192, 192);
+}
+
+.grid2C {
+  background-color: green;
+  grid-area: p3b;
+  border-right: 1px solid rgb(198, 192, 192);
+}
+
+.grid1D {
+  background-color: rgb(121, 78, 23);
+  grid-area: p4a;
+  border-right: 1px solid rgb(198, 192, 192);
+}
+
+.grid2D {
+  background-color: rgb(26, 81, 102);
+  grid-area: p4b;
+}
+
+.p1lifes {
+  pointer-events: none;
+  position: absolute;
+  left: 11%;
+  top: 12%;
+  animation: fromLeft 1s 0s ease-in-out, numberRotateLeft 5s 1s linear infinite;
+}
+
+.p2lifes {
+  pointer-events: none;
+  position: absolute;
+  right: 11%;
+  top: 12%;
+  animation: fromRight 1s 0s ease-in-out,
+    numberRotateRight 5s 1s linear infinite;
+}
+
+.p3lifes {
+  pointer-events: none;
+  position: absolute;
+  top: 65%;
+  left: 11%;
+  animation: fromLeftClock 1s 0s ease-in-out,
+    numberRotateLeftClock 5s 1s linear infinite;
+}
+
+.p4lifes {
+  pointer-events: none;
+  position: absolute;
+  right: 11%;
+  top: 65%;
+  color: black;
+
+  animation: fromRightClock 1s 0s ease-in-out,
+    numberRotateRightClock 5s 1s linear infinite;
+}
+
+@keyframes fromLeft {
+  from {
+    transform: translateX(-100%) rotate(-180deg) rotate(-90deg);
+  }
+  to {
+    transform: translateX(7px) rotate(-180deg) rotate(-90deg);
+  }
+}
+@keyframes numberRotateLeft {
+  from {
+    transform: rotate(0deg) translateX(7px) rotate(-90deg) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(7px) rotate(-90deg) rotate(-180deg);
+  }
+}
+
+@keyframes fromLeftClock {
+  from {
+    transform: translateX(-100%) rotate(-180deg) rotate(-90deg);
+  }
+  to {
+    transform: translateX(-7px) rotate(-180deg) rotate(-90deg);
+  }
+}
+@keyframes numberRotateLeftClock {
+  from {
+    transform: rotate(0deg) translateX(-7px) rotate(-90deg) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-7px) rotate(-90deg) rotate(-180deg);
+  }
+}
+
+@keyframes fromRight {
+  from {
+    transform: translateX(100%) rotate(180deg) rotate(90deg);
+  }
+  to {
+    transform: translateX(-7px) rotate(180deg) rotate(90deg);
+  }
+}
+@keyframes numberRotateRight {
+  from {
+    transform: rotate(0deg) translateX(-7px) rotate(90deg) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(-7px) rotate(90deg) rotate(-180deg);
+  }
+}
+
+@keyframes fromRightClock {
+  from {
+    transform: translateX(100%) rotate(180deg) rotate(90deg);
+  }
+  to {
+    transform: translateX(7px) rotate(180deg) rotate(90deg);
+  }
+}
+@keyframes numberRotateRightClock {
+  from {
+    transform: rotate(0deg) translateX(7px) rotate(90deg) rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(7px) rotate(90deg) rotate(-180deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .p1lifes {
+    pointer-events: none;
+    position: absolute;
+    left: 21%;
+    top: 12%;
+    animation: fromLeft 1s 0s ease-in-out, numberRotateLeft 5s 1s linear infinite;
+  }
+  
+  .p2lifes {
+    pointer-events: none;
+    position: absolute;
+    right: 21%;
+    top: 12%;
+    animation: fromRight 1s 0s ease-in-out,
+      numberRotateRight 5s 1s linear infinite;
+  }
+  
+  .p3lifes {
+    pointer-events: none;
+    position: absolute;
+    left: 21%;
+    top: 65%;
+    animation: fromLeftClock 1s 0s ease-in-out,
+      numberRotateLeftClock 5s 1s linear infinite;
+  }
+  
+  .p4lifes {
+    pointer-events: none;
+    position: absolute;
+    right: 21%;
+    top: 65%;
+    animation: fromRightClock 1s 0s ease-in-out,
+      numberRotateRightClock 5s 1s linear infinite;
+  }
+}
