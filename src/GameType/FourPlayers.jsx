@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import { LifeCounterCtx } from "../Store/LifeStore";
 import classes from "./FourPlayers.module.css";
+import Sidebar from '../Sidebar/Sidebar';
 
 const FourPlayers = () => {
   const navigate = useNavigate();
@@ -37,62 +38,64 @@ const FourPlayers = () => {
   };
 
   return (
-    <div className={`${classes.grid4P}`}>
-      {/* /////////////////// PLAYER 1 /////////////////////////////////// */}
-      <div
-        onClick={decrement.bind(null, "p1")}
-        className={`${classes.grid1A}`}
-      ></div>
-      <div
-        onClick={increment.bind(null, "p1")}
-        className={`${classes.grid2A} `}
-      ></div>
-      <p className={`${classes.p1lifes} pointer-events-none`}>
-        {lifesState.lifesP1}
-      </p>
-      <img
-        className={`h-14 w-14 ${classes.centerLogo}`}
-        src="/magic-logo-center.png"
-        alt="centerLogo"
-        onClick={goHome}
-      />
+    <Sidebar sidebarType='4p'>
+      <div className={`${classes.grid4P}`}>
+        {/* /////////////////// PLAYER 1 /////////////////////////////////// */}
+        <div
+          onClick={decrement.bind(null, "p1")}
+          className={`${classes.grid1A}`}
+        ></div>
+        <div
+          onClick={increment.bind(null, "p1")}
+          className={`${classes.grid2A} `}
+        ></div>
+        <p className={`${classes.p1lifes} pointer-events-none`}>
+          {lifesState.lifesP1}
+        </p>
+        <img
+          className={`h-14 w-14 ${classes.centerLogo}`}
+          src="/magic-logo-center.png"
+          alt="centerLogo"
+          onClick={goHome}
+        />
 
-      {/* ////////////////////////PLAYER 2///////////////////////////////// */}
+        {/* ////////////////////////PLAYER 2///////////////////////////////// */}
 
-      <div
-        onClick={increment.bind(null, "p2")}
-        className={`${classes.grid1B}`}
-      ></div>
-      <div
-        onClick={decrement.bind(null, "p2")}
-        className={`${classes.grid2B}`}
-      ></div>
-      <p className={`${classes.p2lifes}`}>{lifesState.lifesP2}</p>
+        <div
+          onClick={increment.bind(null, "p2")}
+          className={`${classes.grid1B}`}
+        ></div>
+        <div
+          onClick={decrement.bind(null, "p2")}
+          className={`${classes.grid2B}`}
+        ></div>
+        <p className={`${classes.p2lifes}`}>{lifesState.lifesP2}</p>
 
-      {/* ///////////////////////////PLAYER 3/////////////////////////////////// */}
+        {/* ///////////////////////////PLAYER 3/////////////////////////////////// */}
 
-      <div
-        onClick={decrement.bind(null, "p3")}
-        className={`${classes.grid1C}`}
-      ></div>
-      <div
-        onClick={increment.bind(null, "p3")}
-        className={`${classes.grid2C}`}
-      ></div>
-      <p className={`${classes.p3lifes}`}>{lifesState.lifesP3}</p>
+        <div
+          onClick={decrement.bind(null, "p3")}
+          className={`${classes.grid1C}`}
+        ></div>
+        <div
+          onClick={increment.bind(null, "p3")}
+          className={`${classes.grid2C}`}
+        ></div>
+        <p className={`${classes.p3lifes}`}>{lifesState.lifesP3}</p>
 
-      {/* ///////////////////////////PLAYER 4/////////////////////////////////// */}
+        {/* ///////////////////////////PLAYER 4/////////////////////////////////// */}
 
-      <div
-        onClick={increment.bind(null, "p4")}
-        className={`${classes.grid1D}`}
-      ></div>
-      <div
-        onClick={decrement.bind(null, "p4")}
-        className={`${classes.grid2D}`}
-      ></div>
-      <p className={`${classes.p4lifes}`}>{lifesState.lifesP4}</p>
-    </div>
+        <div
+          onClick={increment.bind(null, "p4")}
+          className={`${classes.grid1D}`}
+        ></div>
+        <div
+          onClick={decrement.bind(null, "p4")}
+          className={`${classes.grid2D}`}
+        ></div>
+        <p className={`${classes.p4lifes}`}>{lifesState.lifesP4}</p>
+      </div>
+    </Sidebar>
   );
 };
 

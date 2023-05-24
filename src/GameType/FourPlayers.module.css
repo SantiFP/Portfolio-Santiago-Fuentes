@@ -100,8 +100,6 @@
   position: absolute;
   right: 11%;
   top: 65%;
-  color: black;
-
   animation: fromRightClock 1s 0s ease-in-out,
     numberRotateRightClock 5s 1s linear infinite;
 }
