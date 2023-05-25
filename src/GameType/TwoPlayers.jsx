@@ -15,13 +15,11 @@ const TwoPlayers = () => {
   const { color1P2, color2P2 } = colorsStateP2;
 
   const decrement = (player) => {
-    player === "p1" && dispatchLifes({ type: "decrement", player: "p1" });
-    player === "p2" && dispatchLifes({ type: "decrement", player: "p2" });
+    dispatchLifes({ type: "decrement", player: player });
   };
 
   const increment = (player) => {
-    player === "p1" && dispatchLifes({ type: "increment", player: "p1" });
-    player === "p2" && dispatchLifes({ type: "increment", player: "p2" });
+    dispatchLifes({ type: "increment", player: player });
   };
 
   const goHome = () => {

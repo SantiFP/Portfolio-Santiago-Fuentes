@@ -19,6 +19,15 @@
   animation: centerLogo 1s ease-in-out;
 }
 
+@keyframes centerLogo {
+  from {
+    transform: translateX(-350%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .grid1A {
   grid-area: p1a;
   border-bottom: 1px solid rgb(198, 192, 192);
@@ -64,7 +73,6 @@
 .p1lifes {
   pointer-events: none;
   position: absolute;
-  left: 11%;
   top: 12%;
   animation: fromLeft 1s 0s ease-in-out, numberRotateLeft 5s 1s linear infinite;
 }
@@ -72,7 +80,6 @@
 .p2lifes {
   pointer-events: none;
   position: absolute;
-  right: 11%;
   top: 12%;
   animation: fromRight 1s 0s ease-in-out,
     numberRotateRight 5s 1s linear infinite;
@@ -82,7 +89,6 @@
   pointer-events: none;
   position: absolute;
   top: 65%;
-  left: 11%;
   animation: fromLeftClock 1s 0s ease-in-out,
     numberRotateLeftClock 5s 1s linear infinite;
 }
@@ -90,7 +96,6 @@
 .p4lifes {
   pointer-events: none;
   position: absolute;
-  right: 11%;
   top: 65%;
   animation: fromRightClock 1s 0s ease-in-out,
     numberRotateRightClock 5s 1s linear infinite;

@@ -17,15 +17,12 @@ const ThreePlayers = () => {
   const { color1P3, color2P3 } = colorsStateP3;
 
   const increment = (player) => {
-    player === "p1" && dispatchLifes({ player: "p1", type: "increment" });
-    player === "p2" && dispatchLifes({ player: "p2", type: "increment" });
-    player === "p3" && dispatchLifes({ player: "p3", type: "increment" });
+    dispatchLifes({ player: player, type: "increment" });
+    
   };
 
   const decrement = (player) => {
-    player === "p1" && dispatchLifes({ player: "p1", type: "decrement" });
-    player === "p2" && dispatchLifes({ player: "p2", type: "decrement" });
-    player === "p3" && dispatchLifes({ player: "p3", type: "decrement" });
+    dispatchLifes({ player: player, type: "decrement" });
   };
 
   const goHome = () => {
