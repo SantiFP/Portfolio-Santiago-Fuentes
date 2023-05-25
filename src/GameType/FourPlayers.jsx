@@ -52,7 +52,7 @@ const FourPlayers = () => {
         ></div>
         <p
           className={`${classes.p1lifes} 
-          ${lifesP1 > 20 && "left-[17%] md:left-[22%]"}
+          ${lifesP1 > 20 && "left-[12%] md:left-[22%]"}
           ${lifesP1 === 20 && "left-[12%] md:left-[22%]"}
           ${lifesP1 < 20 && lifesP1 >= 10 && "left-[14%] md:left-[23%]"}
           ${lifesP1 < 10 && lifesP1 >= 0 && "left-[19%] md:left-[24%]"}
@@ -83,7 +83,7 @@ const FourPlayers = () => {
           }`}
         ></div>
         <p className={`${classes.p2lifes}
-          ${lifesP2 > 20 && "right-[17%] md:right-[22%]"}
+          ${lifesP2 > 20 && "right-[12%] md:right-[22%]"}
           ${lifesP2 === 20 && "right-[12%] md:right-[22%]"}
           ${lifesP2 < 20 && lifesP2 >= 10 && "right-[14%] md:right-[23%]"}
           ${lifesP2 < 10 && lifesP2 >= 0 && "right-[19%] md:right-[24%]"}
@@ -106,7 +106,7 @@ const FourPlayers = () => {
         ></div>
         <p
           className={`${classes.p3lifes}  
-          ${lifesP3 > 20 && "left-[17%] md:left-[22%]"}
+          ${lifesP3 > 20 && "left-[12%] md:left-[22%]"}
           ${lifesP3 === 20 && "left-[12%] md:left-[22%]"}
           ${lifesP3 < 20 && lifesP3 >= 10 && "left-[14%] md:left-[23%]"}
           ${lifesP3 < 10 && lifesP3 >= 0 && "left-[19%] md:left-[24%]"}
@@ -131,7 +131,7 @@ const FourPlayers = () => {
           }`}
         ></div>
         <p className={`${classes.p4lifes}
-           ${lifesP4 > 20 && "right-[17%] md:right-[22%]"}
+           ${lifesP4 > 20 && "right-[12%] md:right-[22%]"}
            ${lifesP4 === 20 && "right-[12%] md:right-[22%]"}
            ${lifesP4 < 20 && lifesP4 >= 10 && "right-[14%] md:right-[23%]"}
            ${lifesP4 < 10 && lifesP4 >= 0 && "right-[19%] md:right-[24%]"}
