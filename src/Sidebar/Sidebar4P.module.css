@@ -31,14 +31,7 @@
   left: 39%;
 }
 
-.ManaColorsBgRight {
-  background-color: rgb(6, 14, 30);
-  background-image: url("/magic-logo-transparent-right.png");
-  background-size: center center;
-  background-repeat: no-repeat;
-  overflow: scroll;
-  width: 25.8rem;
-}
+
 
 .sidebar2 {
   position: fixed;
@@ -72,14 +65,7 @@
   left: 38%;
   top: -0.8rem;
 }
-.ManaColorsBgLeft {
-  background-color: rgb(6, 14, 30);
-  background-image: url("/magic-logo-transparent-right.png");
-  background-size: center center;
-  background-repeat: no-repeat;
-  overflow: scroll;
-  width: 25.8rem;
-}
+
 
 .sidebar3 {
   position: fixed;
@@ -175,6 +161,27 @@
   }
 }
 
+.ManaColorsBgRight {
+  background-color: rgb(6, 14, 30);
+  background-image: url("/magic-logo-transparent-right.png");
+  background-size: center center;
+  background-repeat: no-repeat;
+  overflow: scroll;
+  width: 24.2rem;
+}
+.ManaColorsBgLeft {
+  background-color: rgb(6, 14, 30);
+  background-image: url("/magic-logo-transparent-right.png");
+  background-size: center center;
+  background-repeat: no-repeat;
+  overflow: scroll;
+  width: 24.2rem;
+}
+
+
+
+
+
 
 
 
@@ -185,10 +192,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 31rem;
+  width: 29rem;
   position: relative;
-  right: 7.5rem;
-  top: 4.5rem;
+  right: 7rem;
+  top: 4rem;
 }
 .rotateLeft {
   transform: rotate(-90deg);
