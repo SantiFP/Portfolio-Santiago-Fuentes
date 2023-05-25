@@ -59,7 +59,7 @@ function Sidebar(props) {
         <ManaColors
           player="p1"
           position={`${
-            sidebarType === "3p" ? "P1-3P" : sidebarType === "2p" && "2P"
+            sidebarType === "3p" ? "P1-3P" : sidebarType === "2p" ? "2P" : 'P1-4P'
           }`}
           bg={`${
             sidebarType === "2p"
@@ -111,7 +111,7 @@ function Sidebar(props) {
         <ManaColors
           player="p2"
           position={`${
-            sidebarType === "3p" ? "P2-3P" : sidebarType === "2p" && "2P"
+            sidebarType === "3p" ? "P2-3P" : sidebarType === "2p" ? "2P" : 'P2-4P'
           }`}
           bg={`${
             sidebarType === "2p"
@@ -162,7 +162,7 @@ function Sidebar(props) {
           <ManaColors
             player="p3"
             position={`${
-              sidebarType === "3p" ? "P3-3P" : sidebarType === "2p" && "2P"
+              sidebarType === "3p" ? "P3-3P" : 'P3-4P'
             }`}
             bg={`${
               sidebarType === "2p"
@@ -206,7 +206,7 @@ function Sidebar(props) {
             side4 ? `open` : `${classes4P.closed}`
           }`}
         >
-          <ManaColors player="p4" position={`${sidebarType === '3p' ? 'P3-3P' : sidebarType === '2p' && '2P'}`} 
+          <ManaColors player="p4" position={`${sidebarType === '4p' && 'P4-4P' }`} 
           bg={classes4P.ManaColorsBgRight} />
 
           <img

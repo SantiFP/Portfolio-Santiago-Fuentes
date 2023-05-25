@@ -43,11 +43,15 @@ const FourPlayers = () => {
         {/* /////////////////// PLAYER 1 /////////////////////////////////// */}
         <div
           onClick={decrement.bind(null, "p1")}
-          className={`${classes.grid1A}`}
+          className={`${classes.grid1A} ${
+            color1P1 === "bgWhite" ? classes.bgWhite : color1P1
+          }`}
         ></div>
         <div
           onClick={increment.bind(null, "p1")}
-          className={`${classes.grid2A} `}
+          className={`${classes.grid2A}  ${
+            color2P1 === "bgWhite" ? classes.bgWhite : color2P1
+          }`}
         ></div>
         <p className={`${classes.p1lifes} pointer-events-none`}>
           {lifesState.lifesP1}
@@ -63,11 +67,15 @@ const FourPlayers = () => {
 
         <div
           onClick={increment.bind(null, "p2")}
-          className={`${classes.grid1B}`}
+          className={`${classes.grid1B}  ${
+            color1P2 === "bgWhite" ? classes.bgWhite : color1P2
+          }`}
         ></div>
         <div
           onClick={decrement.bind(null, "p2")}
-          className={`${classes.grid2B}`}
+          className={`${classes.grid2B}  ${
+            color2P2 === "bgWhite" ? classes.bgWhite : color2P2
+          }`}
         ></div>
         <p className={`${classes.p2lifes}`}>{lifesState.lifesP2}</p>
 
@@ -75,11 +83,15 @@ const FourPlayers = () => {
 
         <div
           onClick={decrement.bind(null, "p3")}
-          className={`${classes.grid1C}`}
+          className={`${classes.grid1C}  ${
+            color1P3 === "bgWhite" ? classes.bgWhite : color1P3
+          }`}
         ></div>
         <div
           onClick={increment.bind(null, "p3")}
-          className={`${classes.grid2C}`}
+          className={`${classes.grid2C}  ${
+            color2P3 === "bgWhite" ? classes.bgWhite : color2P3
+          }`}
         ></div>
         <p className={`${classes.p3lifes}`}>{lifesState.lifesP3}</p>
 
@@ -87,11 +99,15 @@ const FourPlayers = () => {
 
         <div
           onClick={increment.bind(null, "p4")}
-          className={`${classes.grid1D}`}
+          className={`${classes.grid1D}  ${
+            color1P4 === "bgWhite" ? classes.bgWhite : color1P4
+          }`}
         ></div>
         <div
           onClick={decrement.bind(null, "p4")}
-          className={`${classes.grid2D}`}
+          className={`${classes.grid2D}  ${
+            color2P4 === "bgWhite" ? classes.bgWhite : color2P4
+          }`}
         ></div>
         <p className={`${classes.p4lifes}`}>{lifesState.lifesP4}</p>
       </div>

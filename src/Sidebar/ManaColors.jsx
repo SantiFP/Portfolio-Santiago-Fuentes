@@ -2,7 +2,9 @@ import { useContext, useState } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import classes2P from "./Sidebar2P.module.css";
 import classes3P from "./Sidebar3P.module.css";
+import classes4P from "./Sidebar4P.module.css";
 import imagesArray from "./ImagesArray";
+
 
 const ManaColors = (props) => {
   const { dispatch } = useContext(ColorsContext);
@@ -20,7 +22,13 @@ const ManaColors = (props) => {
         className={`${position === "2P" && "flex flex-wrap space-x-2 space-y-4"} 
         ${position === "P1-3P" && `${classes3P.rotateRight} space-x-3 ml-2 space-y-4`}
         ${position === "P2-3P" && `${classes3P.rotateLeft} space-x-3 ml-2 space-y-4`}
-        ${ position === "P3-3P" && ` flex flex-row flex-wrap pb-6 space-x-2  space-y-4`}`}
+        ${ position === "P3-3P" && ` flex flex-row flex-wrap pb-6 space-x-2  space-y-4`}
+        ${position === "P1-4P" && `${classes4P.rotateLeft} space-x-3 ml-2 space-y-4`}
+        ${position === "P2-4P" && `${classes4P.rotateRight} space-x-3 ml-2 space-y-4`}
+        ${position === "P3-4P" && `${classes4P.rotateLeft} space-x-3 ml-2 space-y-4`}
+        ${position === "P4-4P" && `${classes4P.rotateRight} space-x-3 ml-2 space-y-4`}
+        `}
+        
       >
         {imagesArray.map((el, i) => {
           return (
@@ -30,8 +38,8 @@ const ManaColors = (props) => {
                   ? ` ${i <= 5 && "ml-2"} ${i === 0 && "mt-4"} `
                   : (position === "P1-3P" ||
                       position === "P2-3P" ||
-                      position == "P3-3P") &&
-                    `${i === 0 && "ml-[0.65rem] mt-4"}`
+                      position == "P3-3P") ?
+                    `${i === 0 && "ml-[0.65rem] mt-4"}` : `${i === 0 && "ml-[0.65rem] mt-4"}`
               } ${
                 selected === el.id
                   ? ` ${
@@ -39,7 +47,7 @@ const ManaColors = (props) => {
                       position === "P2-3P" ||
                       position === "P3-3P"
                         ? classes3P.selectedImg
-                        : position === "2P" && classes2P.selectedImg
+                        : position === "2P" ? classes2P.selectedImg : classes4P.selectedImg
                     } `
                   : "w-[4.5rem] h-[4.5rem]"
               }`}
