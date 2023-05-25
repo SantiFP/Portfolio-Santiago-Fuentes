@@ -63,7 +63,7 @@ const imagesArray = [
     id: 11,
     src: "/mana symbols/black-and-white.png",
     alt: "b&w",
-    type: "backAndWhite",
+    type: "blackAndWhite",
   },
   {
     id: 12,
