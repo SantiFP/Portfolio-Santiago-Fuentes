@@ -8,23 +8,24 @@ import Sidebar from "../Sidebar/Sidebar";
 const TwoPlayers = () => {
   const navigate = useNavigate();
   const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
-  const { state: lifes, dispatch: dispatchLifes } = useContext(LifeCounterCtx);
+  const { state: lifesState, dispatch: dispatchLifes } = useContext(LifeCounterCtx);
 
   const [colorsStateP1, colorsStateP2] = colorsState;
   const { color1P1, color2P1 } = colorsStateP1;
   const { color1P2, color2P2 } = colorsStateP2;
+  const {lifesP1,lifesP2} = lifesState;
 
   const decrement = (player) => {
-    dispatchLifes({ type: "decrement", player: player });
+    dispatchLifes({ player: player, type: "decrement"  });
   };
 
   const increment = (player) => {
-    dispatchLifes({ type: "increment", player: player });
+    dispatchLifes({ player: player, type: "increment"  });
   };
 
   const goHome = () => {
-    dispatchColors({ type: "reset" });
     navigate("/");
+    dispatchColors({ type: "reset" });
     dispatchLifes({ starting: "start", type: "20" });
   };
 
@@ -42,7 +43,7 @@ const TwoPlayers = () => {
           <p
             className={`absolute text-center text-white  w-fit  h-fit ${classes.rotate}`}
           >
-            {lifes.lifesP1}
+            {lifesP1}
           </p>
           <div
             onClick={decrement.bind(null, "p1")}
@@ -60,7 +61,7 @@ const TwoPlayers = () => {
           <p
             className={`absolute text-center text-white w-fit h-fit ${classes.place} `}
           >
-            {lifes.lifesP2}
+            {lifesP2}
           </p>
           <div
             onClick={increment.bind(null, "p2")}

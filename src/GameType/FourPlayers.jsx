@@ -8,10 +8,8 @@ import Sidebar from "../Sidebar/Sidebar";
 const FourPlayers = () => {
   const navigate = useNavigate();
 
-  const { state: colorsState, dispatch: dispatchColors } =
-    useContext(ColorsContext);
-  const { state: lifesState, dispatch: dispatchLifes } =
-    useContext(LifeCounterCtx);
+  const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
+  const { state: lifesState, dispatch: dispatchLifes } = useContext(LifeCounterCtx);
 
   const [colorsStateP1, colorsStateP2, colorsStateP3, colorsStateP4] = colorsState;
   const { color1P1, color2P1 } = colorsStateP1;
@@ -29,8 +27,8 @@ const FourPlayers = () => {
   };
 
   const goHome = () => {
-    dispatchColors({ type: "reset" });
     navigate("/");
+    dispatchColors({ type: "reset" });
     dispatchLifes({ starting: "start", type: "20" });
   };
 

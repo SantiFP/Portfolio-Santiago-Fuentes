@@ -21,10 +21,7 @@ const Home = () => {
   };
 
   const lifesSelectionHandler = (e) => {
-    selectedLifes = Number(e.target.value);
-    selectedLifes === 20 && dispatch({ type: "20",starting: 'start' });
-    selectedLifes === 30 && dispatch({ type: "30",starting: 'start' });
-    selectedLifes === 40 && dispatch({ type: "40" ,starting: 'start'});
+    dispatch({ type: e.target.value,starting: 'start' });
   };
 
   return (

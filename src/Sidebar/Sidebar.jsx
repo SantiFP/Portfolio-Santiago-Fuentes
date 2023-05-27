@@ -20,7 +20,7 @@ const reducer = (state, action) => {
     case "s3":
       return { ...state, side3: !state.side3 };
     case "s4":
-        return { ...state, side4: !state.side4 };
+      return { ...state, side4: !state.side4 };
     default:
       break;
   }
@@ -36,7 +36,7 @@ function Sidebar(props) {
     side === "s4" && dispatch({ type: "s4" });
   };
 
-  const { side1, side2, side3,side4 } = openSides;
+  const { side1, side2, side3, side4 } = openSides;
   const { sidebarType } = props;
 
   return (
@@ -44,7 +44,7 @@ function Sidebar(props) {
       <div>{props.children}</div>
 
       {/* /////////////////// PLAYER 1 ////////////////////////////////// */}
-      
+
       <div
         className={`${sidebarType === "2p" && classes2P.sidebar}
          ${sidebarType === "3p" && classes3P.sidebar} 
@@ -59,7 +59,11 @@ function Sidebar(props) {
         <ManaColors
           player="p1"
           position={`${
-            sidebarType === "3p" ? "P1-3P" : sidebarType === "2p" ? "2P" : 'P1-4P'
+            sidebarType === "3p"
+              ? "P1-3P"
+              : sidebarType === "2p"
+              ? "2P"
+              : "P1-4P"
           }`}
           bg={`${
             sidebarType === "2p"
@@ -111,7 +115,11 @@ function Sidebar(props) {
         <ManaColors
           player="p2"
           position={`${
-            sidebarType === "3p" ? "P2-3P" : sidebarType === "2p" ? "2P" : 'P2-4P'
+            sidebarType === "3p"
+              ? "P2-3P"
+              : sidebarType === "2p"
+              ? "2P"
+              : "P2-4P"
           }`}
           bg={`${
             sidebarType === "2p"
@@ -161,13 +169,9 @@ function Sidebar(props) {
         >
           <ManaColors
             player="p3"
-            position={`${
-              sidebarType === "3p" ? "P3-3P" : 'P3-4P'
-            }`}
+            position={`${sidebarType === "3p" ? "P3-3P" : "P3-4P"}`}
             bg={`${
-              sidebarType === "2p"
-                ? classes2P.ManaColorsBg
-                : sidebarType === "3p"
+              sidebarType === "3p"
                 ? classes3P.ManaColorsBg
                 : classes4P.ManaColorsBgLeft
             }`}
@@ -187,10 +191,10 @@ function Sidebar(props) {
                       : classes4P.arrowReverse3
                   }`
                 : `${
-                  sidebarType === "3p"
-                    ? classes3P.goBackArrow3
-                    : classes4P.goBackArrow3
-                }`
+                    sidebarType === "3p"
+                      ? classes3P.goBackArrow3
+                      : classes4P.goBackArrow3
+                  }`
             }`}
             src="/flecha-correcta.png"
             alt="arrow"
@@ -199,18 +203,21 @@ function Sidebar(props) {
       )}
 
       {/* //////////////// PLAYER 4 ///////////////////////////// */}
-      
-       {sidebarType === "4p" && (
+
+      {sidebarType === "4p" && (
         <div
           className={`${classes4P.sidebar4}  ${
             side4 ? `open` : `${classes4P.closed}`
           }`}
         >
-          <ManaColors player="p4" position={`${sidebarType === '4p' && 'P4-4P' }`} 
-          bg={classes4P.ManaColorsBgRight} />
+          <ManaColors
+            player="p4"
+            position={`${sidebarType === "4p" && "P4-4P"}`}
+            bg={classes4P.ManaColorsBgRight}
+          />
 
           <img
-            onClick={(toggleSidebar.bind(null, "s4"))}
+            onClick={toggleSidebar.bind(null, "s4")}
             className={`h-11 w-11 ${classes4P.sideArrowP4} ${
               side4 ? `${classes4P.arrowReverse4}` : `${classes4P.goBackArrow4}`
             }`}

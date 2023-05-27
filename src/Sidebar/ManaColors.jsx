@@ -15,9 +15,10 @@ const ManaColors = (props) => {
   };
 
   const { position } = props;
+  const positionsArray = ['P1-3P','P2-3P','P1-4P','P2-4P','P3-4P','P4-4P',]
 
   return (
-    <form className={` h-full pt-3 pl-1 pointer ${props.bg} ${(position === "P1-3P" || position === "P2-3P") && " lg:w-auto "}`}>
+    <form className={` h-full pt-3 pl-1 pointer ${props.bg} ${positionsArray.includes(position) && " lg:w-auto "}`}>
       <div
         className={`${position === "2P" && "flex flex-wrap space-x-2 space-y-4"} 
         ${position === "P1-3P" && `${classes3P.rotateRight} space-x-3 ml-2 space-y-4`}

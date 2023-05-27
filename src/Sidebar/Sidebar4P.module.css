@@ -28,7 +28,7 @@
   position: absolute;
   top: 0;
   margin-top: -1.98rem;
-  left: 39%;
+  left: 39.5%;
 }
 
 
@@ -62,7 +62,7 @@
 
 .sideArrowP2 {
   position: relative;
-  left: 38%;
+  left: 39.2%;
   top: -0.8rem;
 }
 
@@ -130,7 +130,7 @@
 .sideArrowP4 {
   position: absolute;
   top: -9%;
-  left: 39%;
+  left: 39.2%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -138,12 +138,12 @@
     position: absolute;
     top: 0;
     margin-top: -1.98rem;
-    left: 46.5%;
+    left: 47.2%;
   }
 
   .sideArrowP2 {
     position: relative;
-    left: 46.5%;
+    left: 47.2%;
     top: -0.8rem;
   }
 
@@ -157,7 +157,7 @@
   .sideArrowP4 {
     position: absolute;
     top: -9%;
-    left: 46.8%;
+    left: 47.2%;
   }
 }
 

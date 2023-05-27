@@ -15,6 +15,7 @@ const ThreePlayers = () => {
   const { color1P1, color2P1 } = colorsStateP1;
   const { color1P2, color2P2 } = colorsStateP2;
   const { color1P3, color2P3 } = colorsStateP3;
+  const {lifesP1,lifesP2,lifesP3} = lifesState;
 
   const increment = (player) => {
     dispatchLifes({ player: player, type: "increment" });
@@ -26,8 +27,8 @@ const ThreePlayers = () => {
   };
 
   const goHome = () => {
-    dispatchColors({ type: "reset" });
     navigate("/");
+    dispatchColors({ type: "reset" });
     dispatchLifes({ starting: "start", type: "20" });
   };
 
@@ -47,7 +48,7 @@ const ThreePlayers = () => {
           }`}
         ></div>
         <p className={`${classes.p1lifes} pointer-events-none`}>
-          {lifesState.lifesP1}
+          {lifesP1}
         </p>
         <img
           className={`h-14 w-14 ${classes.centerLogo}`}
@@ -77,7 +78,7 @@ const ThreePlayers = () => {
           ${lifesState.lifesP2 <= -10 && lifesState.lifesP2 > -18 && 'ml-[-0.5rem] left-[6.5%]  md:ml-[0] md:left-[19.7%]'}
           ${lifesState.lifesP2 <= -18 && 'ml-[-1rem] left-[6.5%] md:ml-[0] md:left-[19.7%]'}`}
         >
-          {lifesState.lifesP2}
+          {lifesP2}
         </p>
 
         <div
@@ -100,7 +101,7 @@ const ThreePlayers = () => {
         ${lifesState.lifesP3 <= -10 && lifesState.lifesP3 > -18 && 'mr-[-0.5rem] right-[6.5%]  md:mr-[0] md:right-[19.7%]'}
         ${lifesState.lifesP3 <= -18 && 'mr-[-1rem] right-[6.5%] md:mr-[0] md:right-[19.7%]'}`}
         >
-          {lifesState.lifesP3}
+          {lifesP3}
         </p>
       </div>
 
