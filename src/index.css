@@ -5,4 +5,8 @@
   .selectedImg {
     @apply w-[5.5rem] h-[5.5rem] ;
   }
+  .languages {
+    @apply absolute text-white text-lg flex flex-row justify-center w-full space-x-3 top-7 lg:w-fit lg:justify-normal lg:space-x-0 lg:right-8 lg:top-14 lg:flex lg:flex-col lg:space-y-1
+  }
 }
+

@@ -13,14 +13,14 @@ const TwoPlayers = () => {
   const [colorsStateP1, colorsStateP2] = colorsState;
   const { color1P1, color2P1 } = colorsStateP1;
   const { color1P2, color2P2 } = colorsStateP2;
-  const {lifesP1,lifesP2} = lifesState;
+  const { lifesP1, lifesP2 } = lifesState;
 
   const decrement = (player) => {
-    dispatchLifes({ player: player, type: "decrement"  });
+    dispatchLifes({ player: player, type: "decrement" });
   };
 
   const increment = (player) => {
-    dispatchLifes({ player: player, type: "increment"  });
+    dispatchLifes({ player: player, type: "increment" });
   };
 
   const goHome = () => {
@@ -31,7 +31,7 @@ const TwoPlayers = () => {
 
   return (
     <>
-      <Sidebar sidebarType='2p'>
+      <Sidebar sidebarType="2p">
         <div className={`relative overflow-hidden ${classes.grid}`}>
           <img
             onClick={goHome}
@@ -41,21 +41,17 @@ const TwoPlayers = () => {
           />
 
           <p
-            className={`absolute text-center text-white  w-fit  h-fit ${classes.rotate}`}
+            className={`absolute text-center text-white w-fit  h-fit ${classes.rotate}`}
           >
             {lifesP1}
           </p>
           <div
             onClick={decrement.bind(null, "p1")}
-            className={`${classes.grid1A} ${
-              color1P1 === "bgWhite" ? classes.bgWhite : color1P1
-            }`}
+            className={`${classes.grid1A} ${color1P1}`}
           ></div>
           <div
             onClick={increment.bind(null, "p1")}
-            className={`${classes.grid2A} ${
-              color2P1 === "bgWhite" ? classes.bgWhite : color2P1
-            }`}
+            className={`${classes.grid2A} ${color2P1}`}
           ></div>
 
           <p
@@ -65,15 +61,11 @@ const TwoPlayers = () => {
           </p>
           <div
             onClick={increment.bind(null, "p2")}
-            className={`${classes.grid1B} ${
-              color1P2 === "bgWhite" ? classes.bgWhite : color1P2
-            }`}
+            className={`${classes.grid1B} ${color1P2}`}
           ></div>
           <div
             onClick={decrement.bind(null, "p2")}
-            className={`${classes.grid2B} ${
-              color2P2 === "bgWhite" ? classes.bgWhite : color2P2
-            }`}
+            className={`${classes.grid2B} ${color2P2}`}
           ></div>
         </div>
       </Sidebar>

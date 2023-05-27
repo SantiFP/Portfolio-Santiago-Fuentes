@@ -86,3 +86,22 @@
     opacity: 1;
   }
 }
+
+
+.languages{
+  animation: languages 4s ease-in-out;
+}
+
+@keyframes languages {
+  0%{
+    opacity: 0;
+  }
+  
+  50%{
+    opacity: 0.05;
+  }
+ 
+  100%{
+    opacity: 1;
+  }
+}

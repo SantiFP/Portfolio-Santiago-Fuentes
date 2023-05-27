@@ -23,7 +23,7 @@ const ManaColors = (props) => {
         className={`${position === "2P" && "flex flex-wrap space-x-2 space-y-4"} 
         ${position === "P1-3P" && `${classes3P.rotateRight} space-x-3 ml-2 space-y-4`}
         ${position === "P2-3P" && `${classes3P.rotateLeft} space-x-3 ml-2 space-y-4`}
-        ${ position === "P3-3P" && ` flex flex-row flex-wrap pb-6 space-x-2  space-y-4`}
+        ${position === "P3-3P" && ` flex flex-row flex-wrap pb-6 space-x-2  space-y-4`}
         ${position === "P1-4P" && `${classes4P.rotateLeft} space-x-3 ml-2 space-y-4`}
         ${position === "P2-4P" && `${classes4P.rotateRight} space-x-3 ml-2 space-y-4`}
         ${position === "P3-4P" && `${classes4P.rotateLeft} space-x-3 ml-2 space-y-4`}

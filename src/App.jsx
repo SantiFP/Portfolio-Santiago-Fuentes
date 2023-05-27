@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./home/Home";
+import Home from "./Home/Home";
 import TwoPlayers from "./GameType/TwoPlayers";
 import ThreePlayers from "./GameType/ThreePlayers";
 import FourPlayers from "./GameType/FourPlayers";

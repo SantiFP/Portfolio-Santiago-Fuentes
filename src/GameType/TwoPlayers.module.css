@@ -67,10 +67,6 @@
   font-size: 11rem;
 }
 
-.bgWhite {
-  background-color: #e1c54a;
-}
-
 @keyframes up {
   from {
     transform: translateY(-100%) rotate(180deg);

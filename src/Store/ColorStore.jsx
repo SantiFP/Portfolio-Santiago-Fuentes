@@ -56,23 +56,23 @@ export const MyColorProvider = (props) => {
         switch (action.player) {
           case "p1":
             return state.map((el,i) => i === 0 ? ({
-              color1P1: "bgWhite",
-              color2P1: "bgWhite",
+              color1P1: "bg-whiteMana",
+              color2P1: "bg-whiteMana",
             }) : el );
           case "p2":
             return state.map((el,i) => i === 1 ? ({
-              color1P2: "bgWhite",
-              color2P2: "bgWhite",
+              color1P2: "bg-whiteMana",
+              color2P2: "bg-whiteMana",
             }) : el);
           case "p3":
             return state.map((el,i) => i === 2 ? ({
-              color1P3: "bgWhite",
-              color2P3: "bgWhite",
+              color1P3: "bg-whiteMana",
+              color2P3: "bg-whiteMana",
             }) : el );
           case "p4":
             return state.map((el,i) => i === 3 ? ({
-              color1P4: "bgWhite",
-              color2P4: "bgWhite",
+              color1P4: "bg-whiteMana",
+              color2P4: "bg-whiteMana",
             }) : el );
         }    
 
@@ -153,22 +153,22 @@ export const MyColorProvider = (props) => {
         switch(action.player){
           case "p1":
             return state.map((el,i) => i === 0 ? ({
-              color1P1: "bgWhite",
+              color1P1: "bg-whiteMana",
               color2P1: "bg-blue-500",
             }) : el );
           case "p2":
             return state.map((el,i) => i === 1 ? ({
-              color1P2: "bgWhite",
+              color1P2: "bg-whiteMana",
               color2P2: "bg-blue-500",
             }) : el );
           case "p3":
             return state.map((el,i) => i === 2 ? ({
-              color1P3: "bgWhite",
+              color1P3: "bg-whiteMana",
               color2P3: "bg-blue-500",
             }) : el );
           case "p4":
             return state.map((el,i) => i === 3 ? ({
-              color1P4: "bgWhite",
+              color1P4: "bg-whiteMana",
               color2P4: "bg-blue-500",
             }) : el );
         }
@@ -249,22 +249,22 @@ export const MyColorProvider = (props) => {
         switch(action.player){
           case "p1":
             return state.map((el,i) => i === 0 ? ({
-              color1P1: "bgWhite",
+              color1P1: "bg-whiteMana",
               color2P1: "bg-red-600",
             }) : el);
           case "p2":
             return state.map((el,i) => i === 1 ? ({
-              color1P2: "bgWhite",
+              color1P2: "bg-whiteMana",
               color2P2: "bg-red-600",
             }) : el );
           case "p3":
             return state.map((el,i) => i === 2 ? ({
-              color1P3: "bgWhite",
+              color1P3: "bg-whiteMana",
               color2P3: "bg-red-600",
             }) : el );
           case "p4":
             return state.map((el,i) => i === 3 ? ({
-              color1P4: "bgWhite",
+              color1P4: "bg-whiteMana",
               color2P4: "bg-red-600",
             }) : el );
         }
@@ -274,22 +274,22 @@ export const MyColorProvider = (props) => {
           case "p1":
             return state.map((el,i) => i === 0 ? ({
               color1P1: "bg-zinc-900",
-              color2P1: "bgWhite",
+              color2P1: "bg-whiteMana",
             }) : el );
           case "p2":
             return state.map((el,i) => i === 1 ? ({
               color1P2: "bg-zinc-900",
-              color2P2: "bgWhite",
+              color2P2: "bg-whiteMana",
             }) : el );
           case "p3":
             return state.map((el,i) => i === 2 ? ({
               color1P3: "bg-zinc-900",
-              color2P3: "bgWhite",
+              color2P3: "bg-whiteMana",
             }) : el );
           case "p4":
             return state.map((el,i) => i === 3 ? ({
               color1P4: "bg-zinc-900",
-              color2P4: "bgWhite",
+              color2P4: "bg-whiteMana",
             }) : el );
         }
           
@@ -345,22 +345,22 @@ export const MyColorProvider = (props) => {
         switch(action.player){
           case "p1":
             return state.map((el,i) => i === 0 ? ({
-              color1P1: "bgWhite",
+              color1P1: "bg-whiteMana",
               color2P1: "bg-green-800",
             }) : el );
           case "p2":
             return state.map((el,i) => i === 1 ? ({
-              color1P2: "bgWhite",
+              color1P2: "bg-whiteMana",
               color2P2: "bg-green-800",
             }) : el );
           case "p3":
             return state.map((el,i) => i === 2 ? ({
-              color1P3:"bgWhite",
+              color1P3:"bg-whiteMana",
               color2P3:"bg-green-800",
             }) : el );
           case "p4":
             return state.map((el,i) => i === 3 ? ({
-              color1P4: "bgWhite",
+              color1P4: "bg-whiteMana",
               color2P4: "bg-green-800",
             }) : el );
         }     

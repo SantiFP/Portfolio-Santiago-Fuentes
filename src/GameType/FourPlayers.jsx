@@ -8,10 +8,13 @@ import Sidebar from "../Sidebar/Sidebar";
 const FourPlayers = () => {
   const navigate = useNavigate();
 
-  const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
-  const { state: lifesState, dispatch: dispatchLifes } = useContext(LifeCounterCtx);
+  const { state: colorsState, dispatch: dispatchColors } =
+    useContext(ColorsContext);
+  const { state: lifesState, dispatch: dispatchLifes } =
+    useContext(LifeCounterCtx);
 
-  const [colorsStateP1, colorsStateP2, colorsStateP3, colorsStateP4] = colorsState;
+  const [colorsStateP1, colorsStateP2, colorsStateP3, colorsStateP4] =
+    colorsState;
   const { color1P1, color2P1 } = colorsStateP1;
   const { color1P2, color2P2 } = colorsStateP2;
   const { color1P3, color2P3 } = colorsStateP3;
@@ -38,15 +41,11 @@ const FourPlayers = () => {
         {/* /////////////////// PLAYER 1 /////////////////////////////////// */}
         <div
           onClick={decrement.bind(null, "p1")}
-          className={`${classes.grid1A} ${
-            color1P1 === "bgWhite" ? classes.bgWhite : color1P1
-          }`}
+          className={`${classes.grid1A} ${color1P1}`}
         ></div>
         <div
           onClick={increment.bind(null, "p1")}
-          className={`${classes.grid2A}  ${
-            color2P1 === "bgWhite" ? classes.bgWhite : color2P1
-          }`}
+          className={`${classes.grid2A}  ${color2P1}`}
         ></div>
         <p
           className={`${classes.p1lifes} 
@@ -70,37 +69,33 @@ const FourPlayers = () => {
 
         <div
           onClick={increment.bind(null, "p2")}
-          className={`${classes.grid1B}  ${
-            color1P2 === "bgWhite" ? classes.bgWhite : color1P2
-          }`}
+          className={`${classes.grid1B}  ${color1P2}`}
         ></div>
         <div
           onClick={decrement.bind(null, "p2")}
-          className={`${classes.grid2B}  ${
-            color2P2 === "bgWhite" ? classes.bgWhite : color2P2
-          }`}
+          className={`${classes.grid2B}  ${color2P2}`}
         ></div>
-        <p className={`${classes.p2lifes}
+        <p
+          className={`${classes.p2lifes}
           ${lifesP2 > 20 && "right-[12%] md:right-[22%]"}
           ${lifesP2 === 20 && "right-[12%] md:right-[22%]"}
           ${lifesP2 < 20 && lifesP2 >= 10 && "right-[14%] md:right-[23%]"}
           ${lifesP2 < 10 && lifesP2 >= 0 && "right-[19%] md:right-[24%]"}
           ${lifesP2 < 0 && lifesP2 >= -9 && "right-[16%] md:right-[23%]"}
-          ${lifesP2 < -9 && "right-[8%] md:right-[21%]"}`}>{lifesP2}</p>
+          ${lifesP2 < -9 && "right-[8%] md:right-[21%]"}`}
+        >
+          {lifesP2}
+        </p>
 
         {/* ///////////////////////////PLAYER 3/////////////////////////////////// */}
 
         <div
           onClick={decrement.bind(null, "p3")}
-          className={`${classes.grid1C}  ${
-            color1P3 === "bgWhite" ? classes.bgWhite : color1P3
-          }`}
+          className={`${classes.grid1C}  ${color1P3}`}
         ></div>
         <div
           onClick={increment.bind(null, "p3")}
-          className={`${classes.grid2C}  ${
-            color2P3 === "bgWhite" ? classes.bgWhite : color2P3
-          }`}
+          className={`${classes.grid2C}  ${color2P3}`}
         ></div>
         <p
           className={`${classes.p3lifes}  
@@ -118,24 +113,24 @@ const FourPlayers = () => {
 
         <div
           onClick={increment.bind(null, "p4")}
-          className={`${classes.grid1D}  ${
-            color1P4 === "bgWhite" ? classes.bgWhite : color1P4
-          }`}
+          className={`${classes.grid1D}  ${color1P4}`}
         ></div>
         <div
           onClick={decrement.bind(null, "p4")}
-          className={`${classes.grid2D}  ${
-            color2P4 === "bgWhite" ? classes.bgWhite : color2P4
-          }`}
+          className={`${classes.grid2D}  ${color2P4}`}
         ></div>
-        <p className={`${classes.p4lifes}
+        <p
+          className={`${classes.p4lifes}
            ${lifesP4 > 20 && "right-[12%] md:right-[22%]"}
            ${lifesP4 === 20 && "right-[12%] md:right-[22%]"}
            ${lifesP4 < 20 && lifesP4 >= 10 && "right-[14%] md:right-[23%]"}
            ${lifesP4 < 10 && lifesP4 >= 0 && "right-[19%] md:right-[24%]"}
            ${lifesP4 < 0 && lifesP4 >= -9 && "right-[16%] md:right-[23%]"}
            ${lifesP4 < -9 && "right-[8%] md:right-[21%]"}
-        `}>{lifesP4}</p>
+        `}
+        >
+          {lifesP4}
+        </p>
       </div>
     </Sidebar>
   );
