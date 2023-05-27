@@ -9,7 +9,6 @@
 
 .calculatorGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   height: 84vh;
   grid-template-areas: "a b c d" 
   "e f g h"

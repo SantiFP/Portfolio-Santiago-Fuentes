@@ -25,7 +25,7 @@ const useShowOperation = () => {
         setOperating(true);
         setOperation((prevState) =>
           !prevState || (signsArray.includes(text) && textState !== "=")
-            ? (console.log("chau"), `${text}`)
+            ? `${text}`
             : `${prevState}${text}`
         );
       }
