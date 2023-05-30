@@ -3,10 +3,16 @@
 @tailwind utilities;
 @layer components {
   .selectedImg {
-    @apply w-[5.5rem] h-[5.5rem] ;
+    @apply w-[5.5rem] h-[5.5rem];
   }
   .languages {
-    @apply absolute text-white text-lg flex flex-row justify-center w-full space-x-3 top-7 lg:w-fit lg:justify-normal lg:space-x-0 lg:right-8 lg:top-14 lg:flex lg:flex-col lg:space-y-1
+    @apply absolute text-white text-lg flex flex-row justify-center w-full space-x-3 top-7 lg:w-fit lg:justify-normal lg:space-x-0 lg:right-8 lg:top-14 lg:flex lg:flex-col lg:space-y-1;
+  }
+  .p1up {
+    @apply absolute bottom-64 left-0 right-0 m-auto text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+
+  .p1down {
+    @apply absolute bottom-[4.5rem] left-0 right-0 m-auto text-center text-4xl text-white w-fit pointer-events-none h-fit;
   }
 }
-

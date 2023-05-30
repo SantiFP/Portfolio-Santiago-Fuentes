@@ -102,3 +102,16 @@
     transform: rotate(360deg) translate(9px) rotate(-360deg);
   }
 }
+
+/* .counting {
+  animation: counting 1s ease-in-out forwards;
+}
+
+@keyframes counting {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+} */
