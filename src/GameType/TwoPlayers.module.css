@@ -103,7 +103,7 @@
   }
 }
 
-/* .counting {
+.counting {
   animation: counting 1s ease-in-out forwards;
 }
 
@@ -114,4 +114,4 @@
   to {
     opacity: 0;
   }
-} */
+} 
