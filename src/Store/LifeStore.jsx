@@ -11,6 +11,14 @@ const counting = {
   p3down: false,
   p4up: false,
   p4down: false,
+  up:false
+};
+
+const initialLifes = {
+  lifesP1: 20,
+  lifesP2: 20,
+  lifesP3: 20,
+  lifesP4: 20,
 };
 
 const counterReducer = (state, action) => {
@@ -84,12 +92,13 @@ const counterReducer = (state, action) => {
   }
 };
 
-const dispatchCountingReducer = (state, action) => {
+const countingReducer = (s, action) => {
   switch (action.type) {
     case "p1up":
       return {
         ...counting,
         p1up: true,
+        up:true
       };
     case "p1down":
       return {
@@ -100,35 +109,51 @@ const dispatchCountingReducer = (state, action) => {
       return {
         ...counting,
         p2up: true,
+        up:true,
       };
     case "p2down":
       return {
         ...counting,
         p2down: true,
       };
+    case "p3up":
+      return {
+        ...counting,
+        p3up: true,
+        up:true,
+      };
+    case "p3down":
+      return {
+        ...counting,
+        p3down: true,
+      };
+    case "p4up":
+      return {
+        ...counting,
+        p4up: true,
+        up:true,
+      };
+    case "p4down":
+      return {
+        ...counting,
+        p4down: true,
+      };
     default:
       break;
   }
 };
 
-const checkCounting = (obj,type) => {
+const checkCounting = (obj, type) => {
   for (let prop in obj) {
-    if(prop === type) continue;
-    if(obj[prop]) return true;
+    if (prop === type || prop === 'up') continue;
+    if (obj[prop]) return true;
   }
-}
+};
 
 export const LifeCounterProvider = (props) => {
-  const initialLifes = {
-    lifesP1: 20,
-    lifesP2: 20,
-    lifesP3: 20,
-    lifesP4: 20,
-  };
-
   const [state, dispatch] = useReducer(counterReducer, initialLifes);
   const [countingState, dispatchCounting] = useReducer(
-    dispatchCountingReducer,
+    countingReducer,
     counting
   );
 
@@ -137,7 +162,7 @@ export const LifeCounterProvider = (props) => {
     dispatch,
     countingState,
     dispatchCounting,
-    checkCounting
+    checkCounting,
   };
 
   return (

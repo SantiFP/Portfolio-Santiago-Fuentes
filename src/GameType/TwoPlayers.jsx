@@ -1,9 +1,9 @@
-import classes from "./TwoPlayers.module.css";
 import { useContext, useState, useEffect } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import { LifeCounterCtx } from "../Store/LifeStore";
 import { useNavigate } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
+import classes from "./TwoPlayers.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 
 const TwoPlayers = () => {
@@ -27,10 +27,10 @@ const TwoPlayers = () => {
   const { color1P1, color2P1 } = colorsStateP1;
   const { color1P2, color2P2 } = colorsStateP2;
   const { lifesP1, lifesP2 } = lifesState;
-  const { p1up,p1down,p2up,p2down } = countingState;
+  const { p1up,p1down,p2up,p2down,up } = countingState;
 
   useEffect(() => {
-    showCount && setCount((prevCount) => (changing === 0 ? 1 : prevCount + 1));
+    showCount && setCount(prevCount => changing === 0 ? 1 : prevCount + 1);
 
     const hideCount = setTimeout(() => setShowCount(false), 1000);
 
@@ -77,18 +77,28 @@ const TwoPlayers = () => {
             alt="centerLogo"
           />
 
-          {/* ///////////////////////// PLAYER 1 //////////////////////////////// */}
+        <animated.p
+          style={props}
+          className={
+            p1up
+              ? "p1up"
+              : p1down
+              ? "p1down"
+              : p2up
+              ? "p2up"
+              : p2down
+              ? "p2down"
+              : "hidden"
+          }
+        >{`${up ? "+" : "-"} ${count}`}</animated.p>
+
+          {/* ////////////////////////// PLAYER 1 //////////////////////////////// */}
 
           <p
             className={`absolute text-center text-white w-fit h-fit ${classes.rotate}`}
           >
             {lifesP1}
           </p>
-
-          <animated.p
-            style={props}
-            className={p1up ? "p1up" : p1down ? "p1down" : "hidden"}
-          >{`${p1up ? "+" : p1down && "-"} ${count}`}</animated.p>
 
           <div
             onClick={() => {
@@ -114,11 +124,6 @@ const TwoPlayers = () => {
           >
             {lifesP2}
           </p>
-
-          <animated.p
-            style={props}
-            className={p2up ? "p2up" : p2down ? "p2down" : "hidden"}
-          >{`${p2up ? "+" : p2down && "-"} ${count}`}</animated.p>
 
           <div
             onClick={() => {

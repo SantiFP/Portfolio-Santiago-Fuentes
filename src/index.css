@@ -20,4 +20,51 @@
   .p2down {
     @apply absolute bottom-[5.4rem] left-0 right-0 m-auto text-center text-4xl text-white w-fit pointer-events-none h-fit;
   }
+  .p1up3p {
+    @apply absolute top-[11rem] rotate-180 left-0 right-0 m-auto text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p1down3p {
+    @apply absolute top-[2.5rem] rotate-180 left-0 right-0 m-auto text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p2up3p {
+    @apply absolute top-[64.15%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p2down3p {
+    @apply absolute top-[64.15%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p3up3p {
+    @apply absolute top-[65%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p3down3p {
+    @apply absolute top-[65%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+
+  .p1up4p {
+    @apply absolute top-[21.5%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+
+  .p1down4p {
+    @apply absolute top-[21.5%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+
+  .p2up4p {
+    @apply absolute top-[22%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+
+  .p2down4p {
+    @apply absolute top-[22%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p3up4p {
+    @apply absolute top-[71.35%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p3down4p {
+    @apply absolute top-[71.35%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+  .p4up4p {
+    @apply absolute top-[72.2%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
+
+  .p4down4p {
+    @apply absolute top-[72.2%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+  }
 }
