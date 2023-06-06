@@ -1,13 +1,14 @@
 import classes from "./ThreePlayers.module.css";
-import { useContext,useState,useEffect } from "react";
+import { useContext, useState, useEffect,useRef } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import { useNavigate } from "react-router-dom";
 import { LifeCounterCtx } from "../Store/LifeStore";
-import { useSpring, animated } from "react-spring";
+import { Transition } from "react-transition-group";
 import Sidebar from "../Sidebar/Sidebar";
 
 const ThreePlayers = () => {
   const navigate = useNavigate();
+  const nodeRef = useRef();
 
   const [count, setCount] = useState(0);
   const [showCount, setShowCount] = useState(false);
@@ -19,7 +20,7 @@ const ThreePlayers = () => {
     dispatch: dispatchLifes,
     countingState,
     dispatchCounting,
-    checkCounting
+    checkCounting,
   } = useContext(LifeCounterCtx);
 
   const [colorsStateP1, colorsStateP2, colorsStateP3] = colorsState;
@@ -27,10 +28,10 @@ const ThreePlayers = () => {
   const { color1P2, color2P2 } = colorsStateP2;
   const { color1P3, color2P3 } = colorsStateP3;
   const { lifesP1, lifesP2, lifesP3 } = lifesState;
-  const { p1up,p1down,p2up,p2down,p3up,p3down,up } = countingState;
+  const { p1up, p1down, p2up, p2down, p3up, p3down, up } = countingState;
 
   useEffect(() => {
-    showCount && setCount(prevCount => changing === 0 ? 1 : prevCount + 1);
+    showCount && setCount((prevCount) => (changing === 0 ? 1 : prevCount + 1));
 
     const hideCount = setTimeout(() => setShowCount(false), 1000);
 
@@ -40,12 +41,7 @@ const ThreePlayers = () => {
       clearInterval(hideCount);
       clearInterval(resetCount);
     };
-  }, [lifesP1, lifesP2,lifesP3]);
-
-  const props = useSpring({
-    opacity: showCount ? 1 : 0,
-    config: { duration: 1000 },
-  });
+  }, [lifesP1, lifesP2, lifesP3]);
 
   const increment = (player) => {
     dispatchLifes({ player: player, type: "increment" });
@@ -69,7 +65,6 @@ const ThreePlayers = () => {
   return (
     <Sidebar sidebarType="3p">
       <div className={`text-center w-full ${classes.common}`}>
-
         <img
           className={`h-14 w-14 ${classes.centerLogo}`}
           src="/magic-logo-center.png"
@@ -77,61 +72,84 @@ const ThreePlayers = () => {
           onClick={goHome}
         />
 
-        <animated.p
-          style={props}
-          className={
-            p1up
-              ? "p1up3p"
-              : p1down
-              ? "p1down3p"
-              : p2up
-              ? "p2up3p"
-              : p2down
-              ? "p2down3p"
-              : p3up
-              ? "p3up3p"
-              : p3down
-              ? 'p3down3p'
-              : "hidden"
-          }
-        >{`${up ? "+" : "-"} ${count}`}</animated.p>
+        <Transition
+          timeout={1000}
+          nodeRef={nodeRef}
+          in={showCount}
+          mountOnEnter
+          unmountOnExit
+        >
+          {(state) => (
+            <p
+              style={{
+                opacity: state === "exiting" ? 0 : 1,
+                transition: "ease-out 1s opacity",
+              }}
+              ref={nodeRef}
+              className={
+                p1up
+                  ? "p1up3p"
+                  : p1down
+                  ? "p1down3p"
+                  : p2up
+                  ? "p2up3p"
+                  : p2down
+                  ? "p2down3p"
+                  : p3up
+                  ? "p3up3p"
+                  : p3down
+                  ? "p3down3p"
+                  : ""
+              }
+            >
+              {`${up ? "+" : "-"} ${!changing && count ? count : 1}`}
+            </p>
+          )}
+        </Transition>
 
         {/* ///////////////////////////////// PLAYER 1 /////////////////////////////////////// */}
 
         <div
-          onClick={() => { 
+          onClick={() => {
             decrement("p1");
-            handleCounting('p1down');
-            checkCounting(countingState,'p1down') ? setChanging(0) : setChanging();
+            handleCounting("p1down");
+            checkCounting(countingState, "p1down")
+              ? setChanging(0)
+              : setChanging();
           }}
           className={`${classes.grid1A} ${color1P3}`}
         ></div>
         <div
           onClick={() => {
             increment("p1");
-            handleCounting('p1up');
-            checkCounting(countingState,'p1up') ? setChanging(0) : setChanging();
+            handleCounting("p1up");
+            checkCounting(countingState, "p1up")
+              ? setChanging(0)
+              : setChanging();
           }}
           className={`${classes.grid2A} ${color2P3}`}
         ></div>
         <p className={`${classes.p1lifes} pointer-events-none`}>{lifesP1}</p>
 
-      
         {/* ///////////////////////////////// PLAYER 2 ////////////////////////////////////////// */}
 
         <div
           onClick={() => {
             decrement("p2");
-            handleCounting('p2down');
-            checkCounting(countingState,'p2down') ? setChanging(0) : setChanging();
+            handleCounting("p2down");
+            checkCounting(countingState, "p2down")
+              ? setChanging(0)
+              : setChanging();
           }}
           className={`${classes.grid1B} ${color1P2}`}
         ></div>
         <div
           onClick={() => {
             increment("p2");
-            handleCounting('p2up');
-            checkCounting(countingState,'p2up') ? setChanging(0) : setChanging();
+            handleCounting("p2up");
+            checkCounting(countingState, "p2up")
+              ? setChanging(0)
+              : setChanging();
           }}
           className={`${classes.grid2B} ${color2P2}`}
         ></div>
@@ -170,16 +188,20 @@ const ThreePlayers = () => {
         <div
           onClick={() => {
             increment("p3");
-            handleCounting('p3up');
-            checkCounting(countingState,'p3up') ? setChanging(0) : setChanging();
+            handleCounting("p3up");
+            checkCounting(countingState, "p3up")
+              ? setChanging(0)
+              : setChanging();
           }}
           className={`${classes.grid1C} ${color1P1}`}
         ></div>
         <div
           onClick={() => {
             decrement("p3");
-            handleCounting('p3down');
-            checkCounting(countingState,'p3down') ? setChanging(0) : setChanging();
+            handleCounting("p3down");
+            checkCounting(countingState, "p3down")
+              ? setChanging(0)
+              : setChanging();
           }}
           className={`${classes.grid2C} ${color2P1}`}
         ></div>

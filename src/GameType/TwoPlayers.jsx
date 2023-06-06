@@ -1,23 +1,22 @@
-import { useContext, useState, useEffect,useRef } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import { LifeCounterCtx } from "../Store/LifeStore";
 import { useNavigate } from "react-router-dom";
 // import { useSpring, animated } from "react-spring";
 import classes from "./TwoPlayers.module.css";
 import Sidebar from "../Sidebar/Sidebar";
-import { Transition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 const TwoPlayers = () => {
   const navigate = useNavigate();
   const nodeRef = useRef();
-  const nodeRef2 = useRef();
-
 
   const [count, setCount] = useState(0);
   const [showCount, setShowCount] = useState(false);
   const [changing, setChanging] = useState(false);
 
-  const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
+  const { state: colorsState, dispatch: dispatchColors } =
+    useContext(ColorsContext);
 
   const {
     state: lifesState,
@@ -70,9 +69,6 @@ const TwoPlayers = () => {
     dispatchCounting({ type: countingType });
   };
 
-  console.log('changing: ', changing);
-  console.log('count: ',count);
-
   return (
     <>
       <Sidebar sidebarType="2p">
@@ -99,30 +95,33 @@ const TwoPlayers = () => {
           }
         >{`${up ? "+" : "-"} ${count}`}</animated.p> */}
 
-          <Transition timeout={800} nodeRef={nodeRef} in={showCount} mountOnEnter unmountOnExit>
-            {(state) => (
-              <p
-                style={{
-                  opacity: state === "exiting" ? 0 : 1,
-                  transition: "ease-out 1s opacity",
-                }}
-                ref={nodeRef}
-                className={
-                  p1up
-                    ? "p1up"
-                    : p1down
-                    ? "p1down"
-                    : p2up
-                    ? "p2up"
-                    : p2down
-                    ? "p2down"
-                    : ""
-                }
-              >
-                {`${up ? "+" : "-"} ${!changing && count ? count : 1}`}
-              </p>
-            )}
-          </Transition>
+          <CSSTransition
+            timeout={1000}
+            classNames={{
+              exitActive: classes.fadingExitActive,
+            }}
+            nodeRef={nodeRef}
+            in={showCount}
+            mountOnEnter
+            unmountOnExit
+          >
+            <p
+              ref={nodeRef}
+              className={
+                p1up
+                  ? "p1up"
+                  : p1down
+                  ? "p1down"
+                  : p2up
+                  ? "p2up"
+                  : p2down
+                  ? "p2down"
+                  : ""
+              }
+            >
+              {`${up ? "+" : "-"} ${!changing && count ? count : 1}`}
+            </p>
+          </CSSTransition>
 
           {/* ////////////////////////// PLAYER 1 //////////////////////////////// */}
 

@@ -115,3 +115,13 @@
     opacity: 0;
   }
 } 
+
+.fadingEnterActive {
+  opacity: 1;
+}
+
+.fadingExitActive {
+  transition: ease-out 1s opacity;
+  opacity: 0;
+}
+

@@ -1,19 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { ColorsContext } from "../Store/ColorStore";
 import { LifeCounterCtx } from "../Store/LifeStore";
-import { useSpring, animated } from "react-spring";
+import { Transition } from "react-transition-group";
 import classes from "./FourPlayers.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 
 const FourPlayers = () => {
   const navigate = useNavigate();
+  const nodeRef = useRef();
 
   const [count, setCount] = useState(0);
   const [showCount, setShowCount] = useState(false);
   const [changing, setChanging] = useState(false);
 
-  const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
+  const { state: colorsState, dispatch: dispatchColors } =
+    useContext(ColorsContext);
   const {
     state: lifesState,
     dispatch: dispatchLifes,
@@ -22,8 +24,7 @@ const FourPlayers = () => {
     checkCounting,
   } = useContext(LifeCounterCtx);
 
-  const [colorsStateP1, colorsStateP2, colorsStateP3, colorsStateP4] =
-    colorsState;
+  const [colorsStateP1, colorsStateP2, colorsStateP3, colorsStateP4] = colorsState;
   const { color1P1, color2P1 } = colorsStateP1;
   const { color1P2, color2P2 } = colorsStateP2;
   const { color1P3, color2P3 } = colorsStateP3;
@@ -43,11 +44,6 @@ const FourPlayers = () => {
       clearInterval(resetCount);
     };
   }, [lifesP1, lifesP2, lifesP3, lifesP4]);
-
-  const props = useSpring({
-    opacity: showCount ? 1 : 0,
-    config: { duration: 1000 },
-  });
 
   const increment = (player) => {
     dispatchLifes({ player: player, type: "increment" });
@@ -78,28 +74,44 @@ const FourPlayers = () => {
           onClick={goHome}
         />
 
-        <animated.p
-          style={props}
-          className={
-            p1up
-              ? "p1up4p"
-              : p1down
-              ? "p1down4p"
-              : p2up
-              ? "p2up4p"
-              : p2down
-              ? "p2down4p"
-              : p3up
-              ? "p3up4p"
-              : p3down
-              ? "p3down4p"
-              : p4up
-              ? "p4up4p"
-              : p4down
-              ? "p4down4p"
-              : "hidden"
-          }
-        >{`${up ? "+" : "-"} ${count}`}</animated.p>
+        <Transition
+          timeout={1000}
+          nodeRef={nodeRef}
+          in={showCount}
+          mountOnEnter
+          unmountOnExit
+        >
+          {(state) => (
+            <p
+              style={{
+                opacity: state === "exiting" ? 0 : 1,
+                transition: "ease-out 1s opacity",
+              }}
+              ref={nodeRef}
+              className={
+                p1up
+                  ? "p1up4p"
+                  : p1down
+                  ? "p1down4p"
+                  : p2up
+                  ? "p2up4p"
+                  : p2down
+                  ? "p2down4p"
+                  : p3up
+                  ? "p3up4p"
+                  : p3down
+                  ? "p3down4p"
+                  : p4up
+                  ? "p4up4p"
+                  : p4down
+                  ? "p4down4p"
+                  : ""
+              }
+            >
+              {`${up ? "+" : "-"} ${!changing && count ? count : 1}`}
+            </p>
+          )}
+        </Transition>
 
         {/* /////////////////// PLAYER 1 /////////////////////////////////// */}
 
