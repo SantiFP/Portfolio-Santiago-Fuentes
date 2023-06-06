@@ -13,8 +13,7 @@ const FourPlayers = () => {
   const [showCount, setShowCount] = useState(false);
   const [changing, setChanging] = useState(false);
 
-  const { state: colorsState, dispatch: dispatchColors } =
-    useContext(ColorsContext);
+  const { state: colorsState, dispatch: dispatchColors } = useContext(ColorsContext);
   const {
     state: lifesState,
     dispatch: dispatchLifes,
