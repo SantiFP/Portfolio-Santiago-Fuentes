@@ -120,7 +120,7 @@ const FourPlayers = () => {
             decrement("p1");
             handleCounting("p1down");
             checkCounting(countingState, "p1down")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid1A} ${color1P1}`}
@@ -130,7 +130,7 @@ const FourPlayers = () => {
             increment("p1");
             handleCounting("p1up");
             checkCounting(countingState, "p1up")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid2A}  ${color2P1}`}
@@ -154,7 +154,7 @@ const FourPlayers = () => {
             increment("p2");
             handleCounting("p2up");
             checkCounting(countingState, "p2up")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid1B}  ${color1P2}`}
@@ -164,7 +164,7 @@ const FourPlayers = () => {
             decrement("p2");
             handleCounting("p2down");
             checkCounting(countingState, "p2down")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid2B}  ${color2P2}`}
@@ -188,7 +188,7 @@ const FourPlayers = () => {
             decrement("p3");
             handleCounting("p3down");
             checkCounting(countingState, "p3down")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid1C}  ${color1P3}`}
@@ -198,7 +198,7 @@ const FourPlayers = () => {
             increment("p3");
             handleCounting("p3up");
             checkCounting(countingState, "p3up")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid2C}  ${color2P3}`}
@@ -222,7 +222,7 @@ const FourPlayers = () => {
             increment("p4");
             handleCounting("p4up");
             checkCounting(countingState, "p4up")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid1D} ${color1P4}`}
@@ -232,7 +232,7 @@ const FourPlayers = () => {
             decrement("p4");
             handleCounting("p4down");
             checkCounting(countingState, "p4down")
-              ? setChanging(0)
+              ? setChanging(1)
               : setChanging();
           }}
           className={`${classes.grid2D} ${color2P4}`}
