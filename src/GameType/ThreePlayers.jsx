@@ -31,7 +31,7 @@ const ThreePlayers = () => {
   const { p1up, p1down, p2up, p2down, p3up, p3down, up } = countingState;
 
   useEffect(() => {
-    showCount && setCount((prevCount) => (changing === 0 ? 1 : prevCount + 1));
+    showCount && setCount((prevCount) => (changing ? 1 : prevCount + 1));
 
     const hideCount = setTimeout(() => setShowCount(false), 1000);
 
