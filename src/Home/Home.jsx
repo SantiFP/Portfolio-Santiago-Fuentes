@@ -105,7 +105,7 @@ const Home = () => {
             {language === "es"
               ? "Total de vidas inicial"
               : language === "en"
-              ? "Starting lifes total"
+              ? "Starting lives total"
               : language === "po"
               ? "Total de vidas iniciais"
               : language === "ch"
