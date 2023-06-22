@@ -1,4 +1,3 @@
-
 interface Props {
   name: string;
   temp: number;
@@ -16,7 +15,6 @@ const WeatherDetails: React.FC<Props> = ({
   weather,
   removeCity,
 }) => {
-
   return (
     <div
       onDoubleClick={removeCity}
