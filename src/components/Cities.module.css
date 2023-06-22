@@ -1,14 +1,11 @@
-.item-enter {
+.enter {
   opacity: 0;
 }
-.item-enter-active {
+.enterActive {
   opacity: 1;
   transition: opacity 1s ease-in;
 }
-.item-exit {
-  opacity: 1;
-}
-.item-exit-active {
+.exitActive {
   opacity: 0;
   transition: opacity 1s ease-in;
 }

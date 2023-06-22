@@ -1,22 +1,25 @@
 import WeatherDetails from "./WeatherDetails";
 import CityModel from "../models/CityModel";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import './Cities.css';
+import classes from "./Cities.module.css";
 
 const Cities: React.FC<{
   citiesList: CityModel[];
   removeCity: (id: number) => void;
   loading: boolean;
 }> = (props) => {
-
   return (
     <TransitionGroup>
-      {props.citiesList.map((el, ) => (
+      {props.citiesList.map((el) => (
         <CSSTransition
-          key={el.id}
           nodeRef={el.ref}
+          key={el.id}
           timeout={1000}
-          classNames="item"
+          classNames={{
+            enter: classes.enter,
+            enterActive: classes.enterActive,
+            exitActive: classes.exitActive,
+          }}
         >
           <div ref={el.ref}>
             <WeatherDetails

@@ -16,6 +16,7 @@ class CityModel {
     humidity: number,
     weather: string,
     ref: React.RefObject<any>
+    
   ){
     this.id = id
     this.cityName = cityName;
