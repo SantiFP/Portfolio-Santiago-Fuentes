@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 class CityModel {
   id: number;
   cityName: string;
@@ -15,7 +15,6 @@ class CityModel {
     feelsLike: number,
     humidity: number,
     weather: string,
-    ref: React.RefObject<any>
     
   ){
     this.id = id
@@ -24,7 +23,7 @@ class CityModel {
     this.feelsLike = feelsLike;
     this.humidity = humidity;
     this.weather = weather;
-    this.ref = ref;
+    this.ref = createRef();
   };
 };
 

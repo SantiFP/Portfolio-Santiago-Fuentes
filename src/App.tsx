@@ -17,7 +17,6 @@ const App: React.FC = () => {
     const id = Math.random() * Math.random();
     const { temp, feels_like, humidity } = res.main;
     const { description } = res.weather[0];
-    const ref = React.createRef();
     const newCity = new CityModel(
       id,
       city,
@@ -25,7 +24,6 @@ const App: React.FC = () => {
       feels_like,
       humidity,
       description,
-      ref
     );
     setCities((prevState) => [newCity, ...prevState]);
     setLoading(false);
