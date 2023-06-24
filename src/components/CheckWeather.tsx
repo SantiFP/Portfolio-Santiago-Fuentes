@@ -1,10 +1,11 @@
-import { useRef, useState, useEffect } from "react";
+import React,{ useRef, useState, useEffect } from "react";
 
 interface Props {
   onCheckWeather: (city: string) => void;
+  toggling: () => void;
 }
 
-const CheckWeather: React.FC<Props> = ({ onCheckWeather }) => {
+const CheckWeather: React.FC<Props> = ({ onCheckWeather,toggling }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [cityInput, setCityInput] = useState<string>("");
@@ -29,6 +30,9 @@ const CheckWeather: React.FC<Props> = ({ onCheckWeather }) => {
     setCityInput(e.target.value);
   };
 
+  const togglingHandler = () => {
+    toggling()
+  };
   return (
     <form
       onSubmit={checkWeatherHandler}
@@ -43,7 +47,7 @@ const CheckWeather: React.FC<Props> = ({ onCheckWeather }) => {
         className="outline-none bg-blue-200 py-2 pl-2"
         type="text"
       />
-      <button className="bg-blue-300 rounded-3xl py-2 px-4">
+      <button onClick={togglingHandler} className="bg-blue-300 rounded-3xl py-2 px-4">
         Check weather
       </button>
     </form>
