@@ -1,14 +1,17 @@
 import React,{ useRef, useState, useEffect } from "react";
+import { useContext } from "react";
+import { CitiesContext } from "../store/cities-store";
 
 interface Props {
-  onCheckWeather: (city: string) => void;
   toggling: () => void;
 }
 
-const CheckWeather: React.FC<Props> = ({ onCheckWeather,toggling }) => {
+const CheckWeather: React.FC<Props> = ({ toggling }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [cityInput, setCityInput] = useState<string>("");
+
+  const {newCity} = useContext(CitiesContext); 
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -22,7 +25,9 @@ const CheckWeather: React.FC<Props> = ({ onCheckWeather,toggling }) => {
     if (!cityInput || !enteredCity) {
       return;
     }
-    onCheckWeather(cityInput);
+
+    newCity(enteredCity)
+
     setCityInput("");
   };
 
@@ -47,7 +52,7 @@ const CheckWeather: React.FC<Props> = ({ onCheckWeather,toggling }) => {
         className="outline-none bg-blue-200 py-2 pl-2"
         type="text"
       />
-      <button onClick={togglingHandler} className="bg-blue-300 rounded-3xl py-2 px-4">
+      <button onClick={togglingHandler} className="bg-blue-300 rounded-3xl py-2 px-4 cursor-auto">
         Check weather
       </button>
     </form>

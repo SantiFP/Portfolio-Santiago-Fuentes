@@ -1,18 +1,17 @@
 import WeatherDetails from "./WeatherDetails";
-import CityModel from "../models/CityModel";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import classes from "./Cities.module.css";
 import React, { useMemo } from "react";
+import { useContext } from "react";
+import { CitiesContext } from "../store/cities-store";
 
-const Cities: React.FC<{
-  citiesList: CityModel[];
-  removeCity: (id: number) => void;
-  loading: boolean;
-}> = (props) => {
+const Cities: React.FC = () => {
+  const { cities, removeCity, newFav } = useContext(CitiesContext);
+
   return useMemo(() => {
     return (
       <TransitionGroup>
-        {props.citiesList.map((el) => (
+        {cities.map((el) => (
           <CSSTransition
             nodeRef={el.ref}
             key={el.id}
@@ -27,18 +26,19 @@ const Cities: React.FC<{
               <WeatherDetails
                 name={el.cityName}
                 temp={el.temp}
-                removeCity={() => props.removeCity(el.id)}
+                removeCity={() => removeCity(el.id)}
                 humidity={el.humidity}
                 weather={el.weather}
                 feelsLike={el.feelsLike}
                 key={el.id}
+                fav={() => newFav(el.cityName)}
               />
             </div>
           </CSSTransition>
         ))}
       </TransitionGroup>
     );
-  }, [props.citiesList]);
+  }, [cities]);
 };
 
 export default React.memo(Cities);

@@ -1,0 +1,15 @@
+.thumb {
+  animation: thumbAnimation 0.3s ease-in-out alternate;
+}
+
+@keyframes thumbAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-25deg) scale(1.5);
+  }
+  100%{
+    transform: rotate(25px);
+  }
+}

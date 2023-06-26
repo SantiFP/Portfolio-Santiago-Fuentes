@@ -6,6 +6,7 @@ class CityModel {
   feelsLike: number;
   humidity: number;
   weather: string;
+  fav: boolean;
   ref: React.RefObject<any>; 
 
   constructor(
@@ -23,6 +24,7 @@ class CityModel {
     this.feelsLike = feelsLike;
     this.humidity = humidity;
     this.weather = weather;
+    this.fav = false;
     this.ref = createRef();
   };
 };
