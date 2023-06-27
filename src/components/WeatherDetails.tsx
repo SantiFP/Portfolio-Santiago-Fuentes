@@ -102,13 +102,13 @@ const WeatherDetails: React.FC<Props> = ({
           </div>
         </div>
         <div className="flex flex-row space-x-3 w-full">
-          <div className="w-[45%] bg-white mr-1">
+          <div className="w-[45%] bg-white ml-1">
             <p>
               Max: {max}°<br />
               Min: {min}°
             </p>
           </div>
-          <div className="w-[48%] bg-white ml-1">
+          <div className="w-[48%] bg-white">
             <p>Humidity: {humidity}°</p>
           </div>
         </div>
