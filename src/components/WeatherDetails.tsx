@@ -111,7 +111,7 @@ const WeatherDetails: React.FC<Props> = ({
             </p>
           </div>
           <div className="w-[45%] bg-white">
-            <p>Humidity: {humidity}%  <br /> 
+            <p>Humidity: {humidity}%<br /> 
                 Wind: {(windSpeed * 3.6).toFixed(1)} k/m
             </p>
           </div>
