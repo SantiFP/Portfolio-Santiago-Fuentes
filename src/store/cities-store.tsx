@@ -40,7 +40,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
     const id = Math.random() * Math.random();
     const { temp, feels_like, humidity } = res.main;
     const { description } = res.weather[0];
-    let repeated = false;
+    let wasFavorite = false;
 
     const filteredCities = cities.filter((el) => {
       return el.cityName !== city;
@@ -48,7 +48,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
 
     for (const el of cities) {
       if (el.cityName === city && el.fav) {
-        repeated = true;
+        wasFavorite = true;
       }
     }
 
@@ -60,7 +60,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
         feels_like,
         humidity,
         description,
-        repeated
+        wasFavorite
       ),
       ...filteredCities,
     ]);
