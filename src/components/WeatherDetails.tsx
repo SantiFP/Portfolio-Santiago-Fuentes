@@ -9,7 +9,7 @@ interface Props {
   weather: string;
   fav: boolean;
   max: number;
-  min:number;
+  min: number;
   removeCity: () => void;
   newFav: () => void;
   deleteFav: () => void;
@@ -44,8 +44,8 @@ const WeatherDetails: React.FC<Props> = ({
 
   const setWhiteMode = () => {
     setWhite(!white);
-    localStorage.setItem('white',JSON.stringify(!white));
-  }
+    localStorage.setItem("white", JSON.stringify(!white));
+  };
 
   return (
     <div className="weatherDetailsDiv">
@@ -102,11 +102,14 @@ const WeatherDetails: React.FC<Props> = ({
           </div>
         </div>
         <div className="flex flex-row space-x-3 w-full">
+          <div className="w-[45%] bg-white mr-1">
+            <p>
+              Max: {max}°<br />
+              Min: {min}°
+            </p>
+          </div>
           <div className="w-[48%] bg-white ml-1">
             <p>Humidity: {humidity}°</p>
-          </div>
-          <div className="w-[45%] bg-white mr-1">
-            <p>Max: {max}°<br />Min: {min}°</p>
           </div>
         </div>
         <div className="text-center flex flex-row items-center">
