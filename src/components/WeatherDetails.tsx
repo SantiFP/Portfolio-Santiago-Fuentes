@@ -42,7 +42,7 @@ const WeatherDetails: React.FC<Props> = ({
       <div className="flex flex-row w-full">
         <div className=" text-xl w-5/6 text-center pb-6">
           <p className="w-5/6 ml-auto mt-2">
-            {name[0].toUpperCase() + name.substring(1)}
+            {name}
           </p>
         </div>
         <div className="w-1/6 flex flex-col">

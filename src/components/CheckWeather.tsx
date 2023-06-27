@@ -1,4 +1,4 @@
-import React,{ useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useContext } from "react";
 import { CitiesContext } from "../store/cities-store";
 
@@ -11,7 +11,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
 
   const [cityInput, setCityInput] = useState<string>("");
 
-  const {newCity} = useContext(CitiesContext); 
+  const { newCity } = useContext(CitiesContext);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -26,7 +26,12 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
       return;
     }
 
-    newCity(enteredCity)
+    let words = enteredCity.split(" ");
+    var capitalizedWords = words.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+
+    newCity(capitalizedWords.join(' '));
 
     setCityInput("");
   };
@@ -36,7 +41,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
   };
 
   const togglingHandler = () => {
-    toggling()
+    toggling();
   };
   return (
     <form
@@ -52,7 +57,10 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
         className="outline-none bg-blue-200 py-2 pl-2"
         type="text"
       />
-      <button onClick={togglingHandler} className="bg-blue-300 rounded-3xl py-2 px-4 cursor-auto">
+      <button
+        onClick={togglingHandler}
+        className="bg-blue-300 rounded-3xl py-2 px-4 cursor-auto"
+      >
         Check weather
       </button>
     </form>

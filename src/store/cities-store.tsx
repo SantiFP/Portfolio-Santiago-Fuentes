@@ -20,7 +20,7 @@ export const CitiesContext = React.createContext<CitiesCtxObj>({
   newFav: () => {},
   fromFav: () => {},
   notLoading: () => {},
-  deleteFav: () => {}
+  deleteFav: () => {},
 });
 
 const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
@@ -40,7 +40,19 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
     const id = Math.random() * Math.random();
     const { temp, feels_like, humidity } = res.main;
     const { description } = res.weather[0];
-    setCities((prevState) => [
+    let repeated = false;
+
+    const filteredCities = cities.filter((el) => {
+      return el.cityName !== city;
+    });
+
+    for (const el of cities) {
+      if (el.cityName === city && el.fav) {
+        repeated = true;
+      }
+    }
+
+    setCities([
       new CityModel(
         id,
         res.name,
@@ -48,10 +60,11 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
         feels_like,
         humidity,
         description,
-        false
+        repeated
       ),
-      ...prevState,
+      ...filteredCities,
     ]);
+
     setLoading(false);
   };
 
@@ -64,27 +77,31 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       if (!fromFav.includes(cityName)) fromFav.push(cityName);
       localStorage.setItem("cities", JSON.stringify(fromFav));
     }
-    setCities(cities.map((el) => {
-      if (el.cityName === cityName) {
-        return { ...el, fav: true };
-      } else {
-        return el;
-      }
-    }))
+    setCities(
+      cities.map((el) => {
+        if (el.cityName === cityName) {
+          return { ...el, fav: true };
+        } else {
+          return el;
+        }
+      })
+    );
   };
 
   const deleteFav = (cityName: string) => {
     const favCities = localStorage.getItem("cities");
     const fromFav = favCities && JSON.parse(favCities);
     const upadatedCities = fromFav.filter((el: string) => el !== cityName);
-    localStorage.setItem('cities',JSON.stringify(upadatedCities));
-    setCities(cities.map((el) => {
-      if (el.cityName === cityName) {
-        return { ...el, fav: false };
-      } else {
-        return el;
-      }
-    }))
+    localStorage.setItem("cities", JSON.stringify(upadatedCities));
+    setCities(
+      cities.map((el) => {
+        if (el.cityName === cityName) {
+          return { ...el, fav: false };
+        } else {
+          return el;
+        }
+      })
+    );
   };
 
   const removeCity = (id: number) => {
