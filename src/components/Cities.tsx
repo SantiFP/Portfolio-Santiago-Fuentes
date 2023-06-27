@@ -30,6 +30,7 @@ const Cities: React.FC = () => {
                 humidity={el.humidity}
                 max={el.max}
                 min={el.min}
+                windSpeed={el.windSpeed}
                 weather={el.weather}
                 feelsLike={el.feelsLike}
                 key={el.id}

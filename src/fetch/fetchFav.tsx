@@ -3,13 +3,13 @@ import CityModel from "../models/CityModel";
 import { CitiesContext } from "../store/cities-store";
 
 const FetchCities = () => {
-  const { fromFav,notLoading } = useContext(CitiesContext);
+  const { fromFav, notLoading } = useContext(CitiesContext);
 
   const favCities = localStorage.getItem("cities");
   const citiesFetch = favCities ? JSON.parse(favCities) : [];
 
   useEffect(() => {
-    let isMounted = true; 
+    let isMounted = true;
     const fetchData = async () => {
       const citiesArray = [];
       const requests = citiesFetch.map((city: string) =>
@@ -23,8 +23,15 @@ const FetchCities = () => {
       if (isMounted) {
         for (let i = 0; i < responses.length; i++) {
           const id = Math.random() * Math.random();
-          const { temp, feels_like, humidity,temp_max:max,temp_min:min } = responses[i].main;
+          const {
+            temp,
+            feels_like,
+            humidity,
+            temp_max: max,
+            temp_min: min,
+          } = responses[i].main;
           const { description } = responses[i].weather[0];
+          const { speed } = responses[i].wind;
           citiesArray.unshift(
             new CityModel(
               id,
@@ -34,6 +41,7 @@ const FetchCities = () => {
               humidity,
               max,
               min,
+              speed,
               description,
               true
             )
@@ -41,7 +49,7 @@ const FetchCities = () => {
         }
 
         fromFav(citiesArray);
-        notLoading()
+        notLoading();
       }
     };
 

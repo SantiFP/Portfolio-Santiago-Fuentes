@@ -10,6 +10,7 @@ interface Props {
   fav: boolean;
   max: number;
   min: number;
+  windSpeed: number;
   removeCity: () => void;
   newFav: () => void;
   deleteFav: () => void;
@@ -22,6 +23,7 @@ const WeatherDetails: React.FC<Props> = ({
   humidity,
   max,
   min,
+  windSpeed,
   weather,
   removeCity,
   newFav,
@@ -102,14 +104,16 @@ const WeatherDetails: React.FC<Props> = ({
           </div>
         </div>
         <div className="flex flex-row space-x-3 w-full">
-          <div className="w-[45%] bg-white ml-1">
+          <div className="w-[48%] bg-white ml-1">
             <p>
               Max: {max}°<br />
               Min: {min}°
             </p>
           </div>
-          <div className="w-[48%] bg-white">
-            <p>Humidity: {humidity}°</p>
+          <div className="w-[45%] bg-white">
+            <p>Humidity: {humidity}%  <br /> 
+                Wind: {(windSpeed * 3.6).toFixed(1)} k/m
+            </p>
           </div>
         </div>
         <div className="text-center flex flex-row items-center">

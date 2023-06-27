@@ -38,10 +38,16 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
     );
     const res = await req.json();
     const id = Math.random() * Math.random();
-    const { temp, feels_like, humidity,temp_max:max,temp_min:min  } = res.main;
+    const {
+      temp,
+      feels_like,
+      humidity,
+      temp_max: max,
+      temp_min: min,
+    } = res.main;
     const { description } = res.weather[0];
+    const { speed } = res.wind;
     let wasFavorite = false;
-    console.log(res);
 
     const filteredCities = cities.filter((el) => {
       return el.cityName !== city;
@@ -62,6 +68,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
         humidity,
         max,
         min,
+        speed,
         description,
         wasFavorite
       ),

@@ -8,6 +8,7 @@ class CityModel {
   weather: string;
   max: number;
   min: number;
+  windSpeed: number;
   fav: boolean;
   ref: React.RefObject<any>;
 
@@ -19,6 +20,7 @@ class CityModel {
     humidity: number,
     max: number,
     min: number,
+    windSpeed: number,
     weather: string,
     fav: boolean
   ) {
@@ -29,6 +31,7 @@ class CityModel {
     this.humidity = humidity;
     this.max = max;
     this.min = min;
+    this.windSpeed = windSpeed;
     this.weather = weather;
     this.fav = fav;
     this.ref = createRef();
