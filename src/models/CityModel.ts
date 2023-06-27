@@ -6,6 +6,8 @@ class CityModel {
   feelsLike: number;
   humidity: number;
   weather: string;
+  max: number;
+  min: number;
   fav: boolean;
   ref: React.RefObject<any>;
 
@@ -15,6 +17,8 @@ class CityModel {
     temp: number,
     feelsLike: number,
     humidity: number,
+    max: number,
+    min: number,
     weather: string,
     fav: boolean
   ) {
@@ -23,6 +27,8 @@ class CityModel {
     this.temp = temp;
     this.feelsLike = feelsLike;
     this.humidity = humidity;
+    this.max = max;
+    this.min = min;
     this.weather = weather;
     this.fav = fav;
     this.ref = createRef();

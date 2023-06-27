@@ -28,6 +28,8 @@ const Cities: React.FC = () => {
                 temp={el.temp}
                 removeCity={() => removeCity(el.id)}
                 humidity={el.humidity}
+                max={el.max}
+                min={el.min}
                 weather={el.weather}
                 feelsLike={el.feelsLike}
                 key={el.id}

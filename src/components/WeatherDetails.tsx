@@ -8,6 +8,8 @@ interface Props {
   humidity: number;
   weather: string;
   fav: boolean;
+  max: number;
+  min:number;
   removeCity: () => void;
   newFav: () => void;
   deleteFav: () => void;
@@ -18,13 +20,19 @@ const WeatherDetails: React.FC<Props> = ({
   temp,
   feelsLike,
   humidity,
+  max,
+  min,
   weather,
   removeCity,
   newFav,
   deleteFav,
   fav,
 }) => {
+  const isWhite = localStorage.getItem("white");
   const [thumb, setThumb] = useState<boolean>(false);
+  const [white, setWhite] = useState<boolean>(
+    isWhite ? JSON.parse(isWhite) : false
+  );
   const nodeRef = useRef<HTMLImageElement>(null);
 
   const thumbsUp = () => {
@@ -34,10 +42,13 @@ const WeatherDetails: React.FC<Props> = ({
     }, 300);
   };
 
+  const setWhiteMode = () => {
+    setWhite(!white);
+    localStorage.setItem('white',JSON.stringify(!white));
+  }
+
   return (
-    <div
-      className={` flex flex-col items-center mt-6 w-3/4 mx-auto border-2 mb-2 pb-4 border-solid border-blue-300 lg:w-1/5`}
-    >
+    <div className="weatherDetailsDiv">
       <div className="flex flex-row w-full">
         <div className="w-1/6 pt-1 pl-1">
           <img
@@ -47,8 +58,10 @@ const WeatherDetails: React.FC<Props> = ({
             alt="delete"
           />
         </div>
-        <div className=" text-xl w-4/6 pb-6 text-center">
-          <p className="mt-2 ">{name}</p>
+        <div className=" text-xl w-4/6 pb-6 text-center  text-white">
+          <p className="mt-2">
+            <span className=" px-4 bg-blue-500">{name}</span>
+          </p>
         </div>
         <div className="w-1/6 flex flex-col">
           <img
@@ -75,17 +88,43 @@ const WeatherDetails: React.FC<Props> = ({
         <p className="fav -mt-10">FAVORITES</p>
       </FavAlert>
 
-      <div className="bg-blue-600 w-full mt-2 py-2 text-white">
-      <div className="flex flex-row  space-x-5 w-full pl-3 mb-2">
-        <p className="w-1/2">Degrees: {temp}°</p>
-        <p className="w-1/2">Feels like: {feelsLike}°</p>
+      <div
+        className={`${
+          white && classes.bgData
+        } w-full mt-2 py-2 text-blue-800 text-center "`}
+      >
+        <div className="flex flex-row space-x-3 w-full mb-2">
+          <div className=" bg-white w-[48%] ml-1">
+            <p>Now: {temp}°</p>
+          </div>
+          <div className=" bg-white w-[45%]">
+            <p>Feels like: {feelsLike}°</p>
+          </div>
+        </div>
+        <div className="flex flex-row space-x-3 w-full">
+          <div className="w-[48%] bg-white ml-1">
+            <p>Humidity: {humidity}°</p>
+          </div>
+          <div className="w-[45%] bg-white mr-1">
+            <p>Max: {max}° Min:{min}°</p>
+          </div>
+        </div>
+        <div className="text-center flex flex-row items-center">
+          <p className="bg-white px-1 ml-1 mt-2 text-blue-800 w-1/2">
+            Weather: <br /> {weather[0].toUpperCase() + weather.substring(1)}
+          </p>
+          <div className="w-1/2 pt-2">
+            <button
+              onClick={setWhiteMode}
+              className={`cursor-auto px-2 py-1 ${
+                white ? "bg-white text-blue-800" : "bg-blue-600 text-white"
+              }`}
+            >
+              {white ? "Blue Mode" : "White Mode"}
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="flex flex-row  space-x-5 w-full pl-3">
-        <p className="w-1/2 ">Humidity: {humidity}%</p>
-        <p className="w-1/2">Weather: {weather}</p>
-      </div>
-      </div>
-     
     </div>
   );
 };

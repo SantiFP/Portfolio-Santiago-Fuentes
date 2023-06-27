@@ -6,4 +6,10 @@
   .fav {
     @apply text-xs text-white px-2 py-1 rounded-xl bg-blue-400  ;
   }
+  .weatherDetailsDiv {
+    @apply flex flex-col items-center mt-6 w-3/4 mx-auto border-[3.5px] mb-2 pb-4 border-solid border-blue-300 lg:w-1/5
+  }
+  .details{
+    @apply bg-white text-blue-800 py-[0.15rem] px-2
+  }
 }
