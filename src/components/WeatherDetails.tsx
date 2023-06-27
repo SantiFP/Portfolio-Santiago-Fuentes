@@ -55,7 +55,7 @@ const WeatherDetails: React.FC<Props> = ({
             src="/fav.png"
             alt="fav"
           />
-          <FavAlert favPrompt={fav}>
+          <FavAlert isFav={fav}>
             <img
               ref={nodeRef}
               onClick={() => deleteFav()}
@@ -66,7 +66,7 @@ const WeatherDetails: React.FC<Props> = ({
         </div>
       </div>
 
-      <FavAlert favPrompt={fav}>
+      <FavAlert isFav={fav}>
         <p className="fav -mt-10">FAVORITES</p>
       </FavAlert>
       <p className="mt-4">Temperature: {temp}°</p>

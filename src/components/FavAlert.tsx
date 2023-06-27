@@ -2,7 +2,7 @@ import { CSSTransition } from "react-transition-group";
 import classes from "./FavAlert.module.css";
 import { useRef } from "react";
 
-const FavAlert: React.FC<{ favPrompt: boolean; children: React.ReactNode }> = (
+const FavAlert: React.FC<{ isFav: boolean; children: React.ReactNode }> = (
   props
 ) => {
   const nodeRef = useRef<HTMLParagraphElement>(null);
@@ -10,7 +10,7 @@ const FavAlert: React.FC<{ favPrompt: boolean; children: React.ReactNode }> = (
   return (
     <CSSTransition
       nodeRef={nodeRef}
-      in={props.favPrompt}
+      in={props.isFav}
       timeout={500}
       classNames={{
         enter: classes.enter,
