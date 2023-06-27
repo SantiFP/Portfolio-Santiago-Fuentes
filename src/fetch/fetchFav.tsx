@@ -32,7 +32,8 @@ const FetchCities = () => {
               temp,
               feels_like,
               humidity,
-              description
+              description,
+              true
             )
           );
         }

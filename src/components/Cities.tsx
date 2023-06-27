@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CitiesContext } from "../store/cities-store";
 
 const Cities: React.FC = () => {
-  const { cities, removeCity, newFav } = useContext(CitiesContext);
+  const { cities, removeCity, newFav,deleteFav } = useContext(CitiesContext);
 
   return useMemo(() => {
     return (
@@ -31,7 +31,9 @@ const Cities: React.FC = () => {
                 weather={el.weather}
                 feelsLike={el.feelsLike}
                 key={el.id}
-                fav={() => newFav(el.cityName)}
+                newFav={() => newFav(el.cityName)}
+                deleteFav={() => deleteFav(el.cityName)}
+                fav={el.fav}
               />
             </div>
           </CSSTransition>

@@ -1,4 +1,4 @@
-import React, { createRef} from "react";
+import React, { createRef } from "react";
 class CityModel {
   id: number;
   cityName: string;
@@ -7,7 +7,7 @@ class CityModel {
   humidity: number;
   weather: string;
   fav: boolean;
-  ref: React.RefObject<any>; 
+  ref: React.RefObject<any>;
 
   constructor(
     id: number,
@@ -16,17 +16,17 @@ class CityModel {
     feelsLike: number,
     humidity: number,
     weather: string,
-    
-  ){
-    this.id = id
+    fav: boolean
+  ) {
+    this.id = id;
     this.cityName = cityName;
     this.temp = temp;
     this.feelsLike = feelsLike;
     this.humidity = humidity;
     this.weather = weather;
-    this.fav = false;
+    this.fav = fav;
     this.ref = createRef();
-  };
-};
+  }
+}
 
-export default CityModel
+export default CityModel;
