@@ -46,8 +46,6 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       return el.cityName !== city;
     });
 
-    console.log(filteredCities);
-
     for (const el of cities) {
       if (el.cityName === city && el.fav) {
         wasFavorite = true;
