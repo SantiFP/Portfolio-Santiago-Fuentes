@@ -4,6 +4,7 @@ import React, { ReactNode, useState } from "react";
 type CitiesCtxObj = {
   cities: CityModel[];
   loading: boolean;
+  notFound: boolean;
   newCity: (city: string) => void;
   removeCity: (id: number) => void;
   newFav: (city: string) => void;
@@ -15,6 +16,7 @@ type CitiesCtxObj = {
 export const CitiesContext = React.createContext<CitiesCtxObj>({
   cities: [],
   loading: true,
+  notFound: false,
   newCity: () => {},
   removeCity: () => {},
   newFav: () => {},
@@ -26,6 +28,7 @@ export const CitiesContext = React.createContext<CitiesCtxObj>({
 const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
   const [cities, setCities] = useState<CityModel[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [notFound, setNotFound] = useState<boolean>(false);
 
   const notLoading = () => {
     setLoading(false);
@@ -37,6 +40,17 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=34afa1ae92e324d4db64606ceed9407f`
     );
     const res = await req.json();
+    if (res.cod === "404") {
+      setLoading(false);
+      setNotFound(true);
+      const interval = setInterval(() => {
+        setNotFound(false);
+      }, 2000);
+      setInterval(() => {
+        clearInterval(interval);
+      }, 2000);
+      return;
+    }
     const id = Math.random() * Math.random();
     const {
       temp,
@@ -53,7 +67,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       return el.cityName !== city;
     });
 
-    const fromStorage = localStorage.getItem('cities');
+    const fromStorage = localStorage.getItem("cities");
     const toArray = fromStorage && JSON.parse(fromStorage);
     toArray.includes(city) && (wasFavorite = true);
 
@@ -135,6 +149,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
     fromFav,
     loading,
     notLoading,
+    notFound,
   };
 
   return (

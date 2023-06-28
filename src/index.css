@@ -12,4 +12,7 @@
   .details{
     @apply bg-white text-blue-800 py-[0.15rem] px-2
   }
+  .results{
+    @apply  bg-blue-600 px-2 py-1 text-white mx-auto w-fit
+  }
 }

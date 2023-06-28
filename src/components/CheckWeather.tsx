@@ -27,7 +27,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
     }
 
     let words = enteredCity.split(" ");
-    var capitalizedWords = words.map((word) => {
+    let capitalizedWords = words.map((word) => {
       return word.charAt(0).toUpperCase() + word.slice(1);
     });
 
