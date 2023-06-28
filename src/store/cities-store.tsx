@@ -45,10 +45,10 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       setNotFound(true);
       const interval = setInterval(() => {
         setNotFound(false);
-      }, 2000);
+      }, 1000);
       setInterval(() => {
         clearInterval(interval);
-      }, 2000);
+      }, 1000);
       return;
     }
     const id = Math.random() * Math.random();

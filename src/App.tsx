@@ -20,14 +20,26 @@ const App: React.FC = () => {
     <>
       <Header />
       <CheckWeather toggling={toggleFetch} />
-      {cities.length === 0 && !loading &&  (
+      {cities.length === 0 && !loading && (
         <p className="text-lg mt-12 results">No cities found</p>
       )}
       <FavAlert isFav={notFound}>
-        <p className="results -mt-20">City not found</p>
+        <p className={`results mt-2 ${cities.length === 0 && "-mt-20"}`}>
+          City not found
+        </p>
       </FavAlert>
 
-      {loading && <p className="text-lg text-center pt-8">Loading...</p>}
+      {loading && (
+        <div className="flex flex-row items-center justify-center space-x-3 mt-4">
+          <img
+            className="h-8 w-8 animate-spin"
+            src="/cargando.png"
+            alt="loading"
+          />
+          <p className="text-lg text-center text-blue-800 ">Loading...</p>
+        </div>
+      )}
+
       <Cities />
       <button className="hidden">toggle</button>
     </>
