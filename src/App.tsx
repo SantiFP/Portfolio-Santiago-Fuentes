@@ -30,7 +30,7 @@ const App: React.FC = () => {
       </FavAlert>
 
       {loading && (
-        <div className="flex flex-row items-center justify-center space-x-3 mt-4">
+        <div className="flex flex-row items-center justify-center space-x-3 mt-8">
           <img
             className="h-8 w-8 animate-spin"
             src="/cargando.png"
