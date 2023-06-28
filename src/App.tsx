@@ -16,21 +16,27 @@ const App: React.FC = () => {
     setToggle(!toggle);
   };
 
+  const citiesLength = cities.length === 0;
+
   return (
     <>
       <Header />
       <CheckWeather toggling={toggleFetch} />
-      {cities.length === 0 && !loading && (
+      {citiesLength && !loading && (
         <p className="text-lg mt-12 results">No cities found</p>
       )}
       <FavAlert isFav={notFound}>
-        <p className={`results mt-2 ${cities.length === 0 && "-mt-20"}`}>
+        <p className={`results mt-2 ${citiesLength && "mt-[-4.8rem]"}`}>
           City not found
         </p>
       </FavAlert>
 
       {loading && (
-        <div className="flex flex-row items-center justify-center space-x-3 mt-8">
+        <div
+          className={`flex flex-row items-center justify-center space-x-3 mt-5 ${
+            citiesLength && "mt-16"
+          }`}
+        >
           <img
             className="h-8 w-8 animate-spin"
             src="/cargando.png"
