@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <p className="text-lg mt-12 results lg:mt-36">No cities found</p>
       )}
       <FavAlert isFav={notFound}>
-        <p className={`results mt-2 ${citiesLength && "mt-[-4.8rem] lg:mt-[-10rem]"}`}>
+        <p className={`results mt-5 ${citiesLength && "mt-[-4.8rem] lg:mt-[-10rem]"}`}>
           City not found
         </p>
       </FavAlert>
