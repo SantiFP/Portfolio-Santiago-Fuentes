@@ -127,7 +127,7 @@ const WeatherDetails: React.FC<Props> = ({
                 white ? "bg-white text-blue-800" : "bg-blue-600 text-white"
               }`}
             >
-              {white ? "Blue Mode" : "White Mode"}
+              {white ? "White Mode" : "Blue Mode"}
             </button>
           </div>
         </div>

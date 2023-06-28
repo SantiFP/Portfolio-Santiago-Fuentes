@@ -22,7 +22,7 @@ const Cities: React.FC = () => {
               exitActive: classes.exitActive,
             }}
           >
-            <div className={index === 0 ? 'lg:ml-4' : ''} ref={el.ref}>
+            <div className={index === 0 ? 'lg:ml-6' : ''} ref={el.ref}>
               <WeatherDetails
                 name={el.cityName}
                 temp={el.temp}
