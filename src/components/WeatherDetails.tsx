@@ -93,7 +93,7 @@ const WeatherDetails: React.FC<Props> = ({
       <div
         className={`${
           white && classes.bgData
-        } w-full mt-2 py-2 pl-3 text-blue-800 text-center lg:pl-0 lg:ml-0`}
+        } w-full mt-2 py-2 pl-1 text-blue-800 text-center lg:pl-0 lg:ml-0`}
       >
         <div className="flex flex-row space-x-3 w-full mb-2">
           <div className=" bg-white w-[48%] ml-1">
