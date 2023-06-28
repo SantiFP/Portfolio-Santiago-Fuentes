@@ -53,6 +53,10 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       return el.cityName !== city;
     });
 
+    const fromStorage = localStorage.getItem('cities');
+    const toArray = fromStorage && JSON.parse(fromStorage);
+    toArray.includes(city) && (wasFavorite = true);
+
     for (const el of cities) {
       if (el.cityName === city && el.fav) {
         wasFavorite = true;
