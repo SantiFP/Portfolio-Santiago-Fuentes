@@ -23,18 +23,18 @@ const App: React.FC = () => {
       <Header />
       <CheckWeather toggling={toggleFetch} />
       {citiesLength && !loading && (
-        <p className="text-lg mt-12 results">No cities found</p>
+        <p className="text-lg mt-12 results lg:mt-36">No cities found</p>
       )}
       <FavAlert isFav={notFound}>
-        <p className={`results mt-2 ${citiesLength && "mt-[-4.8rem]"}`}>
+        <p className={`results mt-2 ${citiesLength && "mt-[-4.8rem] lg:mt-[-10rem]"}`}>
           City not found
         </p>
       </FavAlert>
 
       {loading && (
         <div
-          className={`flex flex-row items-center justify-center space-x-3 mt-5 ${
-            citiesLength && "mt-16"
+          className={`flex flex-row items-center justify-center space-x-3 mt-5  ${
+            citiesLength && "mt-16 lg:mt-36"
           }`}
         >
           <img

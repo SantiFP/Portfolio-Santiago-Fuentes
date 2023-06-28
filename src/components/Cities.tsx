@@ -6,12 +6,12 @@ import { useContext } from "react";
 import { CitiesContext } from "../store/cities-store";
 
 const Cities: React.FC = () => {
-  const { cities, removeCity, newFav,deleteFav } = useContext(CitiesContext);
+  const { cities, removeCity, newFav, deleteFav } = useContext(CitiesContext);
 
   return useMemo(() => {
     return (
-      <TransitionGroup>
-        {cities.map((el) => (
+      <TransitionGroup className="cities ">
+        {cities.map((el,index) => (
           <CSSTransition
             nodeRef={el.ref}
             key={el.id}
@@ -22,7 +22,7 @@ const Cities: React.FC = () => {
               exitActive: classes.exitActive,
             }}
           >
-            <div ref={el.ref}>
+            <div className={index === 0 ? 'lg:ml-4' : ''} ref={el.ref}>
               <WeatherDetails
                 name={el.cityName}
                 temp={el.temp}

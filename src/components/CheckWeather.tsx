@@ -31,7 +31,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
       return word.charAt(0).toUpperCase() + word.slice(1);
     });
 
-    newCity(capitalizedWords.join(' ').trim());
+    newCity(capitalizedWords.join(" ").trim());
 
     setCityInput("");
   };
@@ -44,25 +44,29 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
     toggling();
   };
   return (
-    <form
-      onSubmit={checkWeatherHandler}
-      className="flex flex-col items-center pt-6 space-y-3"
-    >
-      <label className="text-2xl">Choose city</label>
-      <input
-        value={cityInput}
-        onChange={inputHandler}
-        autoFocus
-        ref={inputRef}
-        className="outline-none bg-blue-200 py-2 pl-2"
-        type="text"
-      />
-      <button
-        onClick={togglingHandler}
-        className="bg-blue-300 rounded-3xl py-2 px-4 cursor-auto"
-      >
-        Check weather
-      </button>
+    <form onSubmit={checkWeatherHandler}>
+      <div className="flex flex-col items-center pt-6 space-y-3 lg:space-y-0 ">
+        <div className="choose">
+          <label className="text-2xl bg-blue-500 text-white px-2 py-1">
+            Choose city
+          </label>
+          <input
+            value={cityInput}
+            onChange={inputHandler}
+            autoFocus
+            ref={inputRef}
+            className="outline-none bg-blue-200 py-2 pl-2"
+            type="text"
+          />
+        </div>
+
+        <button
+          onClick={togglingHandler}
+          className="bg-blue-300 rounded-3xl py-2 px-4 cursor-auto"
+        >
+          Check weather
+        </button>
+      </div>
     </form>
   );
 };

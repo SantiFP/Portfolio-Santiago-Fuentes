@@ -51,7 +51,7 @@ const WeatherDetails: React.FC<Props> = ({
 
   return (
     <div className="weatherDetailsDiv">
-      <div className="flex flex-row w-full">
+      <div className="flex flex-row  w-full">
         <div className="w-1/6 pt-1 pl-1">
           <img
             onClick={removeCity}
@@ -62,7 +62,7 @@ const WeatherDetails: React.FC<Props> = ({
         </div>
         <div className=" text-xl w-4/6 pb-6 text-center  text-white">
           <p className="mt-2">
-            <span className=" px-4 bg-blue-500">{name}</span>
+            <span className=" px-4 bg-blue-500 lg:py-1">{name}</span>
           </p>
         </div>
         <div className="w-1/6 flex flex-col">
@@ -87,13 +87,13 @@ const WeatherDetails: React.FC<Props> = ({
       </div>
 
       <FavAlert isFav={fav}>
-        <p className="fav -mt-10">FAVORITES</p>
+        <p className="fav -mt-10 lg:-mt-9">FAVORITES</p>
       </FavAlert>
 
       <div
         className={`${
           white && classes.bgData
-        } w-full mt-2 py-2 text-blue-800 text-center "`}
+        } w-full mt-2 py-2 pl-3 text-blue-800 text-center lg:pl-0 lg:ml-0`}
       >
         <div className="flex flex-row space-x-3 w-full mb-2">
           <div className=" bg-white w-[48%] ml-1">
