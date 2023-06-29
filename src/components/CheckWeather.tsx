@@ -70,7 +70,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
           />
         </div>
 
-        <div className="pt-6 lg:pt-3">
+        <div className="pt-2 lg:pt-3">
           <button
             onClick={() => {
               togglingHandler();
