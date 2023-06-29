@@ -34,7 +34,7 @@ const App: React.FC = () => {
       {loading && (
         <div
           className={`flex flex-row items-center justify-center space-x-3 mt-5  ${
-            citiesLength && "mt-16 lg:mt-36"
+            citiesLength && "pt-8 lg:absolute lg:top-0 lg:bottom-0 lg:right-0 lg:left-0 "
           }`}
         >
           <img

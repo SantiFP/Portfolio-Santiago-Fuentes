@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useContext } from "react";
 import { CitiesContext } from "../store/cities-store";
+import classes from "./CheckWeather.module.css";
 
 interface Props {
   toggling: () => void;
@@ -10,6 +11,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [cityInput, setCityInput] = useState<string>("");
+  const [isUpscaled, setIsUpscaled] = useState<boolean>(false);
 
   const { newCity } = useContext(CitiesContext);
 
@@ -36,6 +38,13 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
     setCityInput("");
   };
 
+  const handleClick = () => {
+    setIsUpscaled(!isUpscaled);
+    setTimeout(() => {
+      setIsUpscaled(false);
+    }, 300);
+  };
+
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCityInput(e.target.value);
   };
@@ -43,6 +52,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
   const togglingHandler = () => {
     toggling();
   };
+
   return (
     <form onSubmit={checkWeatherHandler}>
       <div className="flex flex-col items-center pt-6 space-y-3 lg:space-y-0 ">
@@ -60,12 +70,19 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
           />
         </div>
 
-        <button
-          onClick={togglingHandler}
-          className="bg-blue-300 rounded-3xl py-2 px-4 cursor-auto"
-        >
-          Check weather
-        </button>
+        <div className="pt-6 lg:pt-3">
+          <button
+            onClick={() => {
+              togglingHandler();
+              handleClick();
+            }}
+            className={`buttonCheck ${isUpscaled ? classes.upscaled : ""} ${
+              classes.check
+            } `}
+          >
+            CHECK WEATHER
+          </button>
+        </div>
       </div>
     </form>
   );

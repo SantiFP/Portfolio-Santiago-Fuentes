@@ -1,0 +1,8 @@
+.check {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.check.upscaled {
+    transform: scale(1.2);
+}

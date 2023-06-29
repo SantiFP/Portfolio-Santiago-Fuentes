@@ -50,12 +50,12 @@ const WeatherDetails: React.FC<Props> = ({
   };
 
   return (
-    <div className="weatherDetailsDiv">
+    <div className="weatherDetailsDiv ">
       <div className="flex flex-row  w-full">
         <div className="w-1/6 pt-1 pl-1">
           <img
             onClick={removeCity}
-            className="h-6 w-6"
+            className="h-6 w-6 lg:cursor-pointer"
             src="/boton-eliminar.png"
             alt="delete"
           />
@@ -71,7 +71,7 @@ const WeatherDetails: React.FC<Props> = ({
               thumbsUp();
               newFav();
             }}
-            className={`h-8 w-8 mt-2 ml-auto mr-2 ${thumb && classes.thumb}`}
+            className={`h-8 w-8 mt-2 ml-auto mr-2 ${thumb && classes.thumb} lg:cursor-pointer`}
             src="/fav.png"
             alt="fav"
           />
@@ -80,7 +80,7 @@ const WeatherDetails: React.FC<Props> = ({
               ref={nodeRef}
               onClick={() => deleteFav()}
               src="/thumbs-down.png"
-              className="h-8 w-8 ml-auto mr-2 mt-2"
+              className="h-8 w-8 ml-auto mr-2 mt-2 lg:cursor-pointer"
             />
           </FavAlert>
         </div>
