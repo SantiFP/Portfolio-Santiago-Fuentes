@@ -123,7 +123,7 @@ const WeatherDetails: React.FC<Props> = ({
           <div className="w-1/2 pt-2">
             <button
               onClick={setWhiteMode}
-              className={`cursor-auto px-2 py-1 ${
+              className={`cursor-auto px-2 py-1 lg:cursor-pointer ${
                 white ? "bg-white text-blue-800" : "bg-blue-600 text-white"
               }`}
             >
