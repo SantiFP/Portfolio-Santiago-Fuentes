@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { useContext } from "react";
 import { CitiesContext } from "../store/cities-store";
 import classes from "./CheckWeather.module.css";
-
 interface Props {
   toggling: () => void;
 }

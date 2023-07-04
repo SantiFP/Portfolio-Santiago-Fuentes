@@ -1,9 +1,13 @@
 import { useEffect, useContext } from "react";
 import CityModel from "../models/CityModel";
 import { CitiesContext } from "../store/cities-store";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../store";
+import { loadingActions } from "../store/loading";
 
 const FetchCities = () => {
-  const { fromFav, notLoading } = useContext(CitiesContext);
+  const { fromFav } = useContext(CitiesContext);
+  const dispatch = useDispatch<AppDispatch>();
 
   const favCities = localStorage.getItem("cities");
   const citiesFetch = favCities ? JSON.parse(favCities) : [];
@@ -49,7 +53,7 @@ const FetchCities = () => {
         }
 
         fromFav(citiesArray);
-        notLoading();
+        dispatch(loadingActions.loadingHandler());
       }
     };
 

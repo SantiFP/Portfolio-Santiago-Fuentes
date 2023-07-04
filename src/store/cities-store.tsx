@@ -1,50 +1,42 @@
 import CityModel from "../models/CityModel";
 import React, { ReactNode, useState } from "react";
+import { useDispatch } from "react-redux";
+import { loadingActions } from "./loading";
 
 type CitiesCtxObj = {
   cities: CityModel[];
-  loading: boolean;
-  notFound: boolean;
   newCity: (city: string) => void;
   removeCity: (id: number) => void;
   newFav: (city: string) => void;
   fromFav: (cities: CityModel[]) => void;
   deleteFav: (cityName: string) => void;
-  notLoading: () => void;
 };
 
 export const CitiesContext = React.createContext<CitiesCtxObj>({
   cities: [],
-  loading: true,
-  notFound: false,
   newCity: () => {},
   removeCity: () => {},
   newFav: () => {},
   fromFav: () => {},
-  notLoading: () => {},
   deleteFav: () => {},
 });
 
 const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
   const [cities, setCities] = useState<CityModel[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [notFound, setNotFound] = useState<boolean>(false);
 
-  const notLoading = () => {
-    setLoading(false);
-  };
+  const dispatch = useDispatch();
 
   const newCity = async (city: string) => {
-    setLoading(true);
+    dispatch(loadingActions.loadingHandler());
     const req = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=34afa1ae92e324d4db64606ceed9407f`
     );
     const res = await req.json();
     if (res.cod === "404") {
-      setLoading(false);
-      setNotFound(true);
+      dispatch(loadingActions.loadingHandler());
+      dispatch(loadingActions.notFoundHandler());
       const interval = setInterval(() => {
-        setNotFound(false);
+        dispatch(loadingActions.notFoundHandler());
       }, 1000);
       setInterval(() => {
         clearInterval(interval);
@@ -93,7 +85,7 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
       ...filteredCities,
     ]);
 
-    setLoading(false);
+    dispatch(loadingActions.loadingHandler());
   };
 
   const newFav = (cityName: string) => {
@@ -147,9 +139,6 @@ const CitiesProvider: React.FC<{ children: ReactNode }> = (props) => {
     newCity,
     removeCity,
     fromFav,
-    loading,
-    notLoading,
-    notFound,
   };
 
   return (
