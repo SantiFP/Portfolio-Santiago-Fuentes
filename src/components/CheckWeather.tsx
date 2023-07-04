@@ -16,7 +16,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
 
   useEffect(() => {
     inputRef.current?.focus();
-  }, []);
+  }, []);  
 
   const checkWeatherHandler = (e: React.FormEvent) => {
     e.preventDefault();
