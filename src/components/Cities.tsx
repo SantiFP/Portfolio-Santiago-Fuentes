@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { CitiesContext } from "../store/cities-store";
 
 const Cities: React.FC = () => {
-  const { cities, removeCity } = useContext(CitiesContext);
 
   return useMemo(() => {
     return (
