@@ -1,6 +1,7 @@
 import FavAlert from "./FavAlert";
 import classes from "./WeatherDetails.module.css";
-import { useState, useRef } from "react";
+import { useState, useRef,useContext } from "react";
+import { CitiesContext } from "../store/cities-store";
 interface Props {
   name: string;
   temp: number;
@@ -12,8 +13,6 @@ interface Props {
   min: number;
   windSpeed: number;
   removeCity: () => void;
-  newFav: () => void;
-  deleteFav: () => void;
 }
 
 const WeatherDetails: React.FC<Props> = ({
@@ -26,8 +25,6 @@ const WeatherDetails: React.FC<Props> = ({
   windSpeed,
   weather,
   removeCity,
-  newFav,
-  deleteFav,
   fav,
 }) => {
   const isWhite = localStorage.getItem("white");
@@ -36,6 +33,8 @@ const WeatherDetails: React.FC<Props> = ({
     isWhite ? JSON.parse(isWhite) : false
   );
   const nodeRef = useRef<HTMLImageElement>(null);
+
+  const { newFav, deleteFav } = useContext(CitiesContext);
 
   const thumbsUp = () => {
     setThumb(true);
@@ -69,7 +68,7 @@ const WeatherDetails: React.FC<Props> = ({
           <img
             onClick={() => {
               thumbsUp();
-              newFav();
+              newFav(name);
             }}
             className={`h-8 w-8 mt-2 ml-auto mr-2 ${thumb && classes.thumb} lg:cursor-pointer`}
             src="/fav.png"
@@ -78,7 +77,7 @@ const WeatherDetails: React.FC<Props> = ({
           <FavAlert isFav={fav}>
             <img
               ref={nodeRef}
-              onClick={() => deleteFav()}
+              onClick={() => deleteFav(name)}
               src="/thumbs-down.png"
               className="h-8 w-8 ml-auto mr-2 mt-2 lg:cursor-pointer"
             />
