@@ -12,8 +12,6 @@ const Cities: React.FC = () => {
     [cities]
   );
 
-  console.log(cities);
-
   return useMemo(() => {
     return (
       <TransitionGroup className="cities">
