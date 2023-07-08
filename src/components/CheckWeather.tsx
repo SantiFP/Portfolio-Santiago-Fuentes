@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import classes from "./CheckWeather.module.css";
 import { AppDispatch } from "../store";
 import { useDispatch, useSelector } from "react-redux";
-import { newCity } from "../store/handleCities";
+import { newCity } from "../store/handleNewCity";
 import { RootState } from "../store";
 
 interface Props {
