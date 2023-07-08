@@ -1,18 +1,21 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useContext } from "react";
-import { CitiesContext } from "../store/cities-store";
 import classes from "./CheckWeather.module.css";
+import { AppDispatch } from "../store";
+import { useDispatch, useSelector } from "react-redux";
+import { newCity } from "../store/handleCities";
+import { RootState } from "../store";
+
 interface Props {
   toggling: () => void;
 }
 
 const CheckWeather: React.FC<Props> = ({ toggling }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const dispatch = useDispatch<AppDispatch>();
 
+  const cities = useSelector((state:RootState) => state.cities.cities)
   const [cityInput, setCityInput] = useState<string>("");
   const [isUpscaled, setIsUpscaled] = useState<boolean>(false);
-
-  const { newCity } = useContext(CitiesContext);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -31,8 +34,7 @@ const CheckWeather: React.FC<Props> = ({ toggling }) => {
     let capitalizedWords = words.map((word) => {
       return word.charAt(0).toUpperCase() + word.slice(1);
     });
-
-    newCity(capitalizedWords.join(" ").trim());
+    dispatch(newCity(capitalizedWords.join(" ").trim(),cities))
 
     setCityInput("");
   };

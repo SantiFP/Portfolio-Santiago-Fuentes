@@ -6,7 +6,7 @@ interface LoadingState {
 }
 
 const initialState: LoadingState = {
-  loading: true,
+  loading: false,
   notFound: false
 };
 
@@ -14,8 +14,11 @@ const loadingSlice = createSlice({
   name: "loading",
   initialState,
   reducers: {
-    loadingHandler(state) {
-      state.loading = !state.loading;
+    startLoading(state) {
+      state.loading = true;
+    },
+    stopLoading(state) {
+      state.loading = false;
     },
     notFoundHandler(state){
       state.notFound = !state.notFound
@@ -25,4 +28,4 @@ const loadingSlice = createSlice({
 
 export const loadingActions = loadingSlice.actions;
 
-export const loadingReducer = loadingSlice.reducer
+export const loadingReducer = loadingSlice.reducer;

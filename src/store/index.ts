@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { loadingReducer } from "./loading";
+import { citiesReducer } from "./cities";
 
 
 const store = configureStore({
-  reducer: {loading: loadingReducer}
+  reducer: {loading: loadingReducer,cities: citiesReducer}
 });
 
 export type AppDispatch = typeof store.dispatch;

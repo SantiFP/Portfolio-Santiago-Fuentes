@@ -1,4 +1,3 @@
-import React, { createRef } from "react";
 class CityModel {
   id: number;
   cityName: string;
@@ -10,7 +9,6 @@ class CityModel {
   min: number;
   windSpeed: number;
   fav: boolean;
-  ref: React.RefObject<any>;
 
   constructor(
     id: number,
@@ -34,7 +32,21 @@ class CityModel {
     this.windSpeed = windSpeed;
     this.weather = weather;
     this.fav = fav;
-    this.ref = createRef();
+  }
+
+  serialize() {
+    return {
+      id: this.id,
+      cityName: this.cityName,
+      temp: this.temp,
+      feelsLike: this.feelsLike,
+      humidity: this.humidity,
+      max: this.max,
+      min: this.min,
+      windSpeed: this.windSpeed,
+      weather: this.weather,
+      fav: this.fav,
+    };
   }
 }
 

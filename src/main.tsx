@@ -1,17 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import App from "./App.jsx";
 import "./index.css";
-import CitiesProvider from "./store/cities-store.tsx";
 import { Provider } from "react-redux";
-import store from "./store/index.tsx";
+import store from "./store/index";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <CitiesProvider>
         <App />
-      </CitiesProvider>
     </Provider>
   </React.StrictMode>
 );

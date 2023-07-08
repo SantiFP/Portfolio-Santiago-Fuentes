@@ -1,22 +1,32 @@
 import CheckWeather from "./components/CheckWeather";
 import Cities from "./components/Cities";
 import Header from "./components/Header";
-import React, { useState, useContext } from "react";
-import { CitiesContext } from "./store/cities-store";
-import FetchCities from "./fetch/fetchFav";
+import React, { useState, useEffect } from "react";
+import {FetchCities} from "./store/handleFavs";
 import FavAlert from "./components/FavAlert";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./store";
+import { AppDispatch } from "./store";
+
+let isMounted = true;
 
 const App: React.FC = () => {
   // const auth = useSelector((state: RootState) => state.auth.isAuth);
   const loadingState = useSelector((state: RootState) => state.loading);
-  const {loading,notFound} = loadingState;
-  
-  const [toggle, setToggle] = useState<boolean>(true);
-  const { cities } = useContext(CitiesContext);
+  const cities = useSelector((state: RootState) => state.cities.cities);
 
-  FetchCities();
+  const { loading, notFound } = loadingState;
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const [toggle, setToggle] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (isMounted) {
+      dispatch(FetchCities());
+      isMounted = false; 
+    }
+  }, []);
 
   const toggleFetch = () => {
     setToggle(!toggle);

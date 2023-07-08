@@ -1,19 +1,25 @@
 import WeatherDetails from "./WeatherDetails";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import classes from "./Cities.module.css";
-import React, { useMemo } from "react";
-import { useContext } from "react";
-import { CitiesContext } from "../store/cities-store";
+import React, { useMemo, createRef } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/index";
 
 const Cities: React.FC = () => {
-  const { cities, removeCity, newFav, deleteFav } = useContext(CitiesContext);
+  const cities = useSelector((state: RootState) => state.cities.cities);
+  const cityRefs = useMemo(
+    () => cities.map(() => createRef<HTMLDivElement>()),
+    [cities]
+  );
+
+  console.log(cities);
 
   return useMemo(() => {
     return (
-      <TransitionGroup className="cities ">
-        {cities.map((el,index) => (
+      <TransitionGroup className="cities">
+        {cities.map((el, i) => (
           <CSSTransition
-            nodeRef={el.ref}
+            nodeRef={cityRefs[i]}
             key={el.id}
             timeout={1000}
             classNames={{
@@ -22,11 +28,11 @@ const Cities: React.FC = () => {
               exitActive: classes.exitActive,
             }}
           >
-            <div className={index === 0 ? 'lg:ml-6' : ''} ref={el.ref}>
+            <div className={i === 0 ? "lg:ml-6" : ""} ref={cityRefs[i]}>
               <WeatherDetails
                 name={el.cityName}
                 temp={el.temp}
-                removeCity={() => removeCity(el.id)}
+                id={el.id}
                 humidity={el.humidity}
                 max={el.max}
                 min={el.min}
@@ -34,8 +40,6 @@ const Cities: React.FC = () => {
                 weather={el.weather}
                 feelsLike={el.feelsLike}
                 key={el.id}
-                newFav={() => newFav(el.cityName)}
-                deleteFav={() => deleteFav(el.cityName)}
                 fav={el.fav}
               />
             </div>
@@ -45,5 +49,4 @@ const Cities: React.FC = () => {
     );
   }, [cities]);
 };
-
 export default React.memo(Cities);
