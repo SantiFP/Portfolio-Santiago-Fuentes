@@ -4,4 +4,4 @@ Este es un contador de vidas para el juego de cartas Magic the gathering, esta r
 
 Para ejecutar el servidor de desarrollo correr el comando npm i y luego el comando npm run dev.
 
-VERSIÓN DESPLEGADA: https://magic-f6288.web.app/
+VERSIÓN DESPLEGADA: https://magic-f6288.web.app/ 
