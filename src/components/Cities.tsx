@@ -11,7 +11,7 @@ const Cities: React.FC = () => {
   return useMemo(() => {
     return (
       <TransitionGroup className="cities ">
-        {cities.map((el,index) => (
+        {cities.map((el,i) => (
           <CSSTransition
             nodeRef={el.ref}
             key={el.id}
@@ -22,7 +22,7 @@ const Cities: React.FC = () => {
               exitActive: classes.exitActive,
             }}
           >
-            <div className={index === 0 ? 'lg:ml-6' : ''} ref={el.ref}>
+            <div className={i === 0 ? 'lg:ml-6' : ''} ref={el.ref}>
               <WeatherDetails
                 name={el.cityName}
                 temp={el.temp}

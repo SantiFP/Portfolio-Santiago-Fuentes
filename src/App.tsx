@@ -26,7 +26,11 @@ const App: React.FC = () => {
         <p className="text-lg mt-12 results lg:mt-36">No cities found</p>
       )}
       <FavAlert isFav={notFound}>
-        <p className={`results mt-5 ${citiesLength && "mt-[-4.8rem] lg:mt-[-10rem]"}`}>
+        <p
+          className={`results mt-5 ${
+            citiesLength && "mt-[-4.8rem] lg:mt-[-10rem]"
+          }`}
+        >
           City not found
         </p>
       </FavAlert>
@@ -34,7 +38,8 @@ const App: React.FC = () => {
       {loading && (
         <div
           className={`flex flex-row items-center justify-center space-x-3 mt-5  ${
-            citiesLength && "pt-8 lg:absolute lg:top-0 lg:bottom-0 lg:right-0 lg:left-0 "
+            citiesLength &&
+            "pt-8 lg:absolute lg:top-0 lg:bottom-0 lg:right-0 lg:left-0 "
           }`}
         >
           <img
