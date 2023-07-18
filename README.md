@@ -1,5 +1,6 @@
 # Portfolio-Santiago-Fuentes
-Este es un chat creado con React y el entorno Vite.
+Este es un chat creado con React y el entorno Vite. Se envían mensajes con el botón New Message y se pueden eliminar clickeando dos veces sobre cualquier parte
+del mensaje.
 
 Para ejecutar el servidor de desarrollo correr el comando npm run dev.
 
