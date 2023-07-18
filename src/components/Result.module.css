@@ -17,11 +17,9 @@
 .resultDiv {
   background-color: rgb(81, 118, 188);
   width: 100%;
-  overflow-wrap: break-word;
   height: 16vh;
 }
 
 .result {
   word-wrap: break-word;
-  white-space: normal !important;
 }
