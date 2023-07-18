@@ -4,6 +4,6 @@ como temperatura actual,humedad,etc. Se puede presionar el pulgar hacia arriba, 
 desde el inicio se podrá ver esa ciudad y sus datos climáticos correspondientes actuales obtenidos de la api cuando se carga la aplicación.
 Esta es la versión que utiliza la librería Redux junto con Redux toolkit para transmitir datos.
 
-Para ejecutar el servidor de desarrollo correr el comando npm run dev.
+Para ejecutar el servidor de desarrollo correr el comando npm i y luego el comando npm run dev.
 
 VERSIÓN DESPLEGADA: https://weather-app-ed47d.web.app/
