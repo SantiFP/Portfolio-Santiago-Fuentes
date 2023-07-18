@@ -3,5 +3,6 @@ Esta es una aplicación de clima realizada con React y el entorno Vite, se busca
 como temperatura actual,humedad,etc. Se puede presionar el pulgar hacia arriba, la ciudad se agrega a favoritos y ahora cada vez que se ingrese a la aplicación 
 desde el inicio se podrá ver esa ciudad y sus datos climáticos correspondientes actuales obtenidos de la api cuando se carga la aplicación.
 Esta es la versión que utiliza la librería Redux junto con Redux toolkit para transmitir datos.
+Correr comando npm run dev para ejecutar la aplicación.
 
 VERSIÓN DESPLEGADA: https://weather-app-ed47d.web.app/
