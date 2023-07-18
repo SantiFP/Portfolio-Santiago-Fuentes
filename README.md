@@ -6,4 +6,4 @@ Esta es la versión que utiliza Context para transmitir datos.
 
 Para ejecutar el servidor de desarrollo correr el comando npm i y luego el comando npm run dev.
 
-VERSIÓN DESPLEGADA: https://weather-app-ed47d.web.app/
+VERSIÓN DESPLEGADA: https://weather-app-ed47d.web.app/ 
