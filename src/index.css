@@ -27,44 +27,44 @@
     @apply absolute top-[2.5rem] rotate-180 left-0 right-0 m-auto text-center text-4xl text-white w-fit pointer-events-none h-fit;
   }
   .p2up3p {
-    @apply absolute top-[64.15%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[64.15%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:left-[30rem];
   }
   .p2down3p {
-    @apply absolute top-[64.15%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[64.15%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit  lg:left-[16rem];
   }
   .p3up3p {
-    @apply absolute top-[65%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[65%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:right-[30rem];
   }
   .p3down3p {
-    @apply absolute top-[65%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[65%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit  lg:right-[16rem];
   }
 
   .p1up4p {
-    @apply absolute top-[21.5%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[21.5%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:left-[30rem];
   }
 
   .p1down4p {
-    @apply absolute top-[21.5%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[21.5%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:left-[16rem];
   }
 
   .p2up4p {
-    @apply absolute top-[22%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[22%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:right-[30rem];
   }
 
   .p2down4p {
-    @apply absolute top-[22%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[22%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:right-[16rem];
   }
   .p3up4p {
-    @apply absolute top-[71.35%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[71.35%] rotate-90 left-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:left-[30rem];
   }
   .p3down4p {
-    @apply absolute top-[71.35%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[71.35%] rotate-90 left-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:left-[16rem];
   }
   .p4up4p {
-    @apply absolute top-[72.2%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[72.2%] rotate-[-90deg] right-[8.75rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:right-[30rem];
   }
 
   .p4down4p {
-    @apply absolute top-[72.2%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit;
+    @apply absolute top-[72.2%] rotate-[-90deg] right-[0.4rem] text-center text-4xl text-white w-fit pointer-events-none h-fit lg:right-[16rem];
   }
 }
