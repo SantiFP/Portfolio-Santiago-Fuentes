@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Este es un proyecto que simula una tienda online donde puedes registrarte y logearte(con las respectivas validaciones), agregar productos al carrito, eliminar productos del mismo,
+eliminar el carrito por completo,consultar más información sobre un producto,prodecer a un simulador de pago con tarjeta de crédito,entre otras caraterísticas.
+También la sesión expirará dentro de un tiempo determinado consultando si se desea iniciar sesión nuevamente.
+Fue desarrollado con React,NextJS,Tailwind,Typescript,Sweet alert y react-transition-group.
+
+
 ## Getting Started
 
 First, run the development server:
